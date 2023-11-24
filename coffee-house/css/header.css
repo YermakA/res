@@ -1,0 +1,43 @@
+.header__coffee-menu {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+.header__container {
+  margin-bottom: 20px;
+}
+
+.navbar {
+  width: 1188px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.navbar__menu-item {
+  font-family: "Inter";
+  font-size: 16px;
+  margin-right: 20px;
+}
+.navbar__menu-item:last-child {
+  margin-right: 0px;
+}
+
+.coffee-menu {
+  width: 72px;
+  height: 28px;
+}
+.coffee-menu__text {
+  font-family: "Inter";
+  margin-right: 8px;
+}
+.coffee-menu__coffee-cup {
+  width: 20px;
+  height: 20px;
+}
+
+.header-menu {
+  display: flex;
+  align-items: center;
+  width: 1360px;
+}/*# sourceMappingURL=header.css.map */

@@ -309,17 +309,8 @@ template {
 
 @font-face {
   font-family: "Inter";
-  src: url("../fonts/Inter-Black.ttf") format("ttf"), url("../fonts/Inter-Light.ttf") format("ttf"), url("../fonts/Inter-Medium.ttf") format("ttf"), url("../fonts/Inter-Bold.ttf") format("ttf"), url("../fonts/Inter-ExtraBold.ttf") format("ttf"), url("../fonts/Inter-ExtraLight.ttf") format("ttf"), url("../fonts/Inter-Regular.ttf") format("ttf"), url("../fonts/Inter-SemiBold.ttf") format("ttf"), url("../fonts/Inter-Thin.ttf") format("ttf");
+  src: url("../fonts/Inter-Light.ttf") format("ttf"), url("../fonts/Inter-Black.ttf") format("ttf"), url("../fonts/Inter-Medium.ttf") format("ttf"), url("../fonts/Inter-Bold.ttf") format("ttf"), url("../fonts/Inter-ExtraBold.ttf") format("ttf"), url("../fonts/Inter-ExtraLight.ttf") format("ttf"), url("../fonts/Inter-Regular.ttf") format("ttf"), url("../fonts/Inter-SemiBold.ttf") format("ttf"), url("../fonts/Inter-Thin.ttf") format("ttf");
 }
-body {
-  background-color: #E1D4C9;
-}
-
-.container {
-  width: 1440px;
-  margin: 0 auto;
-}
-
 .header__coffee-menu {
   display: flex;
   align-items: center;
@@ -362,4 +353,63 @@ body {
   display: flex;
   align-items: center;
   width: 1360px;
+}
+
+.hero__img {
+  width: 1360px;
+  height: 644px;
+  border-radius: 40px;
+  margin: 0 auto;
+}
+.hero__container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.hero__offer {
+  left: 140px;
+  top: 100px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 530px;
+  height: 444px;
+}
+.hero__title {
+  color: #E1D4C9;
+  margin: 0 0 40px 0;
+  font-family: Inter;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 105%;
+}
+.hero__text {
+  color: #E1D4C9;
+  align-self: stretch;
+  font-family: Inter;
+  margin: 0 0 40px 0;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+.hero__button {
+  border: none;
+  border-radius: 100px;
+  width: 200px;
+  padding: 20px 78px;
+  background-color: #E1D4C9;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #E1D4C9;
+}
+
+.container {
+  width: 1440px;
+  margin: 0 auto;
 }/*# sourceMappingURL=style.css.map */
