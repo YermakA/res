@@ -307,6 +307,10 @@ template {
   display: none;
 }
 
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Black.ttf") format("ttf"), url("../fonts/Inter-Light.ttf") format("ttf"), url("../fonts/Inter-Medium.ttf") format("ttf"), url("../fonts/Inter-Bold.ttf") format("ttf"), url("../fonts/Inter-ExtraBold.ttf") format("ttf"), url("../fonts/Inter-ExtraLight.ttf") format("ttf"), url("../fonts/Inter-Regular.ttf") format("ttf"), url("../fonts/Inter-SemiBold.ttf") format("ttf"), url("../fonts/Inter-Thin.ttf") format("ttf");
+}
 body {
   background-color: #E1D4C9;
 }
@@ -316,15 +320,46 @@ body {
   margin: 0 auto;
 }
 
+.header__coffee-menu {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+.header__container {
+  margin-bottom: 20px;
+}
+
 .navbar {
   width: 1188px;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
 }
 .navbar__menu-item {
+  font-family: "Inter";
   font-size: 16px;
   margin-right: 20px;
-  font-style: normal;
-  font-weight: 600;
+}
+.navbar__menu-item:last-child {
+  margin-right: 0px;
+}
+
+.coffee-menu {
+  width: 72px;
+  height: 28px;
+}
+.coffee-menu__text {
+  font-family: "Inter";
+  margin-right: 8px;
+}
+.coffee-menu__coffee-cup {
+  width: 20px;
+  height: 20px;
+}
+
+.header-menu {
+  display: flex;
+  align-items: center;
+  width: 1360px;
 }/*# sourceMappingURL=style.css.map */

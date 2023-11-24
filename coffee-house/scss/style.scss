@@ -1,13 +1,25 @@
 @import "normalize.scss";
-
-
+@import "fonts.scss";
 body {
   background-color: #E1D4C9;
 }
 
+
 .container{
   width: 1440px;
   margin: 0 auto;
+}
+
+.header
+{
+  &__coffee-menu{
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+  &__container{
+    margin-bottom: 20px;
+  }
 }
 
 
@@ -16,10 +28,32 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items:center;
   &__menu-item{
+    &:last-child{
+      margin-right: 0px;
+    }
+  font-family: "Inter";
   font-size: 16px;
   margin-right: 20px;
-  font-style: normal;
-  font-weight: 600;
 }
+}
+
+.coffee-menu{
+  width: 72px;
+  height: 28px;
+  &__text{
+    font-family: "Inter";
+    margin-right: 8px;
+  }
+  &__coffee-cup{
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.header-menu{
+  display: flex;
+  align-items: center;
+  width: 1360px;
 }
