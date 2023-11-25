@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     padding: 0;
+    
   }
   &__container{
     margin-top: 20px;
@@ -11,11 +12,7 @@
   }
 }
 
-.udnerline{
-  background-color: black;
-  height: 2px;
-  width: 72px;
-}
+
 
 .navbar{
   width: 1188px;
@@ -46,6 +43,10 @@
     width: 20px;
     height: 20px;
   }
+  
+ &:hover{
+  border-bottom: 2px solid black;
+ }
 }
 
 .header-menu{

@@ -345,12 +345,6 @@ template {
   margin-bottom: 20px;
 }
 
-.udnerline {
-  background-color: black;
-  height: 2px;
-  width: 72px;
-}
-
 .navbar {
   width: 1188px;
   display: flex;
@@ -380,6 +374,9 @@ template {
 .coffee-menu__coffee-cup {
   width: 20px;
   height: 20px;
+}
+.coffee-menu:hover {
+  border-bottom: 2px solid black;
 }
 
 .header-menu {
@@ -430,6 +427,9 @@ template {
   line-height: 150%;
 }
 .hero__button {
+  display: flex;
+  transition: ease all 2s;
+  align-items: center;
   font-family: Inter;
   font-size: 16px;
   font-style: normal;
@@ -440,6 +440,17 @@ template {
   width: 200px;
   padding: 20px 78px;
   background-color: #E1D4C9;
+}
+.hero__button:hover .hero-img {
+  display: block;
+}
+
+.hero-button__text {
+  margin-right: 8px;
+}
+
+.hero-img {
+  display: none;
 }
 
 .favorite-coffee__container {
@@ -728,6 +739,7 @@ template {
 
 .tab-item {
   display: flex;
+  transition: ease all 2s;
   margin-right: 16px;
   align-items: center;
   border: 1px solid #C1B6AD;
@@ -744,26 +756,41 @@ template {
   border-radius: 100px;
   background-color: #C1B6AD;
 }
-.tab-item__img_active {
-  background-color: #E1D4C9;
-}
-.tab-item_active {
+.tab-item:active {
   border: none;
   background-color: #665F55;
+}
+.tab-item:active .tab-item__img {
+  background-color: #E1D4C9;
+}
+.tab-item:active .tab-item__text {
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  color: #E1D4C9;
+  line-height: 150%;
+}
+.tab-item:hover {
+  border: none;
+  background-color: #665F55;
+}
+.tab-item:hover .tab-item__img {
+  background-color: #E1D4C9;
+}
+.tab-item:hover .tab-item__text {
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  color: #E1D4C9;
+  line-height: 150%;
 }
 .tab-item__text {
   font-family: Inter;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
-  line-height: 150%;
-}
-.tab-item__text_active {
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 600;
-  color: #E1D4C9;
   line-height: 150%;
 }
 
@@ -780,6 +807,7 @@ template {
   object-fit: cover;
 }
 .preview__img {
+  transition: ease all 2s;
   width: 310px;
   height: 310px;
   border-radius: 40px;

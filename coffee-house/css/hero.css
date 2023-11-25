@@ -39,6 +39,9 @@
   line-height: 150%;
 }
 .hero__button {
+  display: flex;
+  transition: ease all 2s;
+  align-items: center;
   font-family: Inter;
   font-size: 16px;
   font-style: normal;
@@ -49,4 +52,15 @@
   width: 200px;
   padding: 20px 78px;
   background-color: #E1D4C9;
+}
+.hero__button:hover .hero-img {
+  display: block;
+}
+
+.hero-button__text {
+  margin-right: 8px;
+}
+
+.hero-img {
+  display: none;
 }/*# sourceMappingURL=hero.css.map */

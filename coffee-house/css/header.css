@@ -8,12 +8,6 @@
   margin-bottom: 20px;
 }
 
-.udnerline {
-  background-color: black;
-  height: 2px;
-  width: 72px;
-}
-
 .navbar {
   width: 1188px;
   display: flex;
@@ -43,6 +37,9 @@
 .coffee-menu__coffee-cup {
   width: 20px;
   height: 20px;
+}
+.coffee-menu:hover {
+  border-bottom: 2px solid black;
 }
 
 .header-menu {
