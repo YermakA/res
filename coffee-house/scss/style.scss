@@ -1,8 +1,4 @@
-@import "normalize.scss";
 @import "_variables.scss";
-@import "fonts.scss";
-@import "header.scss";
-@import "hero.scss";
 body {
   margin: 0;
   padding: 0;
@@ -13,4 +9,8 @@ body {
   width: 1440px;
   margin: 0 auto;
 }
-
+@import "normalize.scss";
+@import "fonts.scss";
+@import "header.scss";
+@import "hero.scss";
+@import "favorite-coffee.scss";

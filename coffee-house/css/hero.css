@@ -5,6 +5,7 @@
   margin: 0 auto;
 }
 .hero__container {
+  margin-bottom: 100px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -38,9 +39,18 @@
   line-height: 150%;
 }
 .hero__button {
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
   border: none;
   border-radius: 100px;
   width: 200px;
   padding: 20px 78px;
   background-color: #E1D4C9;
+}
+
+.enjoy {
+  color: #B0907A;
 }/*# sourceMappingURL=hero.css.map */

@@ -1,3 +1,15 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #E1D4C9;
+}
+
+.container {
+  width: 1440px;
+  margin: 0 auto;
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -309,7 +321,7 @@ template {
 
 @font-face {
   font-family: "Inter";
-  src: url("../fonts/Inter-Light.ttf") format("ttf"), url("../fonts/Inter-Black.ttf") format("ttf"), url("../fonts/Inter-Medium.ttf") format("ttf"), url("../fonts/Inter-Bold.ttf") format("ttf"), url("../fonts/Inter-ExtraBold.ttf") format("ttf"), url("../fonts/Inter-ExtraLight.ttf") format("ttf"), url("../fonts/Inter-Regular.ttf") format("ttf"), url("../fonts/Inter-SemiBold.ttf") format("ttf"), url("../fonts/Inter-Thin.ttf") format("ttf");
+  src: url("../fonts/Inter-Regular.ttf") format("truetype"), url("../fonts/Inter-Light.ttf") format("truetype"), url("../fonts/Inter-Black.ttf") format("truetype"), url("../fonts/Inter-Medium.ttf") format("truetype"), url("../fonts/Inter-Bold.ttf") format("truetype"), url("../fonts/Inter-ExtraBold.ttf") format("truetype"), url("../fonts/Inter-ExtraLight.ttf") format("truetype"), url("../fonts/Inter-SemiBold.ttf") format("truetype"), url("../fonts/Inter-Thin.ttf") format("truetype");
 }
 .header__coffee-menu {
   display: flex;
@@ -362,6 +374,7 @@ template {
   margin: 0 auto;
 }
 .hero__container {
+  margin-bottom: 100px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -395,6 +408,11 @@ template {
   line-height: 150%;
 }
 .hero__button {
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
   border: none;
   border-radius: 100px;
   width: 200px;
@@ -402,14 +420,105 @@ template {
   background-color: #E1D4C9;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: #E1D4C9;
+.enjoy {
+  color: #B0907A;
 }
 
-.container {
-  width: 1440px;
-  margin: 0 auto;
+.favorite-coffee__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.favorite-coffee__title {
+  font-family: Inter;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.favorite {
+  color: #B0907A;
+}
+
+.slider {
+  width: 1360px;
+  height: 640px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.slider__arrow-left {
+  border: solid 1px;
+  border-radius: 100px;
+  width: 60px;
+  height: 60px;
+  background: none;
+}
+.slider__arrow-right {
+  border: solid 1px;
+  border-radius: 100px;
+  width: 60px;
+  height: 60px;
+  background: none;
+}
+.slider__slide {
+  display: flex;
+  flex-direction: column;
+}
+
+.slide__img {
+  width: 480px;
+  height: 480px;
+  margin-bottom: 20px;
+}
+.slide__description {
+  width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.description__title {
+  margin: 0 0 16px 0;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+}
+.description__text {
+  text-align: center;
+  margin: 0 0 16px 0;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+.description__price {
+  margin: 0 0 16px 0;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.controls {
+  display: flex;
+}
+
+.control {
+  margin-right: 12px;
+  width: 40px;
+  height: 4px;
+  background-color: #C1B6AD;
+}
+.control:last-child {
+  margin-right: 0px;
+}
+.control_black {
+  background-color: #665F55;
 }/*# sourceMappingURL=style.css.map */

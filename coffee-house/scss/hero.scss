@@ -8,6 +8,7 @@
   margin: 0 auto;
   }
   &__container{
+    margin-bottom: 100px;
     position: relative;
   display: flex;
   justify-content: center;
@@ -44,10 +45,18 @@
     
   }
   &__button{
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
     border: none;
     border-radius: 100px;
     width: 200px;
     padding: 20px 78px;
     background-color: $light;
   }
+}
+.enjoy{
+  color: $text-accent;
 }
