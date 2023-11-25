@@ -5,8 +5,11 @@ body {
   box-sizing: border-box;
   background-color: $light;
 }
+a{
+  text-decoration: none;
+}
 .container{
-  width: 1440px;
+  width: 1360px;
   margin: 0 auto;
 }
 .creamy{
@@ -17,3 +20,5 @@ body {
 @import "header.scss";
 @import "hero.scss";
 @import "favorite-coffee.scss";
+@import "about.scss";
+@import "mobile-app.scss";
