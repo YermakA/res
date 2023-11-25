@@ -15,6 +15,7 @@
   align-items: center;
 }
 .navbar__menu-item {
+  color: black;
   font-family: "Inter";
   font-size: 16px;
   margin-right: 20px;
@@ -30,6 +31,7 @@
 .coffee-menu__text {
   font-family: "Inter";
   margin-right: 8px;
+  color: black;
 }
 .coffee-menu__coffee-cup {
   width: 20px;

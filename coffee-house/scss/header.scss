@@ -21,10 +21,11 @@
     &:last-child{
       margin-right: 0px;
     }
+  color: black;
   font-family: "Inter";
   font-size: 16px;
   margin-right: 20px;
-}
+  }
 }
 
 .coffee-menu{
@@ -33,6 +34,7 @@
   &__text{
     font-family: "Inter";
     margin-right: 8px;
+    color: black;
   }
   &__coffee-cup{
     width: 20px;
