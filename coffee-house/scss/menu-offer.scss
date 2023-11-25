@@ -1,4 +1,12 @@
 @import "_variables.scss";
+
+.menu{
+  margin: 0;
+  padding: 0 ;
+  &__container{
+   margin-bottom: 100px; 
+  }
+}
 .menu-offer{
   display: flex;
   margin-bottom: 40px;
@@ -78,7 +86,7 @@
     margin-bottom: 20px;
   }
   &__title{
-    margin: 0 0 12px 0;
+    margin: 0 0 0 0;
     font-family: Inter;
     font-size: 24px;
     font-style: normal;
@@ -86,7 +94,7 @@
     line-height: 125%;
   }
   &__text{
-    margin: 0 0 12px 0;
+    margin: 0 0 0 0;
     font-family: Inter;
     font-size: 16px;
     font-style: normal;
@@ -102,7 +110,17 @@
   }
 }
 .menu-description{
-  display: flex;
-  flex-direction: column;
+  padding-left: 20px;
+  display: grid;
+  align-items: center;
+  grid-template-rows: 1fr, 1fr, 2fr;
   width: 270px;
+  height: 156px;
+}
+
+.coffee-grid{
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: repeat(2, 2fr);
+  display: grid;
+  gap: 40px;
 }
