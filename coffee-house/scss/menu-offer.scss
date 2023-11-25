@@ -1,0 +1,108 @@
+@import "_variables.scss";
+.menu-offer{
+  display: flex;
+  margin-bottom: 40px;
+  flex-direction: column;
+  align-items: center;
+  &__title{
+    margin: 0 0 40px 0;
+    font-family: Inter;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%;
+    width: 800px;
+    text-align: center;
+  }
+}
+.tabs{
+  display: flex;
+  
+}
+
+.tab-item{
+  display: flex;
+  margin-right: 16px;
+  align-items: center;
+  border: 1px solid #C1B6AD;
+  width: 115px;
+  height: 46px;
+  padding: 8px 16px 8px 8px;
+  border-radius: 100px;
+  &__img{
+    width: 16px;
+    height: 24px;
+    margin-right: 8px;
+    padding: 3px 7px 3px 7px;
+    border-radius: 100px;
+    background-color: #C1B6AD;
+    &_active{
+    background-color: $light;
+  }
+  }
+  &_active{
+    border: none;
+    background-color: #665F55;
+  }
+  &__text{
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+     &_active{
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    color: $light;
+    line-height: 150%
+  }
+  }
+}
+
+
+.preview{
+  width: 310px;
+  height: 506px;
+  border-radius: 40px;
+  border: 1px solid #C1B6AD;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__img{
+    width: 310px;
+    height: 310px;
+    border-radius: 40px;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  &__title{
+    margin: 0 0 12px 0;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%;
+  }
+  &__text{
+    margin: 0 0 12px 0;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+  }
+  &__price{
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%;
+  }
+}
+.menu-description{
+  display: flex;
+  flex-direction: column;
+  width: 270px;
+}

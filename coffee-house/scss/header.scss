@@ -6,10 +6,16 @@
     padding: 0;
   }
   &__container{
+    margin-top: 20px;
     margin-bottom: 20px;
   }
 }
 
+.udnerline{
+  background-color: black;
+  height: 2px;
+  width: 72px;
+}
 
 .navbar{
   width: 1188px;
@@ -24,7 +30,7 @@
   color: black;
   font-family: "Inter";
   font-size: 16px;
-  margin-right: 20px;
+  margin-right: 40px;
   }
 }
 
