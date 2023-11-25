@@ -776,11 +776,14 @@ template {
   flex-direction: column;
   align-items: center;
 }
+.preview:hover .preview__img {
+  object-fit: cover;
+}
 .preview__img {
   width: 310px;
   height: 310px;
   border-radius: 40px;
-  object-fit: cover;
+  object-fit: none;
   margin-bottom: 20px;
 }
 .preview__title {
