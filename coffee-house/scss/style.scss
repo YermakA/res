@@ -9,6 +9,9 @@ body {
   width: 1440px;
   margin: 0 auto;
 }
+.creamy{
+  color: $text-accent;
+}
 @import "normalize.scss";
 @import "fonts.scss";
 @import "header.scss";

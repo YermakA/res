@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 100px;
 }
 .favorite-coffee__title {
   font-family: Inter;
@@ -9,10 +10,6 @@
   font-style: normal;
   font-weight: 600;
   line-height: 125%;
-}
-
-.favorite {
-  color: #B0907A;
 }
 
 .slider {
