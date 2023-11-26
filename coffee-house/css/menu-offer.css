@@ -98,14 +98,13 @@
   align-items: center;
 }
 .preview:hover .preview__img {
-  transition: ease all 1s;
-  transform: scale(1);
+  object-fit: cover;
 }
 .preview__img {
   width: 310px;
   height: 310px;
   border-radius: 40px;
-  transform: scale(1.1);
+  object-fit: none;
   margin-bottom: 20px;
 }
 .preview__title {
