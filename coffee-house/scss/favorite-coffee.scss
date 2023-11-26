@@ -26,6 +26,7 @@
   align-items: center;
   justify-content: space-between;
   &__arrow-left{
+    cursor: pointer;
     border: solid 1px;
     border-radius: 100px;
     width: 60px;
@@ -43,6 +44,7 @@
 
   }
   &__arrow-right{
+    cursor: pointer;
     border: solid 1px;
     border-radius: 100px;
     width: 60px;
