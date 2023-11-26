@@ -21,6 +21,7 @@
   justify-content: space-between;
 }
 .slider__arrow-left {
+  cursor: pointer;
   border: solid 1px;
   border-radius: 100px;
   width: 60px;
@@ -37,6 +38,7 @@
   stroke: #E1D4C9;
 }
 .slider__arrow-right {
+  cursor: pointer;
   border: solid 1px;
   border-radius: 100px;
   width: 60px;
