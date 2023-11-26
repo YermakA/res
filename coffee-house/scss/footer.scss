@@ -10,6 +10,12 @@
     justify-content: space-around;
     align-items: center;
   }
+  &__svg-border{
+    cursor: pointer;
+  }
+   &__svg-icon{
+    cursor: pointer;
+  }
     &__img{
       width: 60px;
       height: 60px;

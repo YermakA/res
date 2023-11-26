@@ -7,6 +7,12 @@
   justify-content: space-around;
   align-items: center;
 }
+.footer__svg-border {
+  cursor: pointer;
+}
+.footer__svg-icon {
+  cursor: pointer;
+}
 .footer__img {
   width: 60px;
   height: 60px;

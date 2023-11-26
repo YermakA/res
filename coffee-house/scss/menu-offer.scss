@@ -29,6 +29,7 @@
 }
 
 .tab-item{
+  cursor: pointer;
   display: flex;
   transition: ease all 2s;
   margin-right: 16px;
@@ -87,6 +88,7 @@ font-family: Inter;
 
 
 .preview{
+  cursor: pointer;
    overflow:hidden;
    position:relative;
   width: 310px;
@@ -98,8 +100,7 @@ font-family: Inter;
   align-items: center;
   &:hover{ 
     .preview__img{
-      transition: ease all 1s;
-     transform: scale(1);
+    object-fit: cover;
     
     }
   }
@@ -107,7 +108,7 @@ font-family: Inter;
     width: 310px;
     height: 310px;
     border-radius: 40px;
-    transform: scale(1.1);
+    object-fit: none;
     margin-bottom: 20px;
   }
   &__title{
