@@ -41,6 +41,7 @@
 .hero__button {
   display: flex;
   align-items: center;
+  height: 64px;
   font-family: Inter;
   font-size: 16px;
   font-style: normal;
@@ -49,7 +50,6 @@
   border: none;
   border-radius: 100px;
   width: 200px;
-  padding: 20px 78px;
   background-color: #E1D4C9;
 }
 .hero__button:hover .hero-img {
@@ -61,6 +61,7 @@
   transition: ease all 2s;
 }
 .hero-button__text {
+  padding: 0 0 0 78px;
   color: black;
   margin-right: 8px;
 }
