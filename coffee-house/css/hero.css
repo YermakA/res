@@ -40,7 +40,6 @@
 }
 .hero__button {
   display: flex;
-  transition: ease all 2s;
   align-items: center;
   font-family: Inter;
   font-size: 16px;
@@ -54,13 +53,17 @@
   background-color: #E1D4C9;
 }
 .hero__button:hover .hero-img {
-  display: block;
+  transition: ease all 2s;
+  opacity: 1;
 }
 
+.hero-button {
+  transition: ease all 2s;
+}
 .hero-button__text {
   margin-right: 8px;
 }
 
 .hero-img {
-  display: none;
+  opacity: 0;
 }/*# sourceMappingURL=hero.css.map */

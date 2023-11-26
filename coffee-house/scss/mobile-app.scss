@@ -1,3 +1,4 @@
+@import "_variables.scss";
 .mobile-app{
   &__container{
     display: flex;
@@ -62,9 +63,25 @@
     font-weight: 600;
     line-height: 140%;
   }
-}
+} 
 
 
 .button-container{
   display: flex;
+}
+
+.offer__btn{
+  transition: all ease 2s;
+  &:hover{
+    border: none;
+    background-color: #665F55;
+    .button__svg-icon{
+       transition: all ease 2s;
+      fill: $light;
+    }
+    .offer_text-pos-start{
+       transition: all ease 2s;
+      color: $light;
+    }
+  }
 }

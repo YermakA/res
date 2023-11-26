@@ -31,6 +31,16 @@
     width: 60px;
     height: 60px;
     background: none;
+   &:hover{
+    transition: ease all 2s;
+    background: #665F55;
+    border:none;
+    .arrows{
+      transition: ease all 2s;
+      stroke: $light;
+    }
+   }
+
   }
   &__arrow-right{
     border: solid 1px;
@@ -38,6 +48,15 @@
     width: 60px;
     height: 60px;
     background: none;
+    &:hover{
+      transition: ease all 2s;
+    background: #665F55;
+    border:none;
+    .arrows{
+      transition: ease all 2s;
+      stroke: $light;
+    }
+   }
   }
   &__slide{
     display: flex;

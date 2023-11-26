@@ -33,6 +33,7 @@
 
 .coffee-menu{
   width: 72px;
+   transition: ease all 2s;
   height: 28px;
   &__text{
     font-family: "Inter";
@@ -44,9 +45,15 @@
     height: 20px;
   }
   
- &:hover{
-  border-bottom: 2px solid black;
+ &:hover + .underline{
+ transition: ease all 2s;
+  opacity: 1;
+}
  }
+
+.underline{
+  opacity: 0;
+  border: 1px solid black;
 }
 
 .header-menu{

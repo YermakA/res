@@ -63,4 +63,20 @@
 
 .button-container {
   display: flex;
+}
+
+.offer__btn {
+  transition: all ease 2s;
+}
+.offer__btn:hover {
+  border: none;
+  background-color: #665F55;
+}
+.offer__btn:hover .button__svg-icon {
+  transition: all ease 2s;
+  fill: #E1D4C9;
+}
+.offer__btn:hover .offer_text-pos-start {
+  transition: all ease 2s;
+  color: #E1D4C9;
 }/*# sourceMappingURL=mobile-app.css.map */

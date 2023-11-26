@@ -27,12 +27,30 @@
   height: 60px;
   background: none;
 }
+.slider__arrow-left:hover {
+  transition: ease all 2s;
+  background: #665F55;
+  border: none;
+}
+.slider__arrow-left:hover .arrows {
+  transition: ease all 2s;
+  stroke: #E1D4C9;
+}
 .slider__arrow-right {
   border: solid 1px;
   border-radius: 100px;
   width: 60px;
   height: 60px;
   background: none;
+}
+.slider__arrow-right:hover {
+  transition: ease all 2s;
+  background: #665F55;
+  border: none;
+}
+.slider__arrow-right:hover .arrows {
+  transition: ease all 2s;
+  stroke: #E1D4C9;
 }
 .slider__slide {
   display: flex;

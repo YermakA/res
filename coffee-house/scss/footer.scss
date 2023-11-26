@@ -1,5 +1,6 @@
 @import "_variables.scss";
 .footer{
+ 
   &__container{
     background-color: #665F55;
     height: 450px;
@@ -8,11 +9,24 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-
   }
-
-
-
+    &__img{
+      width: 60px;
+      height: 60px;
+      margin-right: 12px;
+      transition: ease all 2s;
+      &:hover{
+      .footer__svg-border{
+         transition: all ease 2s;
+        stroke: none;
+        fill: $light;   
+  }
+      .footer__svg-icon{  
+        transition: ease all 2s;
+        stroke: #403F3D;
+  }
+      }
+    }
   &__title{
   margin: 0 0 40px 0;
   font-family: Inter;
@@ -44,6 +58,12 @@
   font-weight: 600;
   line-height: 150%;
   color: $light;
+  &_link{
+    &:hover{
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    }
+  }
   }
 
 
@@ -54,3 +74,4 @@
 .contacts{
   width: 530px;
 }
+

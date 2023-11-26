@@ -27,6 +27,7 @@
 
 .coffee-menu {
   width: 72px;
+  transition: ease all 2s;
   height: 28px;
 }
 .coffee-menu__text {
@@ -38,8 +39,14 @@
   width: 20px;
   height: 20px;
 }
-.coffee-menu:hover {
-  border-bottom: 2px solid black;
+.coffee-menu:hover + .underline {
+  transition: ease all 2s;
+  opacity: 1;
+}
+
+.underline {
+  opacity: 0;
+  border: 1px solid black;
 }
 
 .header-menu {

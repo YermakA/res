@@ -7,6 +7,21 @@
   justify-content: space-around;
   align-items: center;
 }
+.footer__img {
+  width: 60px;
+  height: 60px;
+  margin-right: 12px;
+  transition: ease all 2s;
+}
+.footer__img:hover .footer__svg-border {
+  transition: all ease 2s;
+  stroke: none;
+  fill: #E1D4C9;
+}
+.footer__img:hover .footer__svg-icon {
+  transition: ease all 2s;
+  stroke: #403F3D;
+}
 .footer__title {
   margin: 0 0 40px 0;
   font-family: Inter;
@@ -35,6 +50,10 @@
   font-weight: 600;
   line-height: 150%;
   color: #E1D4C9;
+}
+.contact-item_link:hover {
+  text-decoration: underline;
+  text-underline-offset: 10px;
 }
 
 .links {
