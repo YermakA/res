@@ -1,0 +1,29 @@
+@import "_variables.scss";
+html{
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: $light;
+}
+a{
+  text-decoration: none;
+}
+.container{
+  width: 1360px;
+  margin: 0 auto;
+}
+.creamy{
+  color: $text-accent;
+}
+@import "normalize.scss";
+@import "fonts.scss";
+@import "header.scss";
+@import "hero.scss";
+@import "favorite-coffee.scss";
+@import "about.scss";
+@import "mobile-app.scss";
+@import "footer.scss";
+@import "menu-offer.scss";

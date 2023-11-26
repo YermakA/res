@@ -1,0 +1,64 @@
+.header
+{
+  &__coffee-menu{
+    display: flex;
+    align-items: center;
+    padding: 0;
+    
+  }
+  &__container{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+
+
+.navbar{
+  width: 1188px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:center;
+  &__menu-item{
+    &:last-child{
+      margin-right: 0px;
+    }
+  color: black;
+  font-family: "Inter";
+  font-size: 16px;
+  margin-right: 40px;
+  }
+}
+
+.coffee-menu{
+  width: 72px;
+   transition: ease all 2s;
+  height: 28px;
+  &__text{
+    font-family: "Inter";
+    margin-right: 8px;
+    color: black;
+  }
+  &__coffee-cup{
+    width: 20px;
+    height: 20px;
+  }
+  
+ &:hover + .underline{
+ transition: ease all 2s;
+  opacity: 1;
+}
+ }
+
+.underline{
+  opacity: 0;
+  border: 1px solid black;
+}
+
+.header-menu{
+  padding: 0;
+  display: flex;
+  align-items: center;
+  width: 1360px;
+}
