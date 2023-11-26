@@ -47,6 +47,7 @@
   &__button{
     display: flex;
     align-items: center;
+    height: 64px;
     font-family: Inter;
     font-size: 16px;
     font-style: normal;
@@ -55,7 +56,6 @@
     border: none;
     border-radius: 100px;
     width: 200px;
-    padding: 20px 78px;
     background-color: $light;
     &:hover{
       .hero-img{
@@ -69,6 +69,7 @@
 .hero-button{
   transition: ease all 2s;
   &__text{
+    padding: 0 0 0 78px;
     color: black;
     margin-right: 8px;
   }
