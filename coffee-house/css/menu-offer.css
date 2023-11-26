@@ -28,6 +28,7 @@
 }
 
 .tab-item {
+  cursor: pointer;
   display: flex;
   transition: ease all 2s;
   margin-right: 16px;
@@ -85,6 +86,7 @@
 }
 
 .preview {
+  cursor: pointer;
   overflow: hidden;
   position: relative;
   width: 310px;

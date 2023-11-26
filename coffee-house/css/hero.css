@@ -61,6 +61,7 @@
   transition: ease all 2s;
 }
 .hero-button__text {
+  color: black;
   margin-right: 8px;
 }
 
