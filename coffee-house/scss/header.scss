@@ -28,6 +28,11 @@
   flex-direction: row;
   align-items:center;
   &__menu-item{
+     &:hover  .underline{
+  transition: ease all 2s;
+  width: 100%;
+  opacity: 1;
+}
     &:last-child{
       margin-right: 0px;
     }
