@@ -1,18 +1,19 @@
 @import "_variables.scss";
-
+@import "fonts.scss";
 .menu{
   margin: 0;
   padding: 0 ;
   &__container{
-   margin-bottom: 100px; 
+   margin-bottom: 93px; 
   }
 }
 .menu-offer{
   display: flex;
   margin-bottom: 40px;
   flex-direction: column;
-  align-items: center;
   &__title{
+    padding-left: 280px;
+    letter-spacing: 0.5px;
     margin: 0 0 40px 0;
     font-family: Inter;
     font-size: 60px;
@@ -24,6 +25,7 @@
   }
 }
 .tabs{
+  padding-left: 499.5px;
   display: flex;
   
 }
@@ -37,9 +39,13 @@
   border: 1px solid #C1B6AD;
   width: 115px;
   height: 46px;
-  padding: 8px 16px 8px 8px;
   border-radius: 100px;
+  &_tea{
+    width: 90px;
+    height: 46px;
+  }
   &__img{
+    margin-left: 8px;
     width: 16px;
     height: 24px;
     margin-right: 8px;
@@ -100,19 +106,28 @@ font-family: Inter;
   align-items: center;
   &:hover{ 
     .preview__img{
-    object-fit: cover;
+    transition: ease all 1s;
+    transform: scale(1);
     
     }
   }
-  &__img{   
+  &__border{
+    margin-bottom: 20px;
+    border-radius: 40px;
+    width: 310px;
+    height: 310px;
+    overflow: hidden;
+  }
+  &__img{  
+    transform: scale(1.1); 
     width: 310px;
     height: 310px;
     border-radius: 40px;
     object-fit: none;
     margin-bottom: 20px;
   }
-  &__title{
-    margin: 0 0 0 0;
+  &__title{  
+    margin: 0 0 12px 0;
     font-family: Inter;
     font-size: 24px;
     font-style: normal;
@@ -135,18 +150,42 @@ font-family: Inter;
     line-height: 125%;
   }
 }
+.desctription{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 156px;
+}
 .menu-description{
-  padding-left: 20px;
-  display: grid;
-  align-items: center;
+
+  display: flex;
+  flex-direction: column;
   grid-template-rows: 1fr, 1fr, 2fr;
   width: 270px;
-  height: 156px;
+
 }
 
 .coffee-grid{
+  height: 1056px;
   grid-template-columns: repeat(4,1fr);
   grid-template-rows: repeat(2, 2fr);
   display: grid;
   gap: 40px;
+}
+
+.tab-item_active{
+  border: none;
+    background-color: #665F55;
+  .tab-item__img{
+    background-color: $light;
+    
+  }
+  .tab-item__text{
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    color: $light;
+    line-height: 150%
+  }
 }

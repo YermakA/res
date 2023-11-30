@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Regular.ttf") format("truetype"), url("../fonts/Inter-Light.ttf") format("truetype"), url("../fonts/Inter-Black.ttf") format("truetype"), url("../fonts/Inter-Medium.ttf") format("truetype"), url("../fonts/Inter-Bold.ttf") format("truetype"), url("../fonts/Inter-ExtraBold.ttf") format("truetype"), url("../fonts/Inter-ExtraLight.ttf") format("truetype"), url("../fonts/Inter-SemiBold.ttf") format("truetype"), url("../fonts/Inter-Thin.ttf") format("truetype");
+}
 .mobile-app__container {
   display: flex;
   align-items: center;
@@ -13,12 +17,13 @@
   text-align: start;
 }
 .offer__btn-img {
-  padding-left: 20px;
+  padding-left: 12px;
   width: 36px;
   height: 36px;
   margin-right: 8px;
 }
 .offer__title {
+  letter-spacing: 1.1px;
   font-family: Inter;
   margin: 0 0 40px 0;
   font-size: 60px;
