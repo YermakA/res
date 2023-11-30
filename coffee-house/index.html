@@ -22,15 +22,22 @@
           </a>
           <nav class="navbar">
             <a class="navbar__menu-item" href="#favorite-coffee">
-              <h4>Favorite coffee</h4>
+              <h4 class="header__text">Favorite coffee</h4>
+               <div class="underline"></div>
             </a>
-            <a class="navbar__menu-item" href="#about"><h4>About</h4></a>
-            <a class="navbar__menu-item" href="#mobile-app"><h4>Mobile app</h4></a>
-            <a class="navbar__menu-item" href="#contacts"><h4>Contact us</h4></a>
+            <a class="navbar__menu-item" href="#about"><h4 class="header__text">About</h4>
+             <div class="underline"></div>
+            </a>
+            <a class="navbar__menu-item" href="#mobile-app"><h4 class="header__text">Mobile app</h4>
+             <div class="underline"></div>
+            </a>
+            <a class="navbar__menu-item" href="#contacts"><h4 class="header__text">Contact us</h4>
+             <div class="underline"></div>
+            </a>
           </nav>
           <a href="./menu.html">
-            <div class="coffee-menu header__coffee-menu coffee-menu_underline">
-              <h4 class="coffee-menu__text">Menu</h4>
+            <div class="coffee-menu header__coffee-menu">
+              <h4 class="header__text coffee-menu__text">Menu</h4>
               <img
                 class="coffee-menu__coffee-cup"
                 src="./icons/coffee-cup.svg"
@@ -136,22 +143,30 @@
             friends, or get some work done.
           </h2>
           <div class="images">
+            <div class="images__border big-border">
             <img
               class="images__img big-img"
               src="./img/about-1.jpg"
               alt="woman drinks coffee">
+              </div>
+              <div class="images__border small-border">
             <img
               class="images__img small-img"
               src="./img/about-3.jpg"
               alt="man drinks coffee">
+              </div>
+              <div class="images__border small-border images__img_top">
             <img
-              class="images__img small-img images__img_top"
+              class="images__img small-img"
               src="./img/about-2.jpg"
               alt="a cup of coffee">
+              </div>
+              <div class="images__border big-border">
             <img
-              class="images__img big-img images__img"
+              class="images__img big-img"
               src="./img/about-4.jpg"
               alt="drink coffee together">
+              </div>
           </div> 
         </div>
         </section>
@@ -228,14 +243,12 @@
         </div>
       </section>
     </main>
-    <footer id="contacts"
+     <footer id="contacts"
       ><div class="container footer__container">
         <section class="links">
-          <h2 class="footer__title"
-            >Sip, Savor, Smile. <br><i class="creamy">It’s coffee time!</i>
+          <h2 class="footer__title">Sip, Savor, Smile. <br><i class="creamy">It’s coffee time!</i>
           </h2>
-            <span class="footer__img"
-              ><svg
+            <span class="footer__img"><svg
                 width="60"
                 height="60"
                 viewBox="0 0 60 60"
@@ -248,13 +261,13 @@
                   width="59"
                   height="59"
                   rx="29.5"
-                  stroke="#C1B6AD"/>
+                  stroke="#C1B6AD" />
                 <path
                   class="footer__svg-icon"
                   d="M41 21.0101C41 21.0101 38.9821 22.2022 37.86 22.5401C37.2577 21.8476 36.4573 21.3567 35.567 21.134C34.6767 20.9112 33.7395 20.9673 32.8821 21.2945C32.0247 21.6218 31.2884 22.2045 30.773 22.9638C30.2575 23.7231 29.9877 24.6224 30 25.5401V26.5401C28.2426 26.5856 26.5013 26.1959 24.931 25.4055C23.3607 24.6151 22.0103 23.4487 21 22.0101C21 22.0101 17 31.0101 26 35.0101C23.9405 36.408 21.4872 37.109 19 37.0101C28 42.0101 39 37.0101 39 25.5101C38.9991 25.2315 38.9723 24.9537 38.92 24.6801C39.9406 23.6735 41 21.0101 41 21.0101Z"
                   stroke="#E1D4C9"
                   stroke-linecap="round"
-                  stroke-linejoin="round"/>
+                  stroke-linejoin="round" />
               </svg>
             </span>
             <span class="footer__img">
@@ -271,23 +284,23 @@
                   width="59"
                   height="59"
                   rx="29.5"
-                  stroke="#C1B6AD"/>
+                  stroke="#C1B6AD" />
                 <path
                   class="footer__svg-icon"
                   d="M30 34C32.2091 34 34 32.2091 34 30C34 27.7909 32.2091 26 30 26C27.7909 26 26 27.7909 26 30C26 32.2091 27.7909 34 30 34Z"
                   stroke="#E1D4C9"
                   stroke-linecap="round"
-                  stroke-linejoin="round"/>
+                  stroke-linejoin="round" />
                 <path
                   class="footer__svg-icon"
                   d="M21 34V26C21 23.2386 23.2386 21 26 21H34C36.7614 21 39 23.2386 39 26V34C39 36.7614 36.7614 39 34 39H26C23.2386 39 21 36.7614 21 34Z"
-                  stroke="#E1D4C9"/>
+                  stroke="#E1D4C9" />
                 <path
                   class="footer__svg-icon"
                   d="M35.5 24.51L35.51 24.4989"
                   stroke="#E1D4C9"
                   stroke-linecap="round"
-                  stroke-linejoin="round"/>
+                  stroke-linejoin="round" />
               </svg>
             </span>
             <span class="footer__img">
@@ -304,34 +317,41 @@
                   width="59"
                   height="59"
                   rx="29.5"
-                  stroke="#C1B6AD"/>
+                  stroke="#C1B6AD" />
                 <path
                   class="footer__svg-icon"
                   d="M35 20H32C30.6739 20 29.4021 20.5268 28.4645 21.4645C27.5268 22.4021 27 23.6739 27 25V28H24V32H27V40H31V32H34L35 28H31V25C31 24.7348 31.1054 24.4804 31.2929 24.2929C31.4804 24.1054 31.7348 24 32 24H35V20Z"
                   stroke="#E1D4C9"
                   stroke-linecap="round"
-                  stroke-linejoin="round"/>
+                  stroke-linejoin="round" />
               </svg>
             </span>
         </section>
         <section class="contacts">
           <h3 class="contacts__title">Contact us</h3>
+          <div class="contacts__link">
           <a href="https://maps.app.goo.gl/zYEg2soTSPCqEjh4A" target="_blank">
-            <p class="contact-item contact-item_link">
+            <div class="contact-item contact-item_link">
               <img src="./icons/geo.svg" alt="geometry">
-              8558 Green Rd., LA</p>
+              8558 Green Rd., LA
+              <div class="underline"></div>
+              </div>
           </a>
-          <a href="tel:1-603-555-0123">
-            <p class="contact-item contact-item_link">
+          <a  href="tel:1-603-555-0123">
+            <div class="contact-item contact-item_link">
               <img src="./icons/phone.svg" alt="phone number">
               +1 (603) 555-0123
-            </p>
+              <div class="underline"></div>
+              </div>
           </a>
-          <p class="contact-item">
+          
+          <div class="contact-item">
             <img src="./icons/clock.svg" alt="time">
-            Mon-Sat: 9:00 AM – 23:00 PM</p>
+            Mon-Sat: 9:00 AM – 23:00 PM
+          </div>
+            </div>
         </section>
       </div>
-      </footer>
+    </footer>
   </body>
 </html>

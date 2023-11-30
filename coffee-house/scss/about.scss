@@ -1,3 +1,4 @@
+@import "fonts.scss";
 .about{
   &__container{
     display: flex;
@@ -13,20 +14,37 @@
     font-size: 60px;
     font-style: normal;
     font-weight: 600;
-    line-height: 125%;
-    word-spacing: 2.5px;
+    line-height: 119%;
+  word-spacing: 2.5px;
 
   }
 }
 
 .images{
+
   width: 1360px;
  display: grid;
   gap: 40px;
   grid-template-rows: 430px 590px;
   grid-template-columns: 660px 660px;
-  &__img{
+  &__border{
     border-radius: 20px;
+    overflow: hidden;
+    object-fit: cover;
+    &:hover {
+      .big-img{
+          transition: ease all 2s;
+        transform: scale(1);
+      }
+       .small-img{
+          transition: ease all 2s;
+        transform: scale(1);
+      }
+    }
+  }
+  &__img{
+    object-fit: cover;  
+      transform: scale(1.1);
     &_top{
       position: relative;
       top: 158px;
@@ -35,13 +53,25 @@
 }
 
 .big-img{
+  transform: scale(1.1);
+  object-fit: cover; 
   width: 660px;
-  object-fit: cover;
   height: 590px;
 }
 
 .small-img{
-  object-fit: cover;
+  transform: scale(1.1);
+  object-fit: cover; 
+  width: 660px;
+  height: 430px;
+}
+
+.big-border{
+  width: 660px;
+  height: 590px;
+}
+
+.small-border{
   width: 660px;
   height: 430px;
 }

@@ -18,6 +18,13 @@ a{
 .creamy{
   color: $text-accent;
 }
+
+.underline{
+  opacity: 0;
+  width: 2%;
+  border: 1px solid black;
+}
+
 @import "normalize.scss";
 @import "fonts.scss";
 @import "header.scss";

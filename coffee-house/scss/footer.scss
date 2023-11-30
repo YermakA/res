@@ -1,4 +1,5 @@
 @import "_variables.scss";
+@import "fonts.scss";
 .footer{
  
   &__container{
@@ -7,7 +8,6 @@
     margin-bottom: 40px;
     border-radius: 40px;
     display: flex;
-    justify-content: space-around;
     align-items: center;
   }
   &__svg-border{
@@ -19,7 +19,7 @@
     &__img{
       width: 60px;
       height: 60px;
-      margin-right: 12px;
+      margin-right: 8px;
       transition: ease all 2s;
       &:hover{
       .footer__svg-border{
@@ -36,6 +36,7 @@
   &__title{
   margin: 0 0 40px 0;
   font-family: Inter;
+  letter-spacing: 0.5px;
   font-size: 60px;
   font-style: normal;
   font-weight: 600;
@@ -45,7 +46,12 @@
 }
 
 .contacts{
+  &__link{
+    width: 262px;
+    height: 116px;
+  }
   &__title{
+    padding-top: 16px;
     margin: 0 0 40px 0;
     font-family: Inter;
     font-size: 24px;
@@ -57,24 +63,34 @@
 }
 
 .contact-item{
+  letter-spacing: 0.3px;
   font-family: Inter;
   margin: 0 0 16px 0;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
+  height: 24px;
   line-height: 150%;
+  
   color: $light;
   &_link{
-    &:hover{
-    text-decoration: underline;
-    text-underline-offset: 10px;
+    margin-bottom: 16px;
+    width: 182px;
+    height: 28px;
+    &:hover .underline{
+       transition: ease all 1s;
+    opacity: 1;
+    width: 100%;
+    border: 1px solid $light;
     }
   }
   }
 
 
 .links{
+  padding-left: 100px;
   width: 530px;
+  margin-right: 100px;
 }
 
 .contacts{

@@ -1,3 +1,5 @@
+@import "./fonts.scss";
+
 .header
 {
   &__coffee-menu{
@@ -8,7 +10,11 @@
   }
   &__container{
     margin-top: 20px;
+    height: 60px;
     margin-bottom: 20px;
+  }
+  &__text{
+    margin: 0;
   }
 }
 
@@ -16,17 +22,28 @@
 
 .navbar{
   width: 1188px;
+  height: 60px;
   display: flex;
+  padding-left: 366px;
   flex-direction: row;
-  justify-content: center;
   align-items:center;
   &__menu-item{
+     &:hover  .underline{
+  transition: ease all 2s;
+  width: 100%;
+  opacity: 1;
+}
     &:last-child{
       margin-right: 0px;
     }
+    height: 28px;
+  letter-spacing: 0.3px;
   color: black;
-  font-family: "Inter";
+  font-family: Inter;
   font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
   margin-right: 40px;
   }
 }
@@ -36,25 +53,35 @@
    transition: ease all 2s;
   height: 28px;
   &__text{
+
     font-family: "Inter";
     margin-right: 8px;
     color: black;
   }
+  &_underline{
+    width: 72px;
+  border-bottom: 2px solid black;
+  }
+  &_link{
+    width: 72px;
+      height: 36px;
+  }
   &__coffee-cup{
+    position: relative;
+    top: -2px;
+    right: -2px;
     width: 20px;
     height: 20px;
   }
   
  &:hover + .underline{
  transition: ease all 2s;
+ width: 72px;
   opacity: 1;
 }
  }
 
-.underline{
-  opacity: 0;
-  border: 1px solid black;
-}
+
 
 .header-menu{
   padding: 0;
