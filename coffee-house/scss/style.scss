@@ -1,6 +1,7 @@
-@import "_variables.scss";
+@import "./variables";
 html{
   scroll-behavior: smooth;
+  font-size: 10px;
 }
 body {
   margin: 0;
@@ -12,7 +13,7 @@ a{
   text-decoration: none;
 }
 .container{
-  width: 1360px;
+  width: 136rem;
   margin: 0 auto;
 }
 .creamy{
@@ -22,15 +23,22 @@ a{
 .underline{
   opacity: 0;
   width: 2%;
-  border: 1px solid black;
+  border: 0.1rem solid black;
 }
 
-@import "normalize.scss";
-@import "fonts.scss";
-@import "header.scss";
-@import "hero.scss";
-@import "favorite-coffee.scss";
-@import "about.scss";
-@import "mobile-app.scss";
-@import "footer.scss";
-@import "menu-offer.scss";
+@import "./normalize.scss";
+@import "./fonts.scss";
+@import "./desktop/_header.scss";
+@import "./desktop/_hero.scss";
+@import "./desktop/_favorite-coffee.scss";
+@import "./desktop/_about.scss";
+@import "./desktop/_mobile-app.scss";
+@import "./desktop/_footer.scss";
+@import "./desktop/_menu-offer.scss";
+
+/**tablet**/
+@import "./tablet/style-tablet";
+// mobile
+@import "./mobile/style-mobile";
+//hover
+@import "./hover";
