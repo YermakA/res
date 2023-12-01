@@ -1220,6 +1220,14 @@ template {
   html .preview_hide {
     display: none;
   }
+}
+@media (max-width: 768px) and (min-width: 576px) and (max-width: 768px) {
+  html {
+    font-size: 1.3020833333vw;
+  }
+  html .small-img {
+    display: none;
+  }
   html .small-border {
     display: none;
   }

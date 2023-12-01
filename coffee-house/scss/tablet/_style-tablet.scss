@@ -38,6 +38,7 @@ html{
     justify-content: center;
 }
 
+
 .header{
   &__container{
     justify-content: space-between;
@@ -104,6 +105,7 @@ html{
 
     font-size: calc(100vw / 991 * 10);
 
+
 .coffee-grid {
     height: auto;
     grid-template-columns: repeat(2, 1fr);
@@ -120,6 +122,7 @@ html{
   left: 30.3rem;
   top: -0.5rem;
 }
+
 .header{
   &__container{
     justify-content: space-between;
@@ -218,6 +221,7 @@ html{
 
 
 html{
+
   @media(max-width: 768px) and (min-width: 576px) {
 
     font-size: calc(100vw / 768 * 10);
@@ -234,6 +238,15 @@ html{
   display: none;
 }
 
+
+  @media(max-width: 768px) {
+
+    font-size: calc(100vw / 768 * 10);
+
+.small-img{
+  display: none;
+}
+
 .small-border{
   display: none;
 }
@@ -241,6 +254,7 @@ html{
     grid-template-rows: 48rem 48rem;
     grid-template-columns: 55rem;
 }
+
 .coffee-menu_link{
   display: none;
 }
@@ -403,6 +417,7 @@ letter-spacing: 0;
   opacity: 1;
 }
 
+
 .burger-menu{
   display: flex;
   justify-content: center;
@@ -412,8 +427,6 @@ letter-spacing: 0;
   height: 4.4rem;
   border: 0.1rem solid black;
   border-radius: 10rem;
-
-
 
   &__vector{
   &:last-child{
@@ -437,4 +450,5 @@ letter-spacing: 0;
 
 
 
+}
 }
