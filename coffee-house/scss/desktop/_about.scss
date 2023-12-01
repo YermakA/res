@@ -31,16 +31,8 @@
     border-radius: 2rem;
     overflow: hidden;
     object-fit: cover;
-    &:hover {
-      .big-img{
-          transition: ease all 2s;
-        transform: scale(1);
-      }
-       .small-img{
-          transition: ease all 2s;
-        transform: scale(1);
-      }
-    }
+    cursor: pointer;
+ 
   }
   &__img{
     object-fit: cover;  

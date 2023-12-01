@@ -37,4 +37,8 @@ a{
 @import "./desktop/_menu-offer.scss";
 
 /**tablet**/
-@import "./tablet/style-tablet"
+@import "./tablet/style-tablet";
+// mobile
+@import "./mobile/style-mobile";
+//hover
+@import "./hover";

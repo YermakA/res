@@ -88,7 +88,8 @@
 
 .offer__btn{
   transition: all ease 2s;
-  &:hover{
+  @media screen and (hover:hover) {
+    &:hover{
     border: none;
     background-color: #665F55;
     .button__svg-icon{
@@ -100,4 +101,6 @@
       color: $light;
     }
   }
+  }
+  
 }

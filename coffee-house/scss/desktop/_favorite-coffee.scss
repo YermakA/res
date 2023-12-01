@@ -39,15 +39,6 @@
     width: 6rem;
     height: 6rem;
     background: none;
-   &:hover{
-    transition: ease all 2s;
-    background: #665F55;
-    border:none;
-    .arrows{
-      transition: ease all 2s;
-      stroke: $light;
-    }
-   }
 
   }
   &__arrow-right{
@@ -60,15 +51,6 @@
     width: 6rem;
     height: 6rem;
     background: none;
-    &:hover{
-      transition: ease all 2s;
-    background: #665F55;
-    border:none;
-    .arrows{
-      transition: ease all 2s;
-      stroke: $light;
-    }
-   }
   }
   &__slide{
     display: flex;
