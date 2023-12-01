@@ -1097,6 +1097,10 @@ template {
   width: 27rem;
 }
 
+.load-icon-svg {
+  display: none;
+}
+
 .coffee-grid {
   height: 105.6rem;
   grid-template-columns: repeat(4, 1fr);
@@ -1135,6 +1139,24 @@ template {
 @media (max-width: 1200px) {
   html {
     font-size: 0.8333333333vw;
+  }
+  html .coffee-grid {
+    height: auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 2fr);
+    display: grid;
+    gap: 4rem;
+  }
+  html .menu-offer__title {
+    padding-left: 0rem;
+  }
+  html .menu-offer {
+    align-items: center;
+  }
+  html .tabs {
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
   }
   html .header__container {
     justify-content: space-between;
@@ -1183,6 +1205,21 @@ template {
 @media (max-width: 991px) {
   html {
     font-size: 1.0090817356vw;
+  }
+  html .coffee-grid {
+    height: auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 2fr);
+    display: grid;
+    gap: 4rem;
+    padding-left: 1.1rem;
+  }
+  html .load-icon-svg {
+    width: 6rem;
+    height: 6rem;
+    position: relative;
+    left: 30.3rem;
+    top: -0.5rem;
   }
   html .header__container {
     justify-content: space-between;
@@ -1262,7 +1299,13 @@ template {
   html {
     font-size: 1.3020833333vw;
   }
+  html .tabs {
+    padding-left: 16.4rem;
+  }
   html .small-img {
+    display: none;
+  }
+  html .preview_hide {
     display: none;
   }
   html .small-border {
@@ -1271,6 +1314,16 @@ template {
   html .images {
     grid-template-rows: 48rem 48rem;
     grid-template-columns: 55rem;
+  }
+  html .coffee-menu_link {
+    display: none;
+  }
+  html .menu-offer__title {
+    text-align: center;
+    width: 68.8rem;
+  }
+  html .menu-offer {
+    align-items: flex-start;
   }
   html .header__container {
     justify-content: space-between;
@@ -1385,6 +1438,9 @@ template {
   }
   html .contacts {
     margin-left: 6rem;
+  }
+  html .hero-img {
+    opacity: 1;
   }
   html .burger-menu {
     display: flex;
