@@ -1,34 +1,34 @@
-@import "fonts.scss";
+@import "../fonts.scss";
 .about{
   &__container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 100px;
+    margin-bottom: 10rem;
   }
   &__title{
     margin: 0;
-    margin-bottom: 40px;
-    width: 1360px;
+    margin-bottom: 4rem;
+    width: 136rem;
     font-family: Inter;
-    font-size: 60px;
+    font-size: 6rem;
     font-style: normal;
     font-weight: 600;
     line-height: 119%;
-  word-spacing: 2.5px;
+  word-spacing: 0.25rem;
 
   }
 }
 
 .images{
 
-  width: 1360px;
+  width: 136rem;
  display: grid;
-  gap: 40px;
-  grid-template-rows: 430px 590px;
-  grid-template-columns: 660px 660px;
+  gap: 4rem;
+  grid-template-rows: 43rem 59rem;
+  grid-template-columns: 66rem 66rem;
   &__border{
-    border-radius: 20px;
+    border-radius: 2rem;
     overflow: hidden;
     object-fit: cover;
     &:hover {
@@ -47,7 +47,7 @@
       transform: scale(1.1);
     &_top{
       position: relative;
-      top: 158px;
+      top: 15.8rem;
     }
   }
 }
@@ -55,23 +55,23 @@
 .big-img{
   transform: scale(1.1);
   object-fit: cover; 
-  width: 660px;
-  height: 590px;
+  width: 66rem;
+  height: 59rem;
 }
 
 .small-img{
   transform: scale(1.1);
   object-fit: cover; 
-  width: 660px;
-  height: 430px;
+  width: 66rem;
+  height: 43rem;
 }
 
 .big-border{
-  width: 660px;
-  height: 590px;
+  width: 66rem;
+  height: 59rem;
 }
 
 .small-border{
-  width: 660px;
-  height: 430px;
+  width: 66rem;
+  height: 43rem;
 }

@@ -1,32 +1,32 @@
-@import "_variables.scss";
-@import "fonts.scss";
+@import "../_variables.scss";
+@import "../fonts.scss";
 .hero{
   &__img{
-  width: 1360px;
-  height: 644px;
-  border-radius: 40px;
+  width: 136rem;
+  height: 64.4rem;
+  border-radius: 4rem;
   margin: 0 auto;
   }
   &__container{
-    margin-bottom: 100px;
+    margin-bottom: 10rem;
     position: relative;
   display: flex;
   justify-content: center;
   }
   &__offer{
-    left: 100px;
-    top: 100px;
+    left: 10rem;
+    top: 10rem;
     position: absolute;
     display: flex;
     flex-direction: column;
-    width: 530px;
-    height: 444px;
+    width: 53rem;
+    height: 44.4rem;
   }
   &__title{
     color: $light;
-    margin: 0 0 40px 0;
+    margin: 0 0 4rem 0;
     font-family: Inter;
-    font-size: 72px;
+    font-size: 7.2rem;
     font-style: normal;
     font-weight: 600;
     line-height: 105%;
@@ -37,8 +37,8 @@
     color: $light;
     align-self: stretch;
     font-family: Inter;
-    margin: 0 0 40px 0;
-    font-size: 16px;
+    margin: 0 0 4rem 0;
+    font-size: 1.6rem;
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
@@ -47,18 +47,20 @@
   &__button{
     display: flex;
     align-items: center;
-    height: 64px;
+    height: 6.4rem;
     font-family: Inter;
-    font-size: 16px;
+    font-size: 1.6rem;
     font-style: normal;
     font-weight: 600;
     line-height: 150%;
     border: none;
-    border-radius: 100px;
-    width: 200px;
+    border-radius: 10rem;
+    width: 20rem;
     background-color: $light;
     &:hover{
       .hero-img{
+        width: 2rem;
+        height: 2rem;
         transition: ease all 2s;
        opacity: 1;
       }
@@ -69,9 +71,9 @@
 .hero-button{
   transition: ease all 2s;
   &__text{
-    padding: 0 0 0 78px;
+    padding: 0 0 0 7.8rem;
     color: black;
-    margin-right: 8px;
+    margin-right: 0.8rem;
   }
 }
 
