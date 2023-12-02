@@ -103,7 +103,55 @@ font-family: Inter;
  }
 
 
- .hero{
+ 
+
+
+.slider{
+  &__arrow-left{
+   &:hover{
+    transition: ease all 2s;
+    background: #665F55;
+    border:none;
+    .arrows{
+      transition: ease all 2s;
+      stroke: $light;
+    }
+   }
+  }
+  &__arrow-right{
+    &:hover{
+      transition: ease all 2s;
+    background: #665F55;
+    border:none;
+    .arrows{
+      transition: ease all 2s;
+      stroke: $light;
+    }
+   }
+  }
+
+}
+
+.images{
+  &__border{
+    &:hover {
+      .big-img{
+          transition: ease all 2s;
+        transform: scale(1);
+      }
+       .small-img{
+          transition: ease all 2s;
+        transform: scale(1);
+      }
+    }
+  }
+}
+}
+
+
+@media screen and (hover: hover)  and (min-width: 768px){
+
+  .hero{
   &__img{
   width: 136rem;
   height: 64.4rem;
@@ -158,48 +206,4 @@ font-family: Inter;
     }
   }
 }
-
-
-.slider{
-  &__arrow-left{
-   &:hover{
-    transition: ease all 2s;
-    background: #665F55;
-    border:none;
-    .arrows{
-      transition: ease all 2s;
-      stroke: $light;
-    }
-   }
-  }
-  &__arrow-right{
-    &:hover{
-      transition: ease all 2s;
-    background: #665F55;
-    border:none;
-    .arrows{
-      transition: ease all 2s;
-      stroke: $light;
-    }
-   }
-  }
-
 }
-
-.images{
-  &__border{
-    &:hover {
-      .big-img{
-          transition: ease all 2s;
-        transform: scale(1);
-      }
-       .small-img{
-          transition: ease all 2s;
-        transform: scale(1);
-      }
-    }
-  }
-}
-}
-
-

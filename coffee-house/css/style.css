@@ -1795,6 +1795,34 @@ template {
     width: 7.2rem;
     opacity: 1;
   }
+  .slider__arrow-left:hover {
+    transition: ease all 2s;
+    background: #665F55;
+    border: none;
+  }
+  .slider__arrow-left:hover .arrows {
+    transition: ease all 2s;
+    stroke: #E1D4C9;
+  }
+  .slider__arrow-right:hover {
+    transition: ease all 2s;
+    background: #665F55;
+    border: none;
+  }
+  .slider__arrow-right:hover .arrows {
+    transition: ease all 2s;
+    stroke: #E1D4C9;
+  }
+  .images__border:hover .big-img {
+    transition: ease all 2s;
+    transform: scale(1);
+  }
+  .images__border:hover .small-img {
+    transition: ease all 2s;
+    transform: scale(1);
+  }
+}
+@media screen and (hover: hover) and (min-width: 768px) {
   .hero__img {
     width: 136rem;
     height: 64.4rem;
@@ -1840,31 +1868,5 @@ template {
     height: 2rem;
     transition: ease all 2s;
     opacity: 1;
-  }
-  .slider__arrow-left:hover {
-    transition: ease all 2s;
-    background: #665F55;
-    border: none;
-  }
-  .slider__arrow-left:hover .arrows {
-    transition: ease all 2s;
-    stroke: #E1D4C9;
-  }
-  .slider__arrow-right:hover {
-    transition: ease all 2s;
-    background: #665F55;
-    border: none;
-  }
-  .slider__arrow-right:hover .arrows {
-    transition: ease all 2s;
-    stroke: #E1D4C9;
-  }
-  .images__border:hover .big-img {
-    transition: ease all 2s;
-    transform: scale(1);
-  }
-  .images__border:hover .small-img {
-    transition: ease all 2s;
-    transform: scale(1);
   }
 }/*# sourceMappingURL=style.css.map */
