@@ -54,8 +54,15 @@
   }
   &__slide{
     display: flex;
-    flex-direction: column;
+    width: 48rem;
+    overflow: hidden;
   }
+}
+
+.slide{
+  left: 0rem;
+  transition: ease all 1s;
+  position: relative;
 }
 
 .slide{
@@ -112,13 +119,23 @@
   margin-right: 1.2rem;
   width: 4rem;
   height: 0.4rem;
-  &:last-child{
-    margin-right: 0rem;
-  }
-  background-color: #C1B6AD;
   &_black{
+
+     margin-right: 1.2rem;
+    width: 0rem;
+    height: 0.4rem;
     background-color: #665F55;
   }
 }
 
 
+.control-back{
+  display: block;
+  margin-right: 1.2rem;
+  width: 4rem;
+  height: 0.4rem;
+  background-color: #C1B6AD;
+  &:last-child{
+    margin-right: 0rem;
+  }
+}
