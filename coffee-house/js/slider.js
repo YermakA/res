@@ -701,18 +701,20 @@ const products = `[
 ]`
 const productsJSON = JSON.parse(products)
 
-
+let cellFillingInterval
+let clearCellInterval
 const slides = document.querySelectorAll('div.slide')
 const arrowRight = document.querySelector('.slider__arrow-right')
 const arrowLeft = document.querySelector('.slider__arrow-left')
 const controls = document.querySelectorAll('div.control')
+let cellWidth = 0
+const changeSLideTime = 4000
+const cellFillingTime = changeSLideTime / 100
 
 let position = 0
 let currentSlide = 0
 const slideRight = () => {
   clearInterval(cellFillingInterval)
-  clearCell()
-
   const tapeLength = 48 * slides.length
   position += 48
   if (tapeLength <= position) {
@@ -741,7 +743,7 @@ const slideRight = () => {
 
 const slideLeft = () => {
   clearInterval(cellFillingInterval)
-  clearCell()
+
   const tapeLength = 0;
   position -= 48;
   if (tapeLength > position) {
@@ -769,35 +771,44 @@ const slideLeft = () => {
   cellFillingInterval = setInterval(cellFilling, cellFillingTime)
 }
 
-arrowRight.addEventListener('click', slideRight)
-arrowLeft.addEventListener('click', slideLeft)
+const changeSlides = (leftOrRight) => {
+  clearInterval(cellFillingInterval)
+  clearInterval(clearCellInterval)
+  clearCellInterval = setInterval(() => clearCell(leftOrRight), 3)
+}
+
+arrowRight.addEventListener('click', () => changeSlides(false))
+arrowLeft.addEventListener('click', () => changeSlides(true))
 
 
 
-
-let cellWidth = 0
-const changeSLideTime = 5000
-const cellFillingTime = changeSLideTime / 100
 
 const cellFilling = () => {
   const controlBlack = document.querySelector('.control_black')
   cellWidth += 1
   if (cellWidth > 100) {
-    clearCell()
-    slideRight()
+    clearInterval(cellFillingInterval)
+    clearCellInterval = setInterval(clearCell, 5)
   }
   controlBlack.style.width = cellWidth + '%'
 }
 
-let cellFillingInterval = setInterval(cellFilling, cellFillingTime)
 
 
 
-function clearCell() {
+function clearCell(leftOrRight) {
+  if (cellWidth < 0) {
+    clearInterval(clearCellInterval)
+    if (!leftOrRight) {
+      slideRight()
+    }
+    if (leftOrRight) {
+      slideLeft()
+    }
+  }
   const controlBlack = document.querySelector('.control_black')
-  cellWidth = 0
+  cellWidth -= 1
   controlBlack.style.width = cellWidth + '%'
-  clearInterval(cellFillingInterval)
 }
 
 const slider = document.querySelector('.slider__slide')
@@ -806,3 +817,9 @@ slider.addEventListener('mouseover', () => clearInterval(cellFillingInterval))
 slider.addEventListener('mouseout', () => {
   cellFillingInterval = setInterval(cellFilling, cellFillingTime)
 })
+
+
+
+cellFillingInterval = setInterval(cellFilling, cellFillingTime)
+
+
