@@ -4,6 +4,13 @@
     @media screen and (max-width: 575px)  {
   font-size: calc(100vw / 410 * 10);
 
+
+  .burger-menu__vector_click{  
+      transform: translateY(0.5rem) rotate(-45deg);
+      }
+      .burger-menu__vector_click-last{  
+      transform: translateY(-0.4rem) rotate(45deg);
+      }
   .load-icon-svg{
   position: relative;
   display: block;

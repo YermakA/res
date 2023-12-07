@@ -1136,6 +1136,12 @@ template {
   html {
     font-size: 1.25vw;
   }
+  html .burger-menu__vector_click {
+    transform: translateY(0.5rem) rotate(-45deg);
+  }
+  html .burger-menu__vector_click-last {
+    transform: translateY(-0.5rem) rotate(45deg);
+  }
   html .preview__img {
     width: 33rem;
     height: 33rem;
@@ -1224,10 +1230,74 @@ template {
     margin-bottom: 10rem;
   }
 }
+html .navbar {
+  transition: all ease 1s;
+  width: 100vw;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  top: 9rem;
+  right: -100rem;
+  position: absolute;
+  background-color: #E1D4C9;
+  z-index: 10;
+}
+html .navbar__click {
+  display: flex;
+  right: 0rem;
+}
+html .navbar__menu-item {
+  margin-right: 0;
+  color: var(--text-dark, #403F3D);
+  text-align: center;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Inter;
+  font-size: 3.2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  margin-bottom: 6rem;
+}
 
+@media (min-width: 768) {
+  .menu-link__nav {
+    display: none;
+  }
+  .coffee-menu-link__nav {
+    display: none;
+  }
+}
 @media (max-width: 768px) and (min-width: 576px) {
   html {
     font-size: 1.3020833333vw;
+  }
+  html .navbar {
+    transition: all ease 1s;
+    width: 100vw;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    top: 9rem;
+    right: -100rem;
+    position: absolute;
+    background-color: #E1D4C9;
+    z-index: 10;
+  }
+  html .navbar__click {
+    display: flex;
+    right: 0rem;
+  }
+  html .navbar__menu-item {
+    margin-right: 0;
+    color: var(--text-dark, #403F3D);
+    text-align: center;
+    font-feature-settings: "clig" off, "liga" off;
+    font-family: Inter;
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%;
+    margin-bottom: 6rem;
   }
   html .tabs {
     padding-left: 16.4rem;
@@ -1304,9 +1374,6 @@ template {
   }
   html .container {
     width: 68.8rem;
-  }
-  html .navbar {
-    display: none;
   }
   html .hero__offer {
     left: 6rem;
@@ -1400,6 +1467,7 @@ template {
     border-radius: 10rem;
   }
   html .burger-menu__vector {
+    transition: ease all 1s;
     margin-bottom: 0.8rem;
     display: block;
     height: 0;
@@ -1418,6 +1486,12 @@ template {
 @media screen and (max-width: 575px) {
   html {
     font-size: 2.4390243902vw;
+  }
+  html .burger-menu__vector_click {
+    transform: translateY(0.5rem) rotate(-45deg);
+  }
+  html .burger-menu__vector_click-last {
+    transform: translateY(-0.4rem) rotate(45deg);
   }
   html .load-icon-svg {
     position: relative;

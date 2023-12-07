@@ -106,6 +106,14 @@ html{
 
     font-size: calc(100vw / 800 * 10);
     
+
+      .burger-menu__vector_click{  
+      transform: translateY(0.5rem) rotate(-45deg);
+      }
+      .burger-menu__vector_click-last{  
+      transform: translateY(-0.5rem) rotate(45deg);
+      }
+
 .preview__img {
    
     width: 33rem;
@@ -218,9 +226,48 @@ html{
 }
 
 }
+
+
+.navbar{
+    transition: all ease 1s;
+    width: 100vw;
+    height: 100%;
+
+    flex-direction: column;
+    align-items: center;
+    top: 9rem;
+    right: -100rem;
+    position: absolute;
+    background-color: $light;
+    z-index: 10;
+    &__click{
+      display: flex;
+      right: 0rem;
+    } 
+  &__menu-item{
+      margin-right: 0;
+      color: var(--text-dark, #403F3D);
+      text-align: center;
+      font-feature-settings: 'clig' off, 'liga' off;
+      font-family: Inter;
+      font-size: 3.2rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 125%; 
+      margin-bottom: 6rem;
+  }
 }
 
+}
 
+@media(min-width:768) {
+  .menu-link__nav{
+    display: none;
+  }
+  .coffee-menu-link__nav{
+    display: none;
+  }
+}
 
 
 html{
@@ -229,6 +276,40 @@ html{
 
     font-size: calc(100vw / 768 * 10);
 
+
+
+
+   
+
+.navbar{
+    transition: all ease 1s;
+    width: 100vw;
+    height: 100%;
+
+    flex-direction: column;
+    align-items: center;
+    top: 9rem;
+    right: -100rem;
+    position: absolute;
+    background-color: $light;
+    z-index: 10;
+    &__click{
+      display: flex;
+      right: 0rem;
+    } 
+  &__menu-item{
+      margin-right: 0;
+      color: var(--text-dark, #403F3D);
+      text-align: center;
+      font-feature-settings: 'clig' off, 'liga' off;
+      font-family: Inter;
+      font-size: 3.2rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 125%; 
+      margin-bottom: 6rem;
+  }
+}
   .tabs{
           padding-left: 16.4rem;
     }
@@ -326,9 +407,7 @@ html{
     }
     
     
-    .navbar{
-      display: none;
-    }
+ 
     .hero__offer{
       left: 6rem;
     }
@@ -439,12 +518,12 @@ letter-spacing: 0;
   height: 4.4rem;
   border: 0.1rem solid black;
   border-radius: 10rem;
-
   &__vector{
+    transition: ease all 1s;
   &:last-child{
     margin-bottom: 0;
   }
-
+  
     margin-bottom: 0.8rem;
     display: block;
     height: 0;
