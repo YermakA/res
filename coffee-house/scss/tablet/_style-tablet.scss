@@ -104,8 +104,15 @@ html{
 html{
   @media(max-width: 991px) {
 
-    font-size: calc(100vw / 991 * 10);
-
+    font-size: calc(100vw / 800 * 10);
+    
+.preview__img {
+   
+    width: 33rem;
+    height: 33rem;
+    border-radius: 0rem;
+    object-fit: cover;
+}
 
 .coffee-grid {
     height: auto;
@@ -228,6 +235,8 @@ html{
 .small-img{
   display: none;
 }
+
+
 
 .load-icon-svg{
   display: block;
