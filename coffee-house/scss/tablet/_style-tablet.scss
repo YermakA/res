@@ -70,6 +70,7 @@ html{
 }
 
 .hero__img {
+      object-fit: cover;
     width: 114rem;
   }
 
@@ -115,13 +116,7 @@ html{
     padding-left: 1.1rem;
 }
 
-.load-icon-svg{
-  width: 6rem;
-  height: 6rem;
-  position: relative;
-  left: 30.3rem;
-  top: -0.5rem;
-}
+
 
 .header{
   &__container{
@@ -153,6 +148,7 @@ html{
 }
 
 .hero__img {
+      object-fit: cover;
     width: 72rem;
   }
 
@@ -233,6 +229,14 @@ html{
   display: none;
 }
 
+.load-icon-svg{
+  display: block;
+  width: 6rem;
+  height: 6rem;
+  position: relative;
+  left: 30.3rem;
+  top: -0.5rem;
+}
 
 .preview_hide{
   display: none;
@@ -291,9 +295,8 @@ html{
 }
 
 
-
-
 .hero__img {
+      object-fit: cover;
     width: 68.8rem;
   }
 
