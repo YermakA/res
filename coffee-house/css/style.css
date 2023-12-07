@@ -1094,6 +1094,7 @@ template {
     height: 32rem;
   }
   html .hero__img {
+    object-fit: cover;
     width: 114rem;
   }
   html .slider {
@@ -1116,7 +1117,13 @@ template {
 
 @media (max-width: 991px) {
   html {
-    font-size: 1.0090817356vw;
+    font-size: 1.25vw;
+  }
+  html .preview__img {
+    width: 33rem;
+    height: 33rem;
+    border-radius: 0rem;
+    object-fit: cover;
   }
   html .coffee-grid {
     height: auto;
@@ -1125,13 +1132,6 @@ template {
     display: grid;
     gap: 4rem;
     padding-left: 1.1rem;
-  }
-  html .load-icon-svg {
-    width: 6rem;
-    height: 6rem;
-    position: relative;
-    left: 30.3rem;
-    top: -0.5rem;
   }
   html .header__container {
     justify-content: space-between;
@@ -1157,6 +1157,7 @@ template {
     height: 43rem;
   }
   html .hero__img {
+    object-fit: cover;
     width: 72rem;
   }
   html .slider {
@@ -1217,6 +1218,14 @@ template {
   html .small-img {
     display: none;
   }
+  html .load-icon-svg {
+    display: block;
+    width: 6rem;
+    height: 6rem;
+    position: relative;
+    left: 30.3rem;
+    top: -0.5rem;
+  }
   html .preview_hide {
     display: none;
   }
@@ -1264,6 +1273,7 @@ template {
     left: 1.5rem;
   }
   html .hero__img {
+    object-fit: cover;
     width: 68.8rem;
   }
   html .slider {
@@ -1390,7 +1400,15 @@ template {
 
 @media screen and (max-width: 575px) {
   html {
-    font-size: 1.7391304348vw;
+    font-size: 2.4390243902vw;
+  }
+  html .load-icon-svg {
+    position: relative;
+    display: block;
+    left: 13rem;
+    top: -1.1rem;
+    height: 6rem;
+    width: 6rem;
   }
   html .slider__arrow-left {
     display: none;
@@ -1638,6 +1656,7 @@ template {
     line-height: 115%;
   }
   html .hero__img {
+    object-fit: cover;
     height: 55.2rem;
   }
   html .slide__img {
@@ -1704,6 +1723,7 @@ template {
     left: 1rem;
   }
   html .load-icon-svg {
+    position: relative;
     display: block;
     left: 13.3rem;
     top: -1.1rem;
