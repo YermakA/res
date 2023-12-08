@@ -5,10 +5,9 @@
 }
 
 
+
+
 @media (hover: hover)  {
-
-
-
 
 
 
@@ -215,5 +214,20 @@ font-family: Inter;
       }
     }
   }
+}
+}
+
+
+@media (hover: hover) and (width<=768px)
+{
+  .underline{
+    margin-top: 0.3rem;
+    animation-fill-mode: forwards;
+  }
+.coffee-menu:hover + .underline {
+  
+    transition: ease all 2s;
+    width: 13.2rem;
+    opacity: 1;
 }
 }

@@ -1,8 +1,82 @@
 
 
   html{
-    @media screen and (max-width: 575px)  {
+    @media (max-width: 575px)  {
   font-size: calc(100vw / 410 * 10);
+
+.coffee-menu__text{
+  margin-right: 1.7rem;
+}
+.header__coffee-menu {
+    width: 14.2rem;
+}
+.menu-link__nav{
+  padding-top: 4.8rem;
+}
+
+
+.menu-link{
+  display: none;
+}
+.coffee-menu__text{
+color: var(--text-dark, #403F3D);
+text-align: center;
+font-feature-settings: 'clig' off, 'liga' off;
+font-family: Inter;
+font-size: 3.2rem;
+font-style: normal;
+font-weight: 600;
+line-height: 125%; 
+}
+
+.coffee-menu__coffee-cup{
+  width: 4rem;
+  height: 4rem;
+}
+
+.menu-link__nav{
+  display: block;
+}
+.navbar{
+    padding-top: 7rem;
+    transition: all ease 1s;
+    width: 100vw;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    top: 9rem;
+    right: -100rem;
+    position: absolute;
+    background-color: $light;
+    z-index: 10;
+    &__click{
+      transition: all ease 1s;
+      display: flex;
+    }
+    &__right{
+      transition: all ease 1s;
+           right: 0rem;
+    } 
+  &__menu-item{
+      margin-right: 0;
+      color: var(--text-dark, #403F3D);
+      text-align: center;
+      font-feature-settings: 'clig' off, 'liga' off;
+      font-family: Inter;
+      font-size: 3.2rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 125%; 
+      margin-bottom: 7.2rem;
+      &:last-of-type{
+        border-bottom: 100px;
+      }
+  }
+
+     
+}
+
 
 
   .burger-menu__vector_click{  
@@ -117,10 +191,7 @@
       width: 34.8rem;
     }
     
-    
-    .navbar{
-      display: none;
-    }
+  
     .hero__offer{
       top: 7rem;
       width: 31.6rem;
@@ -271,9 +342,7 @@ letter-spacing: 0;
   }
 }
 
-.menu-link{
-  display: none;
-}
+
 
 .coffee-grid {
     height: auto;
