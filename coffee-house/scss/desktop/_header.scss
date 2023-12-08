@@ -2,6 +2,7 @@
 @import "../fonts.scss";
 .header
 {
+
   &__coffee-menu{
     display: flex;
     align-items: center;
@@ -9,6 +10,8 @@
     
   }
   &__container{
+    position: relative;
+    z-index: 15;
     margin-top: 2rem;
     height: 6rem;
     margin-bottom: 2rem;
@@ -31,7 +34,7 @@
 }
 
 .navbar{
-  width: 118.8rem;
+  width: 80.8rem;
   height: 6rem;
   display: flex;
   padding-left: 36.6rem;
