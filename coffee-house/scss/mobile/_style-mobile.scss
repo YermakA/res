@@ -92,9 +92,11 @@ line-height: 125%;
 
 
   .burger-menu__vector_click{  
+    transition: ease all 1s;
       transform: translateY(0.5rem) rotate(-45deg);
       }
       .burger-menu__vector_click-last{  
+        transition: ease all 1s;
       transform: translateY(-0.4rem) rotate(45deg);
       }
   .load-icon-svg{
@@ -341,6 +343,7 @@ letter-spacing: 0;
 
 
   &__vector{
+    transition: ease all 1s;
   &:last-child{
     margin-bottom: 0;
   }

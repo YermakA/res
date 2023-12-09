@@ -1578,9 +1578,11 @@ template {
     border-bottom: 100px;
   }
   html .burger-menu__vector_click {
+    transition: ease all 1s;
     transform: translateY(0.5rem) rotate(-45deg);
   }
   html .burger-menu__vector_click-last {
+    transition: ease all 1s;
     transform: translateY(-0.4rem) rotate(45deg);
   }
   html .load-icon-svg {
@@ -1784,6 +1786,7 @@ template {
     border-radius: 10rem;
   }
   html .burger-menu__vector {
+    transition: ease all 1s;
     margin-bottom: 0.8rem;
     display: block;
     height: 0;
