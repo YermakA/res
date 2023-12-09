@@ -1303,6 +1303,7 @@ template {
     display: none;
   }
   html .load-icon-svg {
+    cursor: pointer;
     display: block;
     width: 6rem;
     height: 6rem;
