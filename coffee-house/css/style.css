@@ -375,6 +375,7 @@ template {
 }
 
 .navbar {
+  margin-right: 1.3rem;
   width: 80.8rem;
   height: 6rem;
   display: flex;
@@ -398,6 +399,7 @@ template {
 }
 
 .coffee-menu {
+  margin-top: 0.2rem;
   width: 7.2rem;
   transition: ease all 2s;
   height: 2.8rem;
@@ -1259,7 +1261,6 @@ template {
     position: absolute;
     background-color: #E1D4C9;
     width: 100%;
-    height: 100vh;
     right: -100rem;
     display: none;
   }
@@ -1536,7 +1537,6 @@ template {
     position: absolute;
     background-color: #E1D4C9;
     width: 100%;
-    height: 90vmax;
     right: -100rem;
     display: none;
   }
