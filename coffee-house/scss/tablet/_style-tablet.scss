@@ -166,6 +166,7 @@ html{
 .hero__img {
       object-fit: cover;
     width: 72rem;
+    height: 60rem;
   }
 
   .slider {
@@ -243,7 +244,10 @@ html{
 
     font-size: calc(100vw / 768 * 10);
 
-
+.hero-video{
+  position: relative;
+  left: -30rem;
+}
 .coffee-menu__text{
   margin-right: 1.7rem;
 }

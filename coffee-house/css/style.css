@@ -439,7 +439,12 @@ template {
   font-family: "Inter";
   src: url("../fonts/Inter-Regular.ttf") format("truetype"), url("../fonts/Inter-Light.ttf") format("truetype"), url("../fonts/Inter-Black.ttf") format("truetype"), url("../fonts/Inter-Medium.ttf") format("truetype"), url("../fonts/Inter-Bold.ttf") format("truetype"), url("../fonts/Inter-ExtraBold.ttf") format("truetype"), url("../fonts/Inter-ExtraLight.ttf") format("truetype"), url("../fonts/Inter-SemiBold.ttf") format("truetype"), url("../fonts/Inter-Thin.ttf") format("truetype");
 }
+#enjoyVideo {
+  width: 1360px;
+}
+
 .hero__img {
+  overflow: hidden;
   width: 136rem;
   height: 64.4rem;
   border-radius: 4rem;
@@ -1187,6 +1192,7 @@ template {
   html .hero__img {
     object-fit: cover;
     width: 72rem;
+    height: 60rem;
   }
   html .slider {
     width: 72rem;
@@ -1242,6 +1248,10 @@ template {
 @media (max-width: 768px) and (min-width: 576px) {
   html {
     font-size: 1.3020833333vw;
+  }
+  html .hero-video {
+    position: relative;
+    left: -30rem;
   }
   html .coffee-menu__text {
     margin-right: 1.7rem;
@@ -1500,6 +1510,10 @@ template {
   html {
     font-size: 2.4390243902vw;
   }
+  html .hero-video {
+    position: relative;
+    left: -50rem;
+  }
   html .coffee-menu__text {
     margin-right: 1.7rem;
   }
@@ -1649,6 +1663,7 @@ template {
   html .hero__img {
     object-fit: cover;
     width: 34.8rem;
+    height: 51rem;
   }
   html .slider {
     width: 34.8rem;

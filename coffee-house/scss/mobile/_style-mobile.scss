@@ -4,6 +4,11 @@
     @media (max-width: 575px)  {
   font-size: calc(100vw / 410 * 10);
 
+.hero-video{
+  position: relative;
+  left: -50rem;
+}
+
 .coffee-menu__text{
   margin-right: 1.7rem;
 }
@@ -181,6 +186,7 @@ line-height: 125%;
 .hero__img {
   object-fit: cover;
     width: 34.8rem;
+    height: 51rem;
   }
 
   .slider {
