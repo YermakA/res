@@ -1,6 +1,7 @@
 let cellFillingInterval
 let clearCellInterval
 const slides = document.querySelectorAll('div.slide')
+
 const arrowRight = document.querySelector('.slider__arrow-right')
 const arrowLeft = document.querySelector('.slider__arrow-left')
 const controls = document.querySelectorAll('div.control')
@@ -24,7 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 
-window.addEventListener('resize', debounce(resizeSlideplace, 250))
+window.addEventListener('resize', debounce(resizeSlideplace, 5))
 
 
 function debounce(resizeF, time) {
@@ -55,7 +56,7 @@ function resizeSlideplace() {
   if (intervalToggle) {
     cellFillingInterval = setInterval(cellFilling, cellFillingTime)
   } else {
-    clearCellInterval = setInterval(() => clearCell(false), clearCellTime)
+    clearCellInterval = setInterval(clearCell, clearCellTime)
   }
 }
 
@@ -159,17 +160,27 @@ function clearCell(leftOrRight) {
   controlBlack.style.width = cellWidth + '%'
 }
 
-const slider = document.querySelector('.slider__slide')
 
-slider.addEventListener('mouseover', () => {
+
+
+
+
+const slider = document.querySelector('.slider__slide')
+let touchStart
+slider.addEventListener('mouseover', (e) => {
+  e.preventDefault()
+  console.log(e)
   clearInterval(cellFillingInterval)
   clearInterval(clearCellInterval)
 })
 slider.addEventListener('mouseout', () => {
   if (intervalToggle) {
+    clearInterval(cellFillingInterval)
     cellFillingInterval = setInterval(cellFilling, cellFillingTime)
   }
   else {
+
+    clearInterval(clearCellInterval)
     clearCellInterval = setInterval(clearCell, clearCellTime)
   }
 })
@@ -179,4 +190,49 @@ slider.addEventListener('mouseout', () => {
 cellFillingInterval = setInterval(cellFilling, cellFillingTime)
 
 
+let touchMove
+let touchDifference = 0
 
+slider.addEventListener('touchstart', (e) => {
+  e.preventDefault()
+  touchStart = e.touches[0].clientX
+  clearInterval(cellFillingInterval)
+  clearInterval(clearCellInterval)
+})
+slider.addEventListener('touchmove', (e) => {
+  clearInterval(cellFillingInterval)
+  clearInterval(clearCellInterval)
+  touchMove = e.touches[0].clientX
+  if (touchMove - touchStart < 0) {
+    e.target.closest('.slide').style.transform = `translateX(-20px)`
+  } else if (touchMove - touchStart > 0) {
+    e.target.closest('.slide').style.transform = `translateX(20px)`
+  }
+  touchDifference = touchStart - touchMove
+  console.log(touchMove)
+})
+let touchEnd
+slider.addEventListener('touchend', (e) => {
+  touchEnd = e.changedTouches[0].clientX
+  e.target.closest('.slide').style.transform = `translateX(0px)`
+  if (touchDifference !== 0) {
+    if (touchEnd < touchStart) {
+      clearInterval(clearCellInterval)
+      clearCellInterval = setInterval(() => clearCell(false), clearCellTime)
+      touchDifference = 0
+    }
+    if (touchEnd > touchStart) {
+      clearInterval(clearCellInterval)
+      clearCellInterval = setInterval(() => clearCell(true), clearCellTime)
+      touchDifference = 0
+    }
+  }
+  if (intervalToggle) {
+    clearInterval(cellFillingInterval)
+    cellFillingInterval = setInterval(cellFilling, cellFillingTime)
+  }
+  else {
+    clearInterval(clearCellInterval)
+    clearCellInterval = setInterval(clearCell, clearCellTime)
+  }
+})
