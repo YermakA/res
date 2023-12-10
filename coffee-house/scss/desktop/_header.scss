@@ -17,8 +17,11 @@
     display: flex;
     align-items: center;
     width: 136rem;
+    z-index: 10;
 }
   &__logo{
+    position: relative;
+    z-index: 10;
     width: 10rem;
     height: 6rem;
   }
@@ -91,6 +94,8 @@
 
 .burger-menu{
   display: none;
+  position: relative;
+  z-index: 10;
 }
 
 

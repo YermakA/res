@@ -47,7 +47,7 @@ function changeBurgerMenu() {
 
 function backEvent(e) {
   e.preventDefault()
-  if (!e.target.classList.contains('navbar') && !e.target.classList.contains('back')) {
+  if (e.target.closest('.navbar__menu-item') || e.target.closest('.menu-link__nav')) {
     burgerMenuVector.classList.remove('burger-menu__vector_click')
     burgerMenu.lastElementChild.classList.remove('burger-menu__vector_click-last')
     if (back.classList.contains('navbar__click') && back.classList.contains('navbar__right')) {
@@ -60,13 +60,10 @@ function backEvent(e) {
     }
 
     setTimeout(() => {
-      if (e.target.classList.contains('coffee-menu__coffee-cup') || e.target.classList.contains('header__text') && e.target.classList.contains('coffee-menu__text')) {
-        document.location.href = e.target
-          .parentNode
-          .parentNode
-          .getAttribute('href')
+      if (e.target.closest('.menu-link__nav')) {
+        document.location.href = e.target.closest('.menu-link__nav').getAttribute('href')
       } else {
-        document.location.href = e.target.parentNode.getAttribute('href')
+        document.location.href = e.target.closest('.navbar__menu-item').getAttribute('href')
       }
     }, 500)
   }

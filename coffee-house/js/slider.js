@@ -11,10 +11,58 @@ const clearCellTime = 1
 let position = 0
 let currentSlide = 0
 let intervalToggle = true
+let widthDisplacement = 48
+window.addEventListener('DOMContentLoaded', () => {
+  if (window.screen.width <= 575) {
+    widthDisplacement = 34.8
+    position = 0
+  }
+  if (window.screen.width > 575) {
+    widthDisplacement = 48
+    position = 0
+  }
+})
+
+
+window.addEventListener('resize', debounce(resizeSlideplace, 250))
+
+
+function debounce(resizeF, time) {
+  let timeout
+  return function func() {
+    clearInterval(timeout)
+    timeout = setTimeout(resizeF, time)
+  }
+}
+
+function resizeSlideplace() {
+  clearInterval(clearCellInterval)
+  clearInterval(cellFillingInterval)
+  if (window.screen.width <= 575) {
+    widthDisplacement = 34.8
+    position = currentSlide * widthDisplacement
+    for (const slide of slides) {
+      slide.style.left = -position + 'rem'
+    }
+  }
+  if (window.screen.width > 575) {
+    widthDisplacement = 48
+    position = currentSlide * widthDisplacement
+    for (const slide of slides) {
+      slide.style.left = -position + 'rem'
+    }
+  }
+  if (intervalToggle) {
+    cellFillingInterval = setInterval(cellFilling, cellFillingTime)
+  } else {
+    clearCellInterval = setInterval(() => clearCell(false), clearCellTime)
+  }
+}
+
 const slideRight = () => {
   clearInterval(cellFillingInterval)
-  const tapeLength = 48 * slides.length
-  position += 48
+  const tapeLength = widthDisplacement * slides.length
+  position += widthDisplacement
   if (tapeLength <= position) {
     position = 0
   }
@@ -43,9 +91,9 @@ const slideLeft = () => {
   clearInterval(cellFillingInterval)
 
   const tapeLength = 0;
-  position -= 48;
+  position -= widthDisplacement;
   if (tapeLength > position) {
-    position = 48 * (slides.length - 1)
+    position = widthDisplacement * (slides.length - 1)
   }
   for (const slide of slides) {
     slide.style.left = -position + 'rem'

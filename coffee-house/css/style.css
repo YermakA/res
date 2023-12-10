@@ -359,8 +359,11 @@ template {
   display: flex;
   align-items: center;
   width: 136rem;
+  z-index: 10;
 }
 .header__logo {
+  position: relative;
+  z-index: 10;
   width: 10rem;
   height: 6rem;
 }
@@ -429,6 +432,8 @@ template {
 
 .burger-menu {
   display: none;
+  position: relative;
+  z-index: 10;
 }
 
 .menu-link {
@@ -1281,7 +1286,7 @@ template {
     align-items: center;
     right: -100rem;
     background-color: #E1D4C9;
-    z-index: 10;
+    z-index: 9;
   }
   html .navbar__click {
     transition: all ease 1s;
@@ -1563,7 +1568,7 @@ template {
     align-items: center;
     right: -100rem;
     background-color: #E1D4C9;
-    z-index: 10;
+    z-index: 9;
   }
   html .navbar__click {
     transition: all ease 1s;
