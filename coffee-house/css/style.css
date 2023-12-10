@@ -943,16 +943,15 @@ template {
 .tabs {
   padding-left: 49.95rem;
   display: flex;
+  gap: 0.8rem;
 }
 
 .tab-item {
   cursor: pointer;
   display: flex;
   transition: ease all 2s;
-  margin-right: 1.6rem;
   align-items: center;
   border: 0.1rem solid #C1B6AD;
-  width: 11.5rem;
   height: 4.6rem;
   border-radius: 10rem;
 }
@@ -970,11 +969,13 @@ template {
   background-color: #C1B6AD;
 }
 .tab-item__text {
+  margin: 0;
   font-family: Inter;
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 600;
   line-height: 150%;
+  padding: 0.8rem 1.6rem 0.8rem 0;
 }
 
 .preview {
@@ -1280,7 +1281,8 @@ template {
   html .navbar {
     transition: all ease 1s;
     width: 100%;
-    height: 59rem;
+    min-height: 59rem;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1562,7 +1564,8 @@ template {
     padding-top: 0.8rem;
     transition: all ease 1s;
     width: 100%;
-    height: 60.4rem;
+    min-height: 60.4rem;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2101,14 +2104,17 @@ template {
   src: url("../fonts/Inter-Regular.ttf") format("truetype"), url("../fonts/Inter-Light.ttf") format("truetype"), url("../fonts/Inter-Black.ttf") format("truetype"), url("../fonts/Inter-Medium.ttf") format("truetype"), url("../fonts/Inter-Bold.ttf") format("truetype"), url("../fonts/Inter-ExtraBold.ttf") format("truetype"), url("../fonts/Inter-ExtraLight.ttf") format("truetype"), url("../fonts/Inter-SemiBold.ttf") format("truetype"), url("../fonts/Inter-Thin.ttf") format("truetype");
 }
 .modal {
-  top: 30vmin;
-  left: 30vmax;
+  top: 50%;
+  left: 50%;
+  margin-left: -40rem;
+  margin-top: -23.7rem;
+  max-height: 472px;
+  min-height: 47.2rem;
+  width: 76.8rem;
   background-color: #E1D4C9;
   position: fixed;
   z-index: 12;
-  width: 76.8rem;
-  padding: 1.6rem;
-  height: 47.2rem;
+  padding: 16px;
   border-radius: 4rem;
 }
 .modal__back {
@@ -2117,32 +2123,20 @@ template {
   position: absolute;
   z-index: 11;
   width: 100%;
-  height: 300%;
+  height: 1000%;
 }
 .modal__preview {
   display: flex;
   align-items: flex-start;
   align-self: stretch;
-  width: 76.8rem;
-  height: 47.2rem;
 }
 .modal__description {
-  width: 45.8rem;
-  height: 47.2rem;
-  display: flex;
+  display: inline-flex;
   padding-left: 20px;
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
   flex: 1 0 0;
-}
-.modal__menu-description {
-  width: 43.8rem;
-  height: 9rem;
-}
-.modal__size {
-  width: 43.8rem;
-  height: 7.8rem;
 }
 .modal__title {
   margin: 0 0 0.8rem 0;
@@ -2155,23 +2149,17 @@ template {
   line-height: 150%;
 }
 .modal__section {
-  display: flex;
+  display: inline-flex;
   align-items: flex-start;
   align-content: flex-start;
   gap: 8px;
   align-self: stretch;
   flex-wrap: wrap;
 }
-.modal__additives {
-  width: 43.8rem;
-  height: 7.8rem;
-}
 .modal__total {
-  width: 43.8rem;
-  height: 3rem;
   display: flex;
   align-items: center;
-  gap: 20px;
+  justify-content: space-between;
   align-self: stretch;
   color: var(--text-dark, #403F3D);
   font-feature-settings: "clig" off, "liga" off;
@@ -2180,9 +2168,6 @@ template {
   font-style: normal;
   font-weight: 600;
   line-height: 125%;
-}
-.modal__price {
-  width: 20.9rem;
 }
 .modal__price_right {
   text-align: right;
@@ -2194,8 +2179,6 @@ template {
   align-items: flex-start;
   gap: 8px;
   align-self: stretch;
-  width: 43.8rem;
-  height: 2.8rem;
 }
 .modal__button {
   cursor: pointer;
@@ -2214,7 +2197,6 @@ template {
   align-items: center;
   gap: 0.8rem;
   align-self: stretch;
-  width: 43.8rem;
   height: 4.4rem;
   border-radius: 10rem;
   border: 1px solid var(--border-dark, #665F55);

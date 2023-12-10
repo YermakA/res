@@ -59,7 +59,9 @@ line-height: 125%;
     padding-top: 0.8rem;
     transition: all ease 1s;
     width: 100%;
-    height: 60.4rem;
+    min-height: 60.4rem;
+    height: 100%;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -73,6 +75,7 @@ line-height: 125%;
     &__right{
       transition: all ease 1s;
            right: 0rem;
+
     } 
   &__menu-item{
       margin-right: 0;
