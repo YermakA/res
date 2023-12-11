@@ -799,7 +799,7 @@ const modalReposition = () => {
   }
 }
 
-window.addEventListener('click', deb1(modalReposition, 1))
+window.addEventListener('click', modalReposition)
 
 window.addEventListener('resize', deb1(modalReposition, 5))
 
