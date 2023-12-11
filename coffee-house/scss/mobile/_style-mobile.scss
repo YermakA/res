@@ -51,6 +51,7 @@ line-height: 125%;
     position: absolute;
     background-color: $light;
     width: 100%;
+    min-height: 100vh;
     right: -100rem;
     display: none;
 }

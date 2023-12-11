@@ -1271,6 +1271,7 @@ template {
     width: 100%;
     right: -100rem;
     display: none;
+    min-height: 100vh;
   }
   html .navbar {
     transition: all ease 1s;
@@ -1551,6 +1552,7 @@ template {
     position: absolute;
     background-color: #E1D4C9;
     width: 100%;
+    min-height: 100vh;
     right: -100rem;
     display: none;
   }
