@@ -267,6 +267,7 @@ html{
     width: 100%;
     right: -100rem;
     display: none;
+    min-height: 100vh;
 }
 .navbar{
     transition: all ease 1s;
