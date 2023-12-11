@@ -93,7 +93,8 @@ html{
     
     .navbar{
       padding-left: 0;
-      width: 48rem;
+      width: 90rem;
+      justify-content: center;
     }
   }
 
@@ -104,8 +105,16 @@ html{
 html{
   @media(max-width: 991px) {
 
-    font-size: calc(100vw / 800 * 10);
+    font-size: calc(100vw / 850 * 10);
     
+
+      .burger-menu__vector_click{  
+      transform: translateY(0.5rem) rotate(-45deg);
+      }
+      .burger-menu__vector_click-last{  
+      transform: translateY(-0.5rem) rotate(45deg);
+      }
+
 .preview__img {
    
     width: 33rem;
@@ -157,6 +166,7 @@ html{
 .hero__img {
       object-fit: cover;
     width: 72rem;
+    height: 60rem;
   }
 
   .slider {
@@ -178,7 +188,7 @@ html{
     
     .navbar{
       padding-left: 0;
-      width: 48rem;
+      width: 70rem;
     }
   
   .images {
@@ -216,8 +226,13 @@ html{
 .offer{
   margin-bottom: 10rem;
 }
+.navbar{
+  width: 50rem;
+}
+
 
 }
+
 }
 
 
@@ -229,6 +244,64 @@ html{
 
     font-size: calc(100vw / 768 * 10);
 
+.hero-video{
+  position: relative;
+  left: -30rem;
+}
+.coffee-menu__text{
+  margin-right: 1.7rem;
+}
+.header__coffee-menu {
+    width: 14.2rem;
+}
+.menu-link__nav{
+  padding-top: 4.8rem;
+}
+
+.back{
+  top: 7rem;
+  transition: all ease 1s;
+  z-index: 9;
+    position: absolute;
+    background-color: $light;
+    width: 100%;
+    right: -100rem;
+    display: none;
+}
+.navbar{
+    transition: all ease 1s;
+    width: 100%;
+    min-height: 59rem;
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    right: -100rem;
+    background-color: $light;
+    z-index: 9;
+    &__click{
+      transition: all ease 1s;
+      display: flex;
+      padding-top: 0.8rem;
+    }
+    &__right{
+      transition: all ease 1s;
+           right: 0rem;
+    } 
+  &__menu-item{
+      margin-right: 0;
+      color: var(--text-dark, #403F3D);
+      text-align: center;
+      font-feature-settings: 'clig' off, 'liga' off;
+      font-family: Inter;
+      font-size: 3.2rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 125%; 
+      margin-bottom: 7.2rem;
+  }
+}
   .tabs{
           padding-left: 16.4rem;
     }
@@ -239,6 +312,7 @@ html{
 
 
 .load-icon-svg{
+  cursor: pointer;
   display: block;
   width: 6rem;
   height: 6rem;
@@ -255,6 +329,28 @@ html{
   @media(max-width: 768px) {
 
     font-size: calc(100vw / 768 * 10);
+.menu-link{
+  display: none;
+}
+.coffee-menu__text{
+color: var(--text-dark, #403F3D);
+text-align: center;
+font-feature-settings: 'clig' off, 'liga' off;
+font-family: Inter;
+font-size: 3.2rem;
+font-style: normal;
+font-weight: 600;
+line-height: 125%; 
+}
+
+.coffee-menu__coffee-cup{
+  width: 4rem;
+  height: 4rem;
+}
+
+.menu-link__nav{
+  display: block;
+}
 
 .small-img{
   display: none;
@@ -326,9 +422,7 @@ html{
     }
     
     
-    .navbar{
-      display: none;
-    }
+ 
     .hero__offer{
       left: 6rem;
     }
@@ -439,12 +533,12 @@ letter-spacing: 0;
   height: 4.4rem;
   border: 0.1rem solid black;
   border-radius: 10rem;
-
   &__vector{
+    transition: ease all 1s;
   &:last-child{
     margin-bottom: 0;
   }
-
+  
     margin-bottom: 0.8rem;
     display: block;
     height: 0;
@@ -454,12 +548,7 @@ letter-spacing: 0;
   }
 }
 
-.menu-link{
-  display: none;
 }
-
-}
-
 
 
 }

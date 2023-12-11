@@ -14,24 +14,33 @@
                     <a href="#home-header">
                         <img class="header__logo" src="./icons/logo.svg" alt="logo coffee house">
                     </a>
-                    <nav class="navbar">
-                        <a class="navbar__menu-item" href="#favorite-coffee">
-                            <h4 class="header__text">Favorite coffee</h4>
-                            <div class="underline"></div>
-                        </a>
-                        <a class="navbar__menu-item" href="#about">
-                            <h4 class="header__text">About</h4>
-                            <div class="underline"></div>
-                        </a>
-                        <a class="navbar__menu-item" href="#mobile-app">
-                            <h4 class="header__text">Mobile app</h4>
-                            <div class="underline"></div>
-                        </a>
-                        <a class="navbar__menu-item" href="#contacts">
-                            <h4 class="header__text">Contact us</h4>
-                            <div class="underline"></div>
-                        </a>
-                    </nav>
+                    <span class="back">
+                        <nav class="navbar">
+                            <a class="navbar__menu-item" href="#favorite-coffee">
+                                <h4 class="header__text">Favorite coffee</h4>
+                                <div class="underline"></div>
+                            </a>
+                            <a class="navbar__menu-item" href="#about">
+                                <h4 class="header__text">About</h4>
+                                <div class="underline"></div>
+                            </a>
+                            <a class="navbar__menu-item" href="#mobile-app">
+                                <h4 class="header__text">Mobile app</h4>
+                                <div class="underline"></div>
+                            </a>
+                            <a class="navbar__menu-item" href="#contacts">
+                                <h4 class="header__text">Contact us</h4>
+                                <div class="underline"></div>
+                            </a>
+                            <a class="menu-link__nav" href="./menu.html">
+                                <div class="coffee-menu header__coffee-menu">
+                                    <h4 class="header__text coffee-menu__text">Menu</h4>
+                                    <img class="coffee-menu__coffee-cup" src="./icons/coffee-cup.svg" alt="coffee cup image">
+                                </div>
+                                <div class="underline"></div>
+                            </a>
+                        </nav>
+                    </span>
                     <a class="menu-link" href="./menu.html">
                         <div class="coffee-menu header__coffee-menu">
                             <h4 class="header__text coffee-menu__text">Menu</h4>
@@ -49,7 +58,17 @@
         <main>
             <div class="hero" id="hero">
                 <div class="container hero__container">
-                    <img class="hero__img" src="./img/img-hero.jpg" alt="hero image">
+                    <div class="hero__img">
+                        <video
+                            class="hero-video"
+                            src="./videos/video (2160p).webm"
+                            loop="loop"
+                            autoplay="autoplay"
+                            id="#enjoyVideo"
+                            width="1360"
+                            muted
+                        ></video>
+                    </div>
                     <section class="hero__offer">
                         <h1 class="hero__title">
                             <i class="creamy">
@@ -100,17 +119,43 @@
                             </span>
                         </button>
                         <div class="slider__slide">
-                            <img class="slide__img" src="./img//coffee-slider-1.png" alt="S’mores Frappuccino">
-                            <section class="slide__description">
-                                <h2 class="description__title">S’mores Frappuccino</h2>
-                                <p class="description__text">
-                                    This new drink takes an espresso and mixes it with brown
+                            <div class="slide">
+                                <img class="slide__img" src="./img//coffee-slider-1.png" alt="S’mores Frappuccino">
+                                <section class="slide__description">
+                                    <h2 class="description__title">S’mores Frappuccino</h2>
+                                    <p class="description__text">
+                                        This new drink takes an espresso and mixes it with brown
                   sugar and cinnamon before being topped with oat milk.
-                                </p>
-                                <p class="description__price">
-                                    <b>$5.50</b>
-                                </p>
-                            </section>
+                                    </p>
+                                    <p class="description__price">
+                                        <b>$5.50</b>
+                                    </p>
+                                </section>
+                            </div>
+                            <div class="slide">
+                                <img class="slide__img" src="./img//coffee-slider-2.png" alt="Caramel Macchiato">
+                                <section class="slide__description">
+                                    <h2 class="description__title">Caramel Macchiato</h2>
+                                    <p class="description__text">
+                                        Fragrant and unique classic espresso with rich caramel-peanut syrup, with cream under whipped thick foam.
+                                    </p>
+                                    <p class="description__price">
+                                        <b>$5.00</b>
+                                    </p>
+                                </section>
+                            </div>
+                            <div class="slide">
+                                <img class="slide__img" src="./img//coffee-slider-3.png" alt="S’mores Frappuccino">
+                                <section class="slide__description">
+                                    <h2 class="description__title">Ice coffee</h2>
+                                    <p class="description__text">
+                                        A popular summer drink that tones and invigorates. Prepared from coffee, milk and ice.
+                                    </p>
+                                    <p class="description__price">
+                                        <b>$4.50</b>
+                                    </p>
+                                </section>
+                            </div>
                         </div>
                         <button class="slider__arrow-right">
                             <span>
@@ -134,9 +179,15 @@
                         </button>
                     </div>
                     <div class="controls">
-                        <span class="control control_black"></span>
-                        <span class="control"></span>
-                        <span class="control"></span>
+                        <div class="control-back">
+                            <div class="control control_black"></div>
+                        </div>
+                        <div class="control-back">
+                            <div class="control"></div>
+                        </div>
+                        <div class="control-back">
+                            <div class="control"></div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -348,5 +399,7 @@
                 </section>
             </div>
         </footer>
+        <script src="./js/slider.js"></script>
+        <script src="./js/menu.js"></script>
     </body>
 </html>

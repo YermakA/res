@@ -8,30 +8,41 @@
         <title>menu</title>
     </head>
     <body>
+        <!-- MODAL -->
+        <!-- основная часть страницы -->
         <header class="header">
             <section class="header-menu">
                 <div class="container header__container">
                     <a href="./index.html#home-header">
                         <img class="header__logo" src="./icons/logo.svg" alt="logo coffee house">
                     </a>
-                    <nav class="navbar">
-                        <a class="navbar__menu-item" href="#favorite-coffee">
-                            <h4 class="header__text">Favorite coffee</h4>
-                            <div class="underline"></div>
-                        </a>
-                        <a class="navbar__menu-item" href="#about">
-                            <h4 class="header__text">About</h4>
-                            <div class="underline"></div>
-                        </a>
-                        <a class="navbar__menu-item" href="#mobile-app">
-                            <h4 class="header__text">Mobile app</h4>
-                            <div class="underline"></div>
-                        </a>
-                        <a class="navbar__menu-item" href="#contacts">
-                            <h4 class="header__text">Contact us</h4>
-                            <div class="underline"></div>
-                        </a>
-                    </nav>
+                    <span class="back">
+                        <nav class="navbar">
+                            <a class="navbar__menu-item" href="index.html#favorite-coffee">
+                                <h4 class="header__text">Favorite coffee</h4>
+                                <div class="underline"></div>
+                            </a>
+                            <a class="navbar__menu-item" href="index.html#about">
+                                <h4 class="header__text">About</h4>
+                                <div class="underline"></div>
+                            </a>
+                            <a class="navbar__menu-item" href="index.html#mobile-app">
+                                <h4 class="header__text">Mobile app</h4>
+                                <div class="underline"></div>
+                            </a>
+                            <a class="navbar__menu-item" href="#contacts">
+                                <h4 class="header__text">Contact us</h4>
+                                <div class="underline"></div>
+                            </a>
+                            <a class="menu-link__nav" href="#">
+                                <div class="coffee-menu header__coffee-menu">
+                                    <h4 class="header__text coffee-menu__text">Menu</h4>
+                                    <img class="coffee-menu__coffee-cup" src="./icons/coffee-cup.svg" alt="coffee cup image">
+                                </div>
+                                <div class="underline"></div>
+                            </a>
+                        </nav>
+                    </span>
                     <a class="coffee-menu_link" href="#">
                         <div class="coffee-menu header__coffee-menu coffee-menu_underline">
                             <h4 class="header__text coffee-menu__text">Menu</h4>
@@ -71,7 +82,7 @@
                     <!-- 1 -->
                     <div class="preview">
                         <div class="preview__border">
-                            <img class="preview__img" src="./img/coffee-1.jpg" alt="coffee-1">
+                            <img class="preview__img" src="./img/coffee/coffee-1.jpg" alt="coffee-1">
                         </div>
                         <div class="desctription">
                             <div class="menu-description">
@@ -87,7 +98,7 @@
                     <!-- 2 -->
                     <div class="preview">
                         <div class="preview__border">
-                            <img class="preview__img" src="./img/coffee-2.jpg" alt="coffee-2">
+                            <img class="preview__img" src="./img/coffee/coffee-2.jpg" alt="coffee-2">
                         </div>
                         <div class="desctription">
                             <div class="menu-description">
@@ -103,7 +114,7 @@
                     <!-- 3 -->
                     <div class="preview">
                         <div class="preview__border">
-                            <img class="preview__img" src="./img/coffee-3.jpg" alt="coffee-3">
+                            <img class="preview__img" src="./img/coffee/coffee-3.jpg" alt="coffee-3">
                         </div>
                         <div class="desctription">
                             <div class="menu-description">
@@ -118,7 +129,7 @@
                     <!-- 4 -->
                     <div class="preview">
                         <div class="preview__border">
-                            <img class="preview__img" src="./img/coffee-4.jpg" alt="coffee-4">
+                            <img class="preview__img" src="./img/coffee/coffee-4.jpg" alt="coffee-4">
                         </div>
                         <div class="desctription">
                             <div class="menu-description">
@@ -131,7 +142,7 @@
                     <!-- 5 -->
                     <div class="preview preview_hide">
                         <div class="preview__border">
-                            <img class="preview__img" src="./img/coffee-5.jpg" alt="coffee-5">
+                            <img class="preview__img" src="./img/coffee/coffee-5.jpg" alt="coffee-5">
                         </div>
                         <div class="desctription">
                             <div class="menu-description">
@@ -144,7 +155,7 @@
                     <!-- 6 -->
                     <div class="preview preview_hide">
                         <div class="preview__border">
-                            <img class="preview__img" src="./img/coffee-6.jpg" alt="coffee-6">
+                            <img class="preview__img" src="./img/coffee/coffee-6.jpg" alt="coffee-6">
                         </div>
                         <div class="desctription">
                             <div class="menu-description">
@@ -160,7 +171,7 @@
                     <!-- 7 -->
                     <div class="preview preview_hide">
                         <div class="preview__border">
-                            <img class="preview__img" src="./img/coffee-7.jpg" alt="coffee-7">
+                            <img class="preview__img" src="./img/coffee/coffee-7.jpg" alt="coffee-7">
                         </div>
                         <div class="desctription">
                             <div class="menu-description">
@@ -173,7 +184,7 @@
                     <!-- 8 -->
                     <div class="preview preview_hide">
                         <div class="preview__border">
-                            <img class="preview__img" src="./img/coffee-8.jpg" alt="coffee-8">
+                            <img class="preview__img" src="./img/coffee/coffee-8.jpg" alt="coffee-8">
                         </div>
                         <div class="desctription">
                             <div class="menu-description">
@@ -338,5 +349,8 @@
                 </section>
             </div>
         </footer>
+        <script src="./js/menu.js"></script>
+        <script src="./js/swap-products.js"></script>
+        <script src="./js/modal.js"></script>
     </body>
 </html>

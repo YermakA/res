@@ -1,7 +1,14 @@
 @import "../_variables.scss";
 @import "../fonts.scss";
+
+
+#enjoyVideo{
+  width: 1360px;
+
+}
 .hero{
   &__img{
+  overflow: hidden;
   width: 136rem;
   height: 64.4rem;
   border-radius: 4rem;
