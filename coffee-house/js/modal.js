@@ -799,9 +799,9 @@ const modalReposition = () => {
   }
 }
 
-window.addEventListener('click', deb1(modalReposition, 10))
+window.addEventListener('click', deb1(modalReposition, 1))
 
-window.addEventListener('resize', deb1(modalReposition, 10))
+window.addEventListener('resize', deb1(modalReposition, 5))
 
 function deb1(func, time) {
   let timeout
