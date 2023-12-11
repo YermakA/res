@@ -722,8 +722,8 @@ coffeeGrid1.addEventListener('click', (e) => {
 <div class="modal__back"></div>
         <div class="modal">
             <div class="modal__preview">
-                <div class="preview__border">
-                    <img class="preview__img" src="${imgSrc}" alt="">
+                <div class="modal__border">
+                    <img class="modal__img" src="${imgSrc}" alt="">
                 </div>
                 <div class="modal__description">
                     <div class="modal__menu-description">
@@ -784,7 +784,35 @@ coffeeGrid1.addEventListener('click', (e) => {
   body.insertAdjacentHTML('afterbegin', modal)
   body.style.overflow = 'hidden'
   document.querySelector('.modal__back')
+
 })
+
+const modalReposition = () => {
+  const modal = document.querySelector('.modal')
+  if (modal) {
+    const width = window.screen.width / 2
+    const height = window.screen.height / 2
+    const modalWidth = modal.offsetWidth / 2
+    const modalHeight = modal.offsetHeight / 2
+    modal.style.left = `${width - modalWidth}px`
+    modal.style.top = `${height - modalHeight}px`
+  }
+}
+
+window.addEventListener('click', deb1(modalReposition, 10))
+
+window.addEventListener('resize', deb1(modalReposition, 10))
+
+function deb1(func, time) {
+  let timeout
+  return () => {
+    clearInterval(timeout)
+    timeout = setTimeout(func, time)
+  }
+}
+
+
+
 //Закрытие modal
 body.addEventListener('click', (e) => {
 
@@ -818,7 +846,6 @@ body.addEventListener('click', (e) => {
     Number(modalAdditivesArr.reduce((a, b) => a + b, 0))
 
 
-  console.log(total)
   document.querySelector('.modal__price_right')
     .textContent =
     "$" + total.toFixed(2)

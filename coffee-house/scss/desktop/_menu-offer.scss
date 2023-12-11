@@ -31,19 +31,15 @@
 }
 
 .tab-item{
+   padding: .8rem 1.6rem .8rem 0.8rem;
   cursor: pointer;
   display: flex;
   transition: ease all 2s;
   align-items: center;
   border: 0.1rem solid #C1B6AD;
-  height: 4.6rem;
   border-radius: 10rem;
-  &_tea{
-    width: 9rem;
-    height: 4.6rem;
-  }
+
   &__img{
-    margin-left: 0.8rem;
     width: 1.6rem;
     height: 2.4rem;
     margin-right: 0.8rem;
@@ -59,7 +55,7 @@
     font-style: normal;
     font-weight: 600;
     line-height: 150%;
-    padding: .8rem 1.6rem .8rem 0;
+
   }
 }
 

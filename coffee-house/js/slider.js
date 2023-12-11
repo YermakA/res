@@ -169,7 +169,6 @@ const slider = document.querySelector('.slider__slide')
 let touchStart
 slider.addEventListener('mouseover', (e) => {
   e.preventDefault()
-  console.log(e)
   clearInterval(cellFillingInterval)
   clearInterval(clearCellInterval)
 })
@@ -209,7 +208,7 @@ slider.addEventListener('touchmove', (e) => {
     e.target.closest('.slide').style.transform = `translateX(20px)`
   }
   touchDifference = touchStart - touchMove
-  console.log(touchMove)
+
 })
 let touchEnd
 slider.addEventListener('touchend', (e) => {
