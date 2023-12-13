@@ -1274,6 +1274,7 @@ template {
     min-height: 100vh;
   }
   html .navbar {
+    padding: 29px 0 0 13px;
     transition: all ease 1s;
     width: 100%;
     min-height: 59rem;
@@ -1401,7 +1402,7 @@ template {
     width: 72rem;
   }
   html .container {
-    width: 68.8rem;
+    width: 68.9rem;
   }
   html .hero__offer {
     left: 6rem;
@@ -1512,6 +1513,9 @@ template {
   html {
     font-size: 1.7391304348vw;
   }
+  html .container {
+    width: 34.9rem;
+  }
   html .hero-video {
     position: relative;
     left: -50rem;
@@ -1557,7 +1561,7 @@ template {
     display: none;
   }
   html .navbar {
-    padding-top: 0.8rem;
+    padding: 2.9rem 0 0 1.3rem;
     transition: all ease 1s;
     width: 100%;
     min-height: 60.4rem;
@@ -1615,9 +1619,6 @@ template {
     display: none;
   }
   html .offer {
-    width: 34.8rem;
-  }
-  html .container {
     width: 34.8rem;
   }
   html .tabs {
@@ -1685,7 +1686,7 @@ template {
     right: 2rem;
   }
   html .container {
-    width: 34.8rem;
+    width: 34.9rem;
   }
   html .hero__offer {
     top: 7rem;

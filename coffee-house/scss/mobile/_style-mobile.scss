@@ -4,6 +4,10 @@
     @media (max-width: 575px)  {
   font-size: calc(100vw / 575 * 10);
 
+.container {
+    width: 34.9rem;
+}
+
 .hero-video{
   position: relative;
   left: -50rem;
@@ -57,7 +61,7 @@ line-height: 125%;
 }
 
 .navbar{
-    padding-top: 0.8rem;
+    padding: 2.9rem 0 0 1.3rem;
     transition: all ease 1s;
     width: 100%;
     min-height: 60.4rem;
@@ -126,9 +130,7 @@ line-height: 125%;
       .offer{
         width: 34.8rem;
       }
-    .container{
-    width: 34.8rem;
-  }
+
 
  .tabs{
           padding-left: 16.4rem;
@@ -163,6 +165,7 @@ line-height: 125%;
 
 .header{
   &__container{
+
     justify-content: space-between;
   }
 }
@@ -211,7 +214,7 @@ line-height: 125%;
   }
 
     .container{
-      width: 34.8rem;
+      width: 34.9rem;
     }
     
   
