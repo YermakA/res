@@ -10,7 +10,6 @@ const questions = [
   "What kind of pet did Harry Potter have?",
   "What kind of animal is Sonic?",
 ]
-
 const answers = [
   "Clownfish",
   "Flounder",
@@ -23,7 +22,39 @@ const answers = [
   "Owl",
   "Hedgehog",
 ]
-
+//svg elements
+const svgGallows = `<svg width="500" height="581" viewBox="0 0 353 581" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="176.337" y="34.6662" width="39" height="199.598" transform="rotate(45 176.337 34.6662)" fill="black" stroke="#FFFEFE" stroke-width="3"></rect>
+<rect x="34.5" y="1.5" width="39" height="578" rx="3.5" fill="black" stroke="#FFFEFE" stroke-width="3"></rect>
+<rect x="351.5" y="-40.5" width="39" height="450" rx="3.5" transform="rotate(90 351.5 34.5)" fill="black" stroke="#FFFEFE" stroke-width="3"></rect>
+<rect x="298" y="75" width="10" height="74" fill="black"></rect>
+<rect x="875.5" y="20.5" width="20" height="400" rx="3.5" transform="rotate(90 351.5 34.5)" fill="black" stroke="#FFFEFE" stroke-width="3"></rect>
+</svg>
+`
+const svgBody = `<svg class="SVG SVG-body" width="5" height="131" viewBox="0 0 5 131" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="5" height="131" fill="#909090"/>
+</svg>
+`
+const svgHead = `<svg class="SVG SVG-head" width="101" height="101" viewBox="0 0 101 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="50.5" cy="50.5" r="48" fill="white" stroke="#909090" stroke-width="5"/>
+</svg>
+`
+const svgHandOne = `<svg class="SVG SVG-hand-one" width="68" height="81" viewBox="0 0 68 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="63.7964" width="5" height="100" transform="rotate(39.64 63.7964 0)" fill="#909090"/>
+</svg>
+`
+const svgHandTwo = `<svg class="SVG SVG-hand-two" width="68" height="81" viewBox="0 0 68 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect y="3.18951" width="5" height="100" transform="rotate(-39.6353 0 3.18951)" fill="#909090"/>
+</svg>
+`
+const svgLegOne = `<svg class="SVG SVG-leg-one" width="68" height="81" viewBox="0 0 68 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="63.7964" width="5" height="100" transform="rotate(39.64 63.7964 0)" fill="#909090"/>
+</svg>
+`
+const svgLegTwo = `<svg class="SVG SVG-leg-two" width="68" height="81" viewBox="0 0 68 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect y="3.18951" width="5" height="100" transform="rotate(-39.6353 0 3.18951)" fill="#909090"/>
+</svg>
+`
 function showAllImage() {
   const buttonsHTML = "abcdefghijklmnopqrstuvwxyz"
     .split("")
@@ -43,10 +74,25 @@ function showAllImage() {
   body.insertAdjacentHTML(
     "afterbegin",
     `
-  <div class="keyboard">
+  <div class="container">
+  <div class="section-1">
+  ${svgGallows}
+  <div class="hangedman">
+    ${svgHead}
+    ${svgBody}
+    ${svgHandOne}
+    ${svgHandTwo}
+    ${svgLegOne}
+    ${svgLegTwo}
+</div>
+  </div>
+    <div class="section-2">
+      <div class="keyboard">
 
-      ${buttonsHTML}
+          ${buttonsHTML}
 
+      </div>
+    </div>
   </div>
   `,
   )
