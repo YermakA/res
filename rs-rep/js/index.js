@@ -78,11 +78,15 @@ function showAllImage() {
     .join(" ")
 
   const body = document.querySelector("body")
-  const questionNumber = Math.floor(Math.random() * questions.length)
+  let questionNumber = Math.floor(Math.random() * questions.length)
+  let tempNum = sessionStorage.getItem("questionNumber", questionNumber)
+  while (questionNumber === Number(tempNum)) {
+    questionNumber = Math.floor(Math.random() * questions.length)
+  }
+  sessionStorage.setItem("questionNumber", questionNumber)
   console.log("СЕКРЕТНОЕ СЛОВО: " + answers[questionNumber])
   guessWord = answers[questionNumber].toLowerCase().split("")
   answer = Array(guessWord.length).fill("_")
-  console.log(answer)
   body.innerHTML = `
   <div class="container">
   <div class="section-1">
