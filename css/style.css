@@ -20,6 +20,7 @@ body {
 }
 
 .section-1 {
+  max-width: 500px;
   position: relative;
   margin-right: 20px;
   justify-content: center;
@@ -184,6 +185,9 @@ span {
   }
 }
 @media screen and (max-width: 1010px) {
+  .section-1 {
+    margin-right: 30px;
+  }
   .gallows {
     width: 300px;
   }
@@ -248,6 +252,7 @@ span {
     max-width: 370px;
   }
   .gallows {
+    height: 420px;
     width: 300px;
   }
   .SVG-head {
@@ -281,30 +286,33 @@ span {
     top: 230px;
   }
   .hangedman {
-    right: 35px;
+    right: 50px;
+    top: -60px;
   }
   .key {
-    width: 40px;
-    height: 40px;
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
   }
   .Hint {
-    font-size: 25px;
+    font-size: 20px;
   }
   .title {
+    margin-bottom: 0;
     margin-top: 0;
-    font-size: 30px;
-  }
-  .answer {
     font-size: 25px;
   }
+  .answer {
+    font-size: 20px;
+  }
 }
-@media screen and (max-width: 705px) {
+@media screen and (max-width: 460px) {
   .container {
     flex-direction: column;
   }
   .section-1 {
     margin-right: 0;
-    max-width: 370px;
+    min-width: 344px;
   }
   .gallows {
     width: 300px;
@@ -342,21 +350,22 @@ span {
     top: 210px;
   }
   .hangedman {
-    right: 84px;
+    right: 76px;
     top: -98px;
   }
   .key {
-    width: 40px;
-    height: 40px;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
   }
   .Hint {
-    font-size: 25px;
+    font-size: 20px;
   }
   .title {
     margin-top: 0;
-    font-size: 30px;
+    font-size: 20px;
   }
   .answer {
-    font-size: 25px;
+    font-size: 20px;
   }
 }/*# sourceMappingURL=style.css.map */
