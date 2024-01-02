@@ -64,7 +64,7 @@ function showAllImage() {
     .map(
       (letter) =>
         ` 
-  <button class="key"
+  <button class="key" id ="${letter}"
       onClick="handleGuess('` +
         letter +
         `')"
@@ -130,3 +130,22 @@ function handleGuess(chosenLetter) {
     mistakesCounter.textContent = `${++mistakes}/6`
   }
 }
+
+document.addEventListener("keyup", (e) => {
+  const symbol = document.getElementById(
+    e.code.toLowerCase().split("")[e.code.length - 1],
+  )
+  symbol.style.cssText = "background-color: #495eb8;"
+  if (e.code.length <= 4 && e.code.slice(0, 3) === "Key") {
+    handleGuess(e.code.toLowerCase().split("")[e.code.length - 1])
+  }
+})
+
+document.addEventListener("keydown", (e) => {
+  if (e.code.length <= 4 && e.code.slice(0, 3) === "Key") {
+    const symbol = document.getElementById(
+      e.code.toLowerCase().split("")[e.code.length - 1],
+    )
+    symbol.style.cssText = "background-color: rgb(43, 64, 161);"
+  }
+})
