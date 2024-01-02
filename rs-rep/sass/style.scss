@@ -1,103 +1,117 @@
-body{
-  margin: 0;
-  box-sizing: border-box;
+body {
+    margin: 0;
+    box-sizing: border-box;
 }
-.title{
-  font-weight: 900;
-  text-transform: uppercase;
+
+.title {
+    font-weight: 900;
+    font-size: 50px;
+    text-transform: uppercase;
 }
-.container{
-  margin: 0 auto;
+
+.container {
+    margin: auto;
     margin-top: 20px;
-  display: flex;
-  width: 80%;
-  justify-content: space-around;
-  align-items: center;
-  margin-bottom: 20px;
-}
-.section-1{
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 500px;
-  display: flex;
-}
-.answer{
-  font-size: 40px;
-  margin-bottom: 20px;
-}
-.section-2{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.hangedman{
-      right: 72px;
-  position: relative;
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.Hint{
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  align-items: center;
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 20px;
+.section-1 {
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 500px;
+    display: flex;
 }
 
-.SVG{
-  position: absolute;
-  &-head{
-    right: 0px;
-    top: 147px;
-  }
-  &-body{
-    right: 48px;
-    top: 244px;
-  }
-  &-leg-two{
-    top: 369px;
-    right: -16px;
-  }
-   &-leg-one{
-    right: 46px;
-    top: 368px;
-  }
-     &-hand-one{
-    top: 245px;
-    right: 47px;
-  }
-      &-hand-two{
-    right: -14px;
-    top: 245px;
-  }
+.answer {
+    font-size: 50px;
+    margin-bottom: 20px;
 }
 
-.key{
-  background-color: #495eb8;
-  margin: 0;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  font-size: 20px;
-  border-radius: 20%;
-  font-weight: 700;
-  border: none;
-  color: white;
+.section-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.key:hover{
+
+.hangedman {
+    right: 72px;
+    position: relative;
+}
+
+.Hint {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.SVG {
+    position: absolute;
+
+    &-head {
+        right: 0px;
+        top: 147px;
+    }
+
+    &-body {
+        right: 48px;
+        top: 244px;
+    }
+
+    &-leg-two {
+        top: 369px;
+        right: -16px;
+    }
+
+    &-leg-one {
+        right: 46px;
+        top: 368px;
+    }
+
+    &-hand-one {
+        top: 245px;
+        right: 47px;
+    }
+
+    &-hand-two {
+        right: -14px;
+        top: 245px;
+    }
+}
+
+.key {
+    background-color: #495eb8;
+    margin: 0;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    font-size: 30px;
+    border-radius: 20%;
+    font-weight: 700;
+    border: none;
+    color: white;
+}
+
+.key:hover {
     background-color: rgb(43, 64, 161);
-  }
-
-span{
-  position: relative;
-  z-index: 10;
 }
 
-.keyboard{
-  justify-content: center;
-  flex-wrap: wrap;
-  display: flex;
-  gap: 5px;
-  max-width: 500px;
+span {
+    position: relative;
+    z-index: 10;
+}
+
+.keyboard {
+    justify-content: center;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 5px;
+    max-width: 700px;
 }

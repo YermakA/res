@@ -55,6 +55,14 @@ const svgLegTwo = `<svg class="SVG SVG-leg-two" width="68" height="81" viewBox="
 <rect y="3.18951" width="5" height="100" transform="rotate(-39.6353 0 3.18951)" fill="#909090"/>
 </svg>
 `
+const svgArray = [
+  svgHead,
+  svgBody,
+  svgHandOne,
+  svgHandTwo,
+  svgLegOne,
+  svgLegTwo,
+]
 let answer
 let guessWord
 let mistakes = 0
@@ -78,7 +86,7 @@ function showAllImage() {
 
   const body = document.querySelector("body")
   const questionNumber = Math.floor(Math.random() * questions.length)
-  console.log(answers[questionNumber])
+  console.log("СЕКРЕТНОЕ СЛОВО: " + answers[questionNumber])
   guessWord = answers[questionNumber].toLowerCase().split("")
   answer = Array(guessWord.length).fill("_")
   console.log(answer)
@@ -89,12 +97,6 @@ function showAllImage() {
   <div class="section-1">
   ${svgGallows}
   <div class="hangedman">
-    ${svgHead}
-    ${svgBody}
-    ${svgHandOne}
-    ${svgHandTwo}
-    ${svgLegOne}
-    ${svgLegTwo}
 </div>
   <h1 class="title">HANGMAN GAME</h1>
   </div>
@@ -119,15 +121,28 @@ function guessedWord() {
   answerEl.textContent =
     answer.join(" ").charAt(0).toUpperCase() + answer.join(" ").slice(1)
 }
+
 function handleGuess(chosenLetter) {
+  if (mistakes >= 6) {
+    return
+  }
   answer = answer.map((symbol, i) =>
     chosenLetter === guessWord[i] ? chosenLetter : symbol,
   )
   if (answer.includes(chosenLetter)) {
     guessedWord()
   } else {
+    const symbol = document.querySelector(`#${chosenLetter}`)
+    symbol.setAttribute("disabled", true)
+    document
+      .querySelector(".hangedman")
+      .insertAdjacentHTML("beforeend", svgArray.shift())
+    symbol.style.cssText = "background-color: rgb(169, 185, 255);"
     let mistakesCounter = document.querySelector(".mistakes-counter")
     mistakesCounter.textContent = `${++mistakes}/6`
+  }
+  if (mistakes >= 6) {
+    openModal()
   }
 }
 
@@ -135,9 +150,13 @@ document.addEventListener("keyup", (e) => {
   const symbol = document.getElementById(
     e.code.toLowerCase().split("")[e.code.length - 1],
   )
-  symbol.style.cssText = "background-color: #495eb8;"
+  if (!symbol.getAttribute("disabled")) {
+    symbol.style.cssText = "background-color: #495eb8;"
+  }
   if (e.code.length <= 4 && e.code.slice(0, 3) === "Key") {
-    handleGuess(e.code.toLowerCase().split("")[e.code.length - 1])
+    if (!symbol.getAttribute("disabled")) {
+      handleGuess(e.code.toLowerCase().split("")[e.code.length - 1])
+    }
   }
 })
 
@@ -146,6 +165,24 @@ document.addEventListener("keydown", (e) => {
     const symbol = document.getElementById(
       e.code.toLowerCase().split("")[e.code.length - 1],
     )
-    symbol.style.cssText = "background-color: rgb(43, 64, 161);"
+    if (!symbol.getAttribute("disabled")) {
+      symbol.style.cssText = "background-color: rgb(43, 64, 161);"
+    }
   }
 })
+
+function openModal() {
+  if (mistakes >= 6) {
+    document.querySelector("body").insertAdjacentHTML(
+      "beforeend",
+      `  <dialog id="modal">
+    <div class="modal">
+    <h2>You lost!</h2>
+    <p>SECRET WORD: ${guessWord.join("")}</p>
+    <button>play again</button>
+    </div>
+    </dialog>`,
+    )
+    document.querySelector("#modal").showModal()
+  }
+}
