@@ -55,22 +55,33 @@ const svgLegTwo = `<svg class="SVG SVG-leg-two" width="68" height="81" viewBox="
 <rect y="3.18951" width="5" height="100" transform="rotate(-39.6353 0 3.18951)" fill="#909090"/>
 </svg>
 `
+let answer
+let guessWord
+let mistakes = 0
 function showAllImage() {
   const buttonsHTML = "abcdefghijklmnopqrstuvwxyz"
     .split("")
     .map(
-      (letter) => ` 
-  <button class="key">
-      <span>
+      (letter) =>
+        ` 
+  <button class="key"
+      onClick="handleGuess('` +
+        letter +
+        `')"
+      >
         ${letter}
-      </span>
+
   </button> 
   `,
     )
     .join(" ")
 
   const body = document.querySelector("body")
-
+  const questionNumber = Math.floor(Math.random() * questions.length)
+  console.log(answers[questionNumber])
+  guessWord = answers[questionNumber].toLowerCase().split("")
+  answer = Array(guessWord.length).fill("_")
+  console.log(answer)
   body.insertAdjacentHTML(
     "afterbegin",
     `
@@ -85,12 +96,16 @@ function showAllImage() {
     ${svgLegOne}
     ${svgLegTwo}
 </div>
+  <h1 class="title">HANGMAN GAME</h1>
   </div>
     <div class="section-2">
+    <div class="answer"></div>
+    <div class="Hint">
+    <span>Hint: ${questions[questionNumber]}</span>
+    <span>Incorrect guesses: <span class="mistakes-counter" style="color:red">0/6</span></span>
+    </div>
       <div class="keyboard">
-
           ${buttonsHTML}
-
       </div>
     </div>
   </div>
@@ -98,3 +113,20 @@ function showAllImage() {
   )
 }
 showAllImage()
+guessedWord()
+function guessedWord() {
+  answerEl = document.querySelector(".answer")
+  answerEl.textContent =
+    answer.join(" ").charAt(0).toUpperCase() + answer.join(" ").slice(1)
+}
+function handleGuess(chosenLetter) {
+  answer = answer.map((symbol, i) =>
+    chosenLetter === guessWord[i] ? chosenLetter : symbol,
+  )
+  if (answer.includes(chosenLetter)) {
+    guessedWord()
+  } else {
+    let mistakesCounter = document.querySelector(".mistakes-counter")
+    mistakesCounter.textContent = `${++mistakes}/6`
+  }
+}
