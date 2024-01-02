@@ -55,14 +55,7 @@ const svgLegTwo = `<svg class="SVG SVG-leg-two" width="68" height="81" viewBox="
 <rect y="3.18951" width="5" height="100" transform="rotate(-39.6353 0 3.18951)" fill="#909090"/>
 </svg>
 `
-const svgArray = [
-  svgHead,
-  svgBody,
-  svgHandOne,
-  svgHandTwo,
-  svgLegOne,
-  svgLegTwo,
-]
+let svgArray = [svgHead, svgBody, svgHandOne, svgHandTwo, svgLegOne, svgLegTwo]
 let answer
 let guessWord
 let mistakes = 0
@@ -90,9 +83,7 @@ function showAllImage() {
   guessWord = answers[questionNumber].toLowerCase().split("")
   answer = Array(guessWord.length).fill("_")
   console.log(answer)
-  body.insertAdjacentHTML(
-    "afterbegin",
-    `
+  body.innerHTML = `
   <div class="container">
   <div class="section-1">
   ${svgGallows}
@@ -111,8 +102,7 @@ function showAllImage() {
       </div>
     </div>
   </div>
-  `,
-  )
+  `
 }
 showAllImage()
 guessedWord()
@@ -120,6 +110,9 @@ function guessedWord() {
   answerEl = document.querySelector(".answer")
   answerEl.textContent =
     answer.join(" ").charAt(0).toUpperCase() + answer.join(" ").slice(1)
+  if (!answer.includes("_")) {
+    openModal()
+  }
 }
 
 function handleGuess(chosenLetter) {
@@ -175,14 +168,33 @@ function openModal() {
   if (mistakes >= 6) {
     document.querySelector("body").insertAdjacentHTML(
       "beforeend",
-      `  <dialog id="modal">
+      ` <dialog id="modal">
     <div class="modal">
-    <h2>You lost!</h2>
-    <p>SECRET WORD: ${guessWord.join("")}</p>
-    <button>play again</button>
+    <h2 class="modal-title">You lost!</h2>
+    <p class="modal__secret-word">SECRET WORD: ${guessWord.join("")}</p>
+    <button onClick="playAgain()" class="modal-btn">play again</button>
+    </div>
+    </dialog>`,
+    )
+    document.querySelector("#modal").showModal()
+  } else {
+    document.querySelector("body").insertAdjacentHTML(
+      "beforeend",
+      ` <dialog id="modal">
+    <div class="modal">
+    <h2 class="modal-title">You won!</h2>
+    <p class="modal__secret-word">SECRET WORD: ${guessWord.join("")}</p>
+    <button onClick="playAgain()" class="modal-btn">play again</button>
     </div>
     </dialog>`,
     )
     document.querySelector("#modal").showModal()
   }
+}
+function playAgain() {
+  document.querySelector("#modal").close()
+  svgArray = [svgHead, svgBody, svgHandOne, svgHandTwo, svgLegOne, svgLegTwo]
+  mistakes = 0
+  showAllImage()
+  guessedWord()
 }
