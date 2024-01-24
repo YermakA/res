@@ -34,6 +34,38 @@ export default class Game {
     this.#setRowsHints()
     this.#setColumnsHints()
     this.#drawGrid()
+    this.#drawGaps()
+  }
+  // Рисует линии между клетками
+  static #drawGaps() {
+    const canvas = document.getElementById("canvas")
+    const ctx = canvas.getContext("2d")
+    ctx.lineWidth = 5
+    const gap = Math.floor(this.gridLength / 5 - 1) * 5
+    for (let i = 5; i < this.gridLength; i += 5) {
+      const x =
+        i * this.ceilSize + this.maxColumnLength * this.ceilSize + this.lineGapY
+      this.lineGapY += 5
+      ctx.beginPath()
+      ctx.moveTo(x + 2, 0)
+      ctx.lineTo(
+        x + 2,
+        this.gridLength * this.ceilSize +
+          this.maxColumnLength * this.ceilSize +
+          gap,
+      )
+      ctx.stroke()
+      ctx.beginPath()
+      ctx.moveTo(0, x + 2)
+      ctx.lineTo(
+        this.gridLength * this.ceilSize +
+          this.maxColumnLength * this.ceilSize +
+          gap,
+        x + 2,
+      )
+      ctx.stroke()
+    }
+    ctx.lineWidth = 1
   }
   // Рисует сетку
   static #drawGrid() {
@@ -48,10 +80,10 @@ export default class Game {
     )
     const ctx = canvas.getContext("2d")
 
-    for (let i = 0; i < this.GRID.length; i++) {
+    for (let i = 0; i < this.gridLength; i++) {
       const y =
         i * this.ceilSize + this.maxColumnLength * this.ceilSize + this.lineGapX
-      for (let j = 0; j < this.GRID.length; j++) {
+      for (let j = 0; j < this.gridLength; j++) {
         ctx.strokeStyle = "#000"
         const x =
           j * this.ceilSize + this.maxRowLength * this.ceilSize + this.lineGapY
@@ -91,13 +123,11 @@ export default class Game {
           if (this.GRIDBuffer[i][j] === 1) {
             this.GRIDBuffer[i][j] = 0
             ctx.fillStyle = "#fff"
-            ctx.fillRect(x, y, this.ceilSize, this.ceilSize)
-            ctx.strokeStyle = "#000"
-            ctx.strokeRect(x, y, this.ceilSize, this.ceilSize)
+            ctx.fillRect(x + 2, y + 2, this.ceilSize - 3, this.ceilSize - 3)
           } else {
             this.GRIDBuffer[i][j] = 1
             ctx.fillStyle = "#000"
-            ctx.fillRect(x, y, this.ceilSize, this.ceilSize)
+            ctx.fillRect(x + 2, y + 2, this.ceilSize - 4, this.ceilSize - 4)
             break
           }
         }
@@ -136,20 +166,18 @@ export default class Game {
           if (this.GRIDBuffer[i][j] === 2) {
             this.GRIDBuffer[i][j] = 0
             ctx.fillStyle = "#fff"
-            ctx.fillRect(x, y, this.ceilSize, this.ceilSize)
-            ctx.strokeStyle = "#000"
-            ctx.strokeRect(x, y, this.ceilSize, this.ceilSize)
+            ctx.fillRect(x + 2, y + 2, this.ceilSize - 3, this.ceilSize - 3)
           } else {
             this.GRIDBuffer[i][j] = 2
             ctx.fillStyle = "#fff"
-            ctx.fillRect(x, y, this.ceilSize, this.ceilSize)
-            ctx.strokeStyle = "#000"
-            ctx.strokeRect(x, y, this.ceilSize, this.ceilSize)
+            ctx.fillRect(x + 2, y + 2, this.ceilSize - 3, this.ceilSize - 3)
             ctx.beginPath()
-            ctx.moveTo(x, y)
-            ctx.lineTo(x + this.ceilSize, y + this.ceilSize)
-            ctx.lineTo(x, y + this.ceilSize)
-            ctx.lineTo(x + this.ceilSize, y)
+            ctx.moveTo(x + 3, y + 3)
+            ctx.lineTo(x + this.ceilSize - 3, y + this.ceilSize - 3)
+            ctx.stroke()
+            ctx.beginPath()
+            ctx.moveTo(x + 3, y + this.ceilSize - 3)
+            ctx.lineTo(x + this.ceilSize - 3, y + 3)
             ctx.stroke()
           }
         }
