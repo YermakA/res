@@ -4,8 +4,8 @@ export default class Game {
   static GRID
   static ceilSize = 20
   static rowCeils = []
-  static lineGapY = 0
-  static lineGapX = 0
+  static lineGapY = 5
+  static lineGapX = 5
   static columnCeils = []
   static maxRowLength = 0
 
@@ -41,27 +41,28 @@ export default class Game {
     const canvas = document.getElementById("canvas")
     const ctx = canvas.getContext("2d")
     ctx.lineWidth = 5
-    const gap = Math.floor(this.gridLength / 5 - 1) * 5
-    for (let i = 5; i < this.gridLength; i += 5) {
+    const gap = Math.floor(this.gridLength / 5) * 5
+    for (let i = 0; i < this.gridLength; i += 5) {
       const x =
         i * this.ceilSize + this.maxColumnLength * this.ceilSize + this.lineGapY
+
       this.lineGapY += 5
       ctx.beginPath()
-      ctx.moveTo(x + 2, 0)
+      ctx.moveTo(x - 2, 0)
       ctx.lineTo(
-        x + 2,
+        x - 2,
         this.gridLength * this.ceilSize +
           this.maxColumnLength * this.ceilSize +
           gap,
       )
       ctx.stroke()
       ctx.beginPath()
-      ctx.moveTo(0, x + 2)
+      ctx.moveTo(0, x - 2)
       ctx.lineTo(
         this.gridLength * this.ceilSize +
           this.maxColumnLength * this.ceilSize +
           gap,
-        x + 2,
+        x - 2,
       )
       ctx.stroke()
     }
@@ -92,12 +93,12 @@ export default class Game {
           this.lineGapY += 5
         }
       }
-      this.lineGapY = 0
+      this.lineGapY = 5
       if ((i + 1) % 5 == 0) {
         this.lineGapX += 5
       }
     }
-    this.lineGapX = 0
+    this.lineGapX = 5
   }
   // Изменяет буфер и клетку на канвасе
   static fillCell(event) {
@@ -135,12 +136,12 @@ export default class Game {
           this.lineGapY += 5
         }
       }
-      this.lineGapY = 0
+      this.lineGapY = 5
       if ((i + 1) % 5 == 0) {
         this.lineGapX += 5
       }
     }
-    this.lineGapX = 0
+    this.lineGapX = 5
   }
 
   static strokeCell(event) {
@@ -185,12 +186,12 @@ export default class Game {
           this.lineGapY += 5
         }
       }
-      this.lineGapY = 0
+      this.lineGapY = 5
       if ((i + 1) % 5 == 0) {
         this.lineGapX += 5
       }
     }
-    this.lineGapX = 0
+    this.lineGapX = 5
   }
 
   static #setRowsHints() {
