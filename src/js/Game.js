@@ -4,11 +4,11 @@ export default class Game {
   static GRID
   static ceilSize = 20
   static rowCeils = []
+  static columnCeils = []
+
   static lineGapY = 5
   static lineGapX = 5
-  static columnCeils = []
   static maxRowLength = 0
-
   static maxColumnLength = 0
   // Создаёт канвас
   static #createCanvas() {
@@ -35,6 +35,7 @@ export default class Game {
     this.#setColumnsHints()
     this.#drawGrid()
     this.#drawGaps()
+    this.#drawHints()
   }
   // Рисует линии между клетками
   static #drawGaps() {
@@ -67,6 +68,7 @@ export default class Game {
       ctx.stroke()
     }
     ctx.lineWidth = 1
+    this.lineGapY = 5
   }
   // Рисует сетку
   static #drawGrid() {
@@ -98,6 +100,7 @@ export default class Game {
         this.lineGapX += 5
       }
     }
+
     this.lineGapX = 5
   }
   // Изменяет буфер и клетку на канвасе
@@ -141,6 +144,7 @@ export default class Game {
         this.lineGapX += 5
       }
     }
+
     this.lineGapX = 5
   }
 
@@ -191,6 +195,7 @@ export default class Game {
         this.lineGapX += 5
       }
     }
+
     this.lineGapX = 5
   }
 
@@ -257,5 +262,37 @@ export default class Game {
     return this.columnCeils
   }
 
-  static #drawHints() {}
+  static #drawHints() {
+    const canvas = document.getElementById("canvas")
+    const ctx = canvas.getContext("2d")
+
+    //отрисовываем подсказки для колонок
+    for (let i = 0; i < this.columnCeils.length; i++) {
+      for (let j = 0; j < this.maxColumnLength; j++) {
+        const x =
+          i * this.ceilSize + this.maxRowLength * this.ceilSize + this.lineGapX
+        const y = j * this.ceilSize
+        ctx.strokeRect(x, y, this.ceilSize, this.ceilSize)
+      }
+      if ((i + 1) % 5 == 0) {
+        this.lineGapX += 5
+      }
+    }
+    this.lineGapX = 5
+
+    for (let i = 0; i < this.rowCeils.length; i++) {
+      for (let j = 0; j < this.maxRowLength; j++) {
+        const x = j * this.ceilSize
+
+        const y =
+          i * this.ceilSize + this.maxRowLength * this.ceilSize + this.lineGapY
+        ctx.strokeRect(x, y, this.ceilSize, this.ceilSize)
+      }
+      if ((i + 1) % 5 == 0) {
+        this.lineGapY += 5
+      }
+    }
+    this.lineGapY = 5
+  }
+  //отрисовываем подсказки для строк
 }
