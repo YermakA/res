@@ -273,13 +273,15 @@ export default class Game {
           i * this.ceilSize + this.maxRowLength * this.ceilSize + this.lineGapX
         const y = j * this.ceilSize
         ctx.strokeRect(x, y, this.ceilSize, this.ceilSize)
+        ctx.fillStyle = "#cccccc"
+        ctx.fillRect(x + 1, y + 1, this.ceilSize - 2, this.ceilSize - 2)
       }
       if ((i + 1) % 5 == 0) {
         this.lineGapX += 5
       }
     }
     this.lineGapX = 5
-
+    //отрисовываем подсказки для строк
     for (let i = 0; i < this.rowCeils.length; i++) {
       for (let j = 0; j < this.maxRowLength; j++) {
         const x = j * this.ceilSize
@@ -287,6 +289,8 @@ export default class Game {
         const y =
           i * this.ceilSize + this.maxRowLength * this.ceilSize + this.lineGapY
         ctx.strokeRect(x, y, this.ceilSize, this.ceilSize)
+        ctx.fillStyle = "#cccccc"
+        ctx.fillRect(x + 1, y + 1, this.ceilSize - 2, this.ceilSize - 2)
       }
       if ((i + 1) % 5 == 0) {
         this.lineGapY += 5
