@@ -1,6 +1,6 @@
-import two from "../assets/audio/two.mp3"
-import one from "../assets/audio/one.mp3"
-import three from "../assets/audio/three.mp3"
+import two from "../../assets/audio/two.mp3"
+import one from "../../assets/audio/one.mp3"
+import three from "../../assets/audio/three.mp3"
 export default class Game {
   static gridLength = 0
   static GRIDBuffer
@@ -39,7 +39,6 @@ export default class Game {
     this.canvasWidth =
       (this.gridLength + this.maxRowLength) * this.ceilSize +
       this.lineGapY * Math.round(this.gridLength / this.lineGapY)
-    console.log(this.canvasWidth)
   }
   // Создаёт канвас
   static #createCanvas() {
@@ -124,7 +123,6 @@ export default class Game {
   }
   // Изменяет буфер и клетку на канвасе
   static fillCell(event) {
-    console.log(this.gridLength)
     const canvas = document.getElementById("canvas")
     const left = canvas.getBoundingClientRect().left
     const top = canvas.getBoundingClientRect().top
@@ -175,7 +173,6 @@ export default class Game {
     const top = canvas.getBoundingClientRect().top
     const offsetX = event.clientX - left
     const offsetY = event.clientY - top
-    console.log(offsetX, " ", offsetY)
     const ctx = canvas.getContext("2d")
     for (let i = 0; i < this.gridLength; i++) {
       const y =
@@ -371,6 +368,134 @@ export default class Game {
         this.lineGapY += 5
       }
     }
+    this.lineGapY = 5
+    this.lineGapX = 5
+  }
+  // зачеркнуть подсказку
+  static strokeHints(event) {
+    const canvas = document.getElementById("canvas")
+    const left = canvas.getBoundingClientRect().left
+    const top = canvas.getBoundingClientRect().top
+    const offsetX = event.clientX - left
+    const offsetY = event.clientY - top
+    const ctx = canvas.getContext("2d")
+    console.log(
+      this.maxRowLength * this.ceilSize,
+      this.maxColumnLength * this.ceilSize,
+    )
+    console.log(offsetX, offsetY)
+    if (
+      offsetX > this.maxRowLength * this.ceilSize &&
+      offsetY < this.maxColumnLength * this.ceilSize
+    ) {
+      for (let i = 0; i < this.columnCeils.length; i++) {
+        let numberLoc = this.maxColumnLength - 1
+        for (let j = this.maxColumnLength - 1; j >= 0; j--) {
+          const x =
+            i * this.ceilSize +
+            this.maxRowLength * this.ceilSize +
+            this.lineGapX
+          const y = this.ceilSize * numberLoc
+          if (this.columnCeils[i][j]) {
+            if (
+              offsetX > x &&
+              offsetX < x + this.ceilSize &&
+              offsetY > y &&
+              offsetY < y + this.ceilSize
+            ) {
+              if (typeof this.columnCeils[i][j] == "string") {
+                new Audio(one).play()
+                this.columnCeils[i][j] = Number(this.columnCeils[i][j])
+                ctx.fillStyle = "#cccccc"
+                ctx.fillRect(x + 1, y + 1, this.ceilSize - 2, this.ceilSize - 2)
+                ctx.fillStyle = "black"
+                ctx.font = "bold 14px Arial"
+                ctx.textAlign = "left"
+                ctx.textBaseline = "top"
+                this.columnCeils[i][j] > 9
+                  ? ctx.fillText(this.columnCeils[i][j], x + 2, y + 5)
+                  : ctx.fillText(this.columnCeils[i][j], x + 6, y + 5)
+              } else {
+                new Audio(three).play()
+                this.columnCeils[i][j] = this.columnCeils[i][j].toString()
+                ctx.beginPath()
+                ctx.strokeStyle = "#fff"
+                ctx.lineWidth = 2
+                ctx.moveTo(x + 3, y + 3)
+                ctx.lineTo(x + this.ceilSize - 3, y + this.ceilSize - 3)
+                ctx.stroke()
+                ctx.beginPath()
+                ctx.moveTo(x + 3, y + this.ceilSize - 3)
+                ctx.lineTo(x + this.ceilSize - 3, y + 3)
+                ctx.stroke()
+                ctx.strokeStyle = "#000"
+              }
+            }
+            numberLoc -= 1
+          }
+        }
+        if ((i + 1) % 5 == 0) {
+          this.lineGapX += 5
+        }
+      }
+    } else if (
+      offsetX < this.maxRowLength * this.ceilSize &&
+      offsetY > this.maxColumnLength * this.ceilSize
+    ) {
+      //strings
+      for (let i = 0; i < this.rowCeils.length; i++) {
+        let numberLoc = this.maxRowLength - 1
+        for (let j = this.maxRowLength - 1; j >= 0; j--) {
+          const x = this.ceilSize * numberLoc
+          const y =
+            i * this.ceilSize +
+            this.maxColumnLength * this.ceilSize +
+            this.lineGapY
+
+          if (this.rowCeils[i][j]) {
+            if (
+              offsetX > x &&
+              offsetX < x + this.ceilSize &&
+              offsetY > y &&
+              offsetY < y + this.ceilSize
+            ) {
+              if (typeof this.rowCeils[i][j] == "string") {
+                new Audio(one).play()
+                this.rowCeils[i][j] = Number(this.rowCeils[i][j])
+                ctx.fillStyle = "#cccccc"
+                ctx.fillRect(x + 1, y + 1, this.ceilSize - 2, this.ceilSize - 2)
+                ctx.fillStyle = "black"
+                ctx.font = "bold 14px Arial"
+                ctx.textAlign = "left"
+                ctx.textBaseline = "top"
+                this.rowCeils[i][j] > 9
+                  ? ctx.fillText(this.rowCeils[i][j], x + 2, y + 5)
+                  : ctx.fillText(this.rowCeils[i][j], x + 6, y + 5)
+              } else {
+                new Audio(three).play()
+                this.rowCeils[i][j] = this.rowCeils[i][j].toString()
+                ctx.beginPath()
+                ctx.strokeStyle = "#fff"
+                ctx.lineWidth = 2
+                ctx.moveTo(x + 3, y + 3)
+                ctx.lineTo(x + this.ceilSize - 3, y + this.ceilSize - 3)
+                ctx.stroke()
+                ctx.beginPath()
+                ctx.moveTo(x + 3, y + this.ceilSize - 3)
+                ctx.lineTo(x + this.ceilSize - 3, y + 3)
+                ctx.stroke()
+                ctx.strokeStyle = "#000"
+              }
+            }
+            numberLoc -= 1
+          }
+        }
+        if ((i + 1) % 5 == 0) {
+          this.lineGapY += 5
+        }
+      }
+    }
+
     this.lineGapY = 5
     this.lineGapX = 5
   }

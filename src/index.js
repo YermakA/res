@@ -1,5 +1,5 @@
 import "./scss/index.scss"
-import Game from "./js/Game"
+import Game from "./js/Game/Game"
 
 // [
 //   [1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1],
@@ -48,5 +48,8 @@ document.addEventListener("mousedown", (event) => {
   event.preventDefault()
 
   if (event.button === 0) Game.fillCell(event)
-  if (event.button === 2) Game.strokeCell(event)
+  if (event.button === 2) {
+    Game.strokeCell(event)
+    Game.strokeHints(event)
+  }
 })
