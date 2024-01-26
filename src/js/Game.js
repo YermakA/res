@@ -5,25 +5,14 @@ export default class Game {
   static ceilSize = 20
   static rowCeils = []
   static columnCeils = []
-
+  static canvasWidth = 0
+  static canvasHeight = 0
   static lineGapY = 5
   static lineGapX = 5
   static maxRowLength = 0
   static maxColumnLength = 0
-  // Создаёт канвас
-  static #createCanvas() {
-    const canvas = document.createElement("canvas")
-    canvas.width = 500
-    canvas.height = 500
-    canvas.style.border = "1px solid black"
-    canvas.id = "canvas"
-    document
-      .querySelector("body")
-      .insertAdjacentHTML("beforeend", canvas.outerHTML)
-  }
   // Инициализирует всё необходимое
   static initializeGrid(grid) {
-    this.#createCanvas()
     this.GRID = grid
     this.gridLength = grid.length
     // создаём и заполняем буфер сетки нулями
@@ -31,12 +20,36 @@ export default class Game {
       .fill(0)
       .map(() => Array(this.gridLength).fill(0))
     //получаем подсказки для рисования строк и столбцов
-    this.#setRowsHints()
-    this.#setColumnsHints()
-    this.#drawGrid()
-    this.#drawGaps()
-    this.#drawHints()
+    /*1.*/ this.#setRowsHints()
+    /*2.*/ this.#setColumnsHints()
+    /*2.*/ this.#setCanvasSize()
+    // создаём канвас и рисуем сетку
+    /*3.*/ this.#createCanvas()
+    /*4.*/ this.#drawHints()
+    /*4.*/ this.#drawGrid()
+    /*4.*/ this.#drawGaps()
   }
+  static #setCanvasSize() {
+    this.canvasHeight =
+      (this.gridLength + this.maxColumnLength) * this.ceilSize +
+      this.lineGapX * Math.round(this.gridLength / this.lineGapX)
+    this.canvasWidth =
+      (this.gridLength + this.maxRowLength) * this.ceilSize +
+      this.lineGapY * Math.round(this.gridLength / this.lineGapY)
+    console.log(this.canvasWidth)
+  }
+  // Создаёт канвас
+  static #createCanvas() {
+    const canvas = document.createElement("canvas")
+    canvas.width = this.canvasWidth
+    canvas.height = this.canvasHeight
+    canvas.style.border = "1px solid black"
+    canvas.id = "canvas"
+    document
+      .querySelector("body")
+      .insertAdjacentHTML("beforeend", canvas.outerHTML)
+  }
+
   // Рисует линии между клетками
   static #drawGaps() {
     const canvas = document.getElementById("canvas")
@@ -351,7 +364,6 @@ export default class Game {
         this.lineGapY += 5
       }
     }
-
     this.lineGapY = 5
     this.lineGapX = 5
   }
