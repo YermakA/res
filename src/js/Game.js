@@ -45,9 +45,11 @@ export default class Game {
     const gap = Math.floor(this.gridLength / 5) * 5
     for (let i = 0; i < this.gridLength; i += 5) {
       const x =
-        i * this.ceilSize + this.maxColumnLength * this.ceilSize + this.lineGapY
-
+        i * this.ceilSize + this.maxRowLength * this.ceilSize + this.lineGapY
+      const y =
+        i * this.ceilSize + this.maxColumnLength * this.ceilSize + this.lineGapX
       this.lineGapY += 5
+      this.lineGapX += 5
       ctx.beginPath()
       ctx.moveTo(x - 2, 0)
       ctx.lineTo(
@@ -58,17 +60,18 @@ export default class Game {
       )
       ctx.stroke()
       ctx.beginPath()
-      ctx.moveTo(0, x - 2)
+      ctx.moveTo(0, y - 2)
       ctx.lineTo(
         this.gridLength * this.ceilSize +
-          this.maxColumnLength * this.ceilSize +
+          this.maxRowLength * this.ceilSize +
           gap,
-        x - 2,
+        y - 2,
       )
       ctx.stroke()
     }
     ctx.lineWidth = 1
     this.lineGapY = 5
+    this.lineGapX = 5
   }
   // Рисует сетку
   static #drawGrid() {
@@ -248,8 +251,8 @@ export default class Game {
       this.columnCeils.push(tempArr)
     }
     for (let i = 0; i < this.gridLength; i++) {
-      if (this.maxColumnLength < this.rowCeils[i].length) {
-        this.maxColumnLength = this.rowCeils[i].length
+      if (this.maxColumnLength < this.columnCeils[i].length) {
+        this.maxColumnLength = this.columnCeils[i].length
       }
     }
   }
@@ -267,6 +270,7 @@ export default class Game {
     const ctx = canvas.getContext("2d")
 
     //отрисовываем подсказки для колонок
+    console.log(this.columnCeils)
     for (let i = 0; i < this.columnCeils.length; i++) {
       for (let j = 0; j < this.maxColumnLength; j++) {
         const x =
@@ -275,6 +279,15 @@ export default class Game {
         ctx.strokeRect(x, y, this.ceilSize, this.ceilSize)
         ctx.fillStyle = "#cccccc"
         ctx.fillRect(x + 1, y + 1, this.ceilSize - 2, this.ceilSize - 2)
+        if (this.columnCeils[i][j]) {
+          ctx.fillStyle = "black"
+          ctx.font = "bold 14px Arial"
+          ctx.textAlign = "left"
+          ctx.textBaseline = "top"
+          this.columnCeils[i][j] > 9
+            ? ctx.fillText(this.columnCeils[i][j], x + 2, y + 5)
+            : ctx.fillText(this.columnCeils[i][j], x + 6, y + 5)
+        }
       }
       if ((i + 1) % 5 == 0) {
         this.lineGapX += 5
@@ -287,7 +300,9 @@ export default class Game {
         const x = j * this.ceilSize
 
         const y =
-          i * this.ceilSize + this.maxRowLength * this.ceilSize + this.lineGapY
+          i * this.ceilSize +
+          this.maxColumnLength * this.ceilSize +
+          this.lineGapY
         ctx.strokeRect(x, y, this.ceilSize, this.ceilSize)
         ctx.fillStyle = "#cccccc"
         ctx.fillRect(x + 1, y + 1, this.ceilSize - 2, this.ceilSize - 2)
