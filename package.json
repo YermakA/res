@@ -8,7 +8,7 @@
   "scripts": {
     "clean": "rm dist/bundle.js",
     "dev": "webpack serve --mode development",
-    "prod": "webpack --mode production"
+    "build": "webpack --mode production"
   },
   "devDependencies": {
     "css-loader": "^6.9.1",

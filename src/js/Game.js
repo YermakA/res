@@ -1,3 +1,6 @@
+import two from "../assets/audio/two.mp3"
+import one from "../assets/audio/one.mp3"
+import three from "../assets/audio/three.mp3"
 export default class Game {
   static gridLength = 0
   static GRIDBuffer
@@ -143,10 +146,12 @@ export default class Game {
           if (this.GRIDBuffer[i][j] === 1) {
             this.GRIDBuffer[i][j] = 0
             ctx.fillStyle = "#fff"
+            new Audio(one).play()
             ctx.fillRect(x + 2, y + 2, this.ceilSize - 3, this.ceilSize - 3)
           } else {
             this.GRIDBuffer[i][j] = 1
             ctx.fillStyle = "#000"
+            new Audio(two).play()
             ctx.fillRect(x + 2, y + 2, this.ceilSize - 4, this.ceilSize - 4)
             break
           }
@@ -187,9 +192,11 @@ export default class Game {
           if (this.GRIDBuffer[i][j] === 2) {
             this.GRIDBuffer[i][j] = 0
             ctx.fillStyle = "#fff"
+            new Audio(one).play()
             ctx.fillRect(x + 2, y + 2, this.ceilSize - 3, this.ceilSize - 3)
           } else {
             this.GRIDBuffer[i][j] = 2
+            new Audio(three).play()
             ctx.fillStyle = "#fff"
             ctx.fillRect(x + 2, y + 2, this.ceilSize - 3, this.ceilSize - 3)
             ctx.beginPath()
@@ -367,5 +374,4 @@ export default class Game {
     this.lineGapY = 5
     this.lineGapX = 5
   }
-  //отрисовываем подсказки для строк
 }

@@ -32,9 +32,10 @@ const config = {
         use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
-        test: /\.svg$/,
+        test: /\.(svg|mp3)$/i,
         use: "file-loader",
       },
+
       {
         test: /\.png$/,
         use: [
