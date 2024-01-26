@@ -198,7 +198,7 @@ export default class Game {
         this.lineGapX += 5
       }
     }
-
+    this.lineGapY = 5
     this.lineGapX = 5
   }
 
@@ -270,7 +270,6 @@ export default class Game {
     const ctx = canvas.getContext("2d")
 
     //отрисовываем подсказки для колонок
-    console.log(this.columnCeils)
     for (let i = 0; i < this.columnCeils.length; i++) {
       for (let j = 0; j < this.maxColumnLength; j++) {
         const x =
@@ -279,6 +278,20 @@ export default class Game {
         ctx.strokeRect(x, y, this.ceilSize, this.ceilSize)
         ctx.fillStyle = "#cccccc"
         ctx.fillRect(x + 1, y + 1, this.ceilSize - 2, this.ceilSize - 2)
+      }
+      if ((i + 1) % 5 == 0) {
+        this.lineGapX += 5
+      }
+    }
+    this.lineGapX = 5
+    // отрисовываем числа для колонок
+    for (let i = 0; i < this.columnCeils.length; i++) {
+      let numberLoc = this.maxColumnLength - 1
+      for (let j = this.maxColumnLength - 1; j >= 0; j--) {
+        const x =
+          i * this.ceilSize + this.maxRowLength * this.ceilSize + this.lineGapX
+        const y = this.ceilSize * numberLoc
+
         if (this.columnCeils[i][j]) {
           ctx.fillStyle = "black"
           ctx.font = "bold 14px Arial"
@@ -287,13 +300,14 @@ export default class Game {
           this.columnCeils[i][j] > 9
             ? ctx.fillText(this.columnCeils[i][j], x + 2, y + 5)
             : ctx.fillText(this.columnCeils[i][j], x + 6, y + 5)
+          numberLoc -= 1
         }
       }
       if ((i + 1) % 5 == 0) {
         this.lineGapX += 5
       }
     }
-    this.lineGapX = 5
+
     //отрисовываем подсказки для строк
     for (let i = 0; i < this.rowCeils.length; i++) {
       for (let j = 0; j < this.maxRowLength; j++) {
@@ -311,7 +325,35 @@ export default class Game {
         this.lineGapY += 5
       }
     }
+    // numbers for rows
     this.lineGapY = 5
+    for (let i = 0; i < this.rowCeils.length; i++) {
+      let numberLoc = this.maxRowLength - 1
+      for (let j = this.maxRowLength - 1; j >= 0; j--) {
+        const x = this.ceilSize * numberLoc
+        const y =
+          i * this.ceilSize +
+          this.maxColumnLength * this.ceilSize +
+          this.lineGapY
+
+        if (this.rowCeils[i][j]) {
+          ctx.fillStyle = "black"
+          ctx.font = "bold 14px Arial"
+          ctx.textAlign = "left"
+          ctx.textBaseline = "top"
+          this.rowCeils[i][j] > 9
+            ? ctx.fillText(this.rowCeils[i][j], x + 2, y + 5)
+            : ctx.fillText(this.rowCeils[i][j], x + 6, y + 5)
+          numberLoc -= 1
+        }
+      }
+      if ((i + 1) % 5 == 0) {
+        this.lineGapY += 5
+      }
+    }
+
+    this.lineGapY = 5
+    this.lineGapX = 5
   }
   //отрисовываем подсказки для строк
 }
