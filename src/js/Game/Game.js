@@ -2,6 +2,7 @@ import two from "../../assets/audio/two.mp3"
 import one from "../../assets/audio/one.mp3"
 import three from "../../assets/audio/three.mp3"
 export default class Game {
+  static actionsStack = []
   static gridLength = 0
   static GRIDBuffer
   static GRID
@@ -129,6 +130,7 @@ export default class Game {
     const offsetX = event.clientX - left
     const offsetY = event.clientY - top
     const ctx = canvas.getContext("2d")
+    let signal = -1
     for (let i = 0; i < this.gridLength; i++) {
       const y =
         i * this.ceilSize + this.maxColumnLength * this.ceilSize + this.lineGapX
@@ -146,12 +148,13 @@ export default class Game {
             ctx.fillStyle = "#fff"
             new Audio(one).play()
             ctx.fillRect(x + 2, y + 2, this.ceilSize - 3, this.ceilSize - 3)
+            signal = 2
           } else {
             this.GRIDBuffer[i][j] = 1
             ctx.fillStyle = "#000"
             new Audio(two).play()
             ctx.fillRect(x + 2, y + 2, this.ceilSize - 4, this.ceilSize - 4)
-            break
+            signal = 2
           }
         }
         if ((j + 1) % 5 == 0) {
@@ -165,6 +168,7 @@ export default class Game {
     }
 
     this.lineGapX = 5
+    return signal
   }
 
   static strokeCell(event) {
@@ -174,6 +178,7 @@ export default class Game {
     const offsetX = event.clientX - left
     const offsetY = event.clientY - top
     const ctx = canvas.getContext("2d")
+    let signal = -1
     for (let i = 0; i < this.gridLength; i++) {
       const y =
         i * this.ceilSize + this.maxColumnLength * this.ceilSize + this.lineGapX
@@ -191,6 +196,7 @@ export default class Game {
             ctx.fillStyle = "#fff"
             new Audio(one).play()
             ctx.fillRect(x + 2, y + 2, this.ceilSize - 3, this.ceilSize - 3)
+            signal = 0
           } else {
             this.GRIDBuffer[i][j] = 2
             new Audio(three).play()
@@ -204,6 +210,7 @@ export default class Game {
             ctx.moveTo(x + 3, y + this.ceilSize - 3)
             ctx.lineTo(x + this.ceilSize - 3, y + 3)
             ctx.stroke()
+            signal = 0
           }
         }
         if ((j + 1) % 5 == 0) {
@@ -217,6 +224,7 @@ export default class Game {
     }
     this.lineGapY = 5
     this.lineGapX = 5
+    return signal
   }
 
   static #setRowsHints() {
@@ -379,11 +387,7 @@ export default class Game {
     const offsetX = event.clientX - left
     const offsetY = event.clientY - top
     const ctx = canvas.getContext("2d")
-    console.log(
-      this.maxRowLength * this.ceilSize,
-      this.maxColumnLength * this.ceilSize,
-    )
-    console.log(offsetX, offsetY)
+    let signal = -1
     if (
       offsetX > this.maxRowLength * this.ceilSize &&
       offsetY < this.maxColumnLength * this.ceilSize
@@ -415,6 +419,7 @@ export default class Game {
                 this.columnCeils[i][j] > 9
                   ? ctx.fillText(this.columnCeils[i][j], x + 2, y + 5)
                   : ctx.fillText(this.columnCeils[i][j], x + 6, y + 5)
+                signal = 1
               } else {
                 new Audio(three).play()
                 this.columnCeils[i][j] = this.columnCeils[i][j].toString()
@@ -429,6 +434,7 @@ export default class Game {
                 ctx.lineTo(x + this.ceilSize - 3, y + 3)
                 ctx.stroke()
                 ctx.strokeStyle = "#000"
+                signal = 1
               }
             }
             numberLoc -= 1
@@ -471,6 +477,7 @@ export default class Game {
                 this.rowCeils[i][j] > 9
                   ? ctx.fillText(this.rowCeils[i][j], x + 2, y + 5)
                   : ctx.fillText(this.rowCeils[i][j], x + 6, y + 5)
+                signal = 1
               } else {
                 new Audio(three).play()
                 this.rowCeils[i][j] = this.rowCeils[i][j].toString()
@@ -485,6 +492,7 @@ export default class Game {
                 ctx.lineTo(x + this.ceilSize - 3, y + 3)
                 ctx.stroke()
                 ctx.strokeStyle = "#000"
+                signal = 1
               }
             }
             numberLoc -= 1
@@ -498,5 +506,19 @@ export default class Game {
 
     this.lineGapY = 5
     this.lineGapX = 5
+    return signal
+  }
+
+  static addActionIntoStack(func, event) {
+    const { clientX, clientY } = event
+    this.actionsStack.push([func, { clientX, clientY }])
+  }
+
+  static prevState() {
+    const prev = this.actionsStack.shift()
+
+    if (prev) {
+      prev[0].call(Game, prev[1])
+    }
   }
 }

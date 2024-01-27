@@ -21,9 +21,9 @@ import Game from "./js/Game/Game"
 ;[
   [1, 1, 0, 1, 1],
   [1, 1, 0, 1, 1],
-  [0, 1, 1, 1, 1],
-  [0, 0, 1, 1, 1],
-  [0, 0, 0, 0, 1],
+  [1, 1, 1, 1, 1],
+  [1, 1, 0, 1, 1],
+  [1, 1, 0, 1, 1],
 ]
 
 Game.initializeGrid([
@@ -46,10 +46,19 @@ Game.initializeGrid([
 
 document.addEventListener("mousedown", (event) => {
   event.preventDefault()
-
-  if (event.button === 0) Game.fillCell(event)
-  if (event.button === 2) {
-    Game.strokeCell(event)
-    Game.strokeHints(event)
+  let signal = -1
+  if (event.button === 0) {
+    signal = Game.fillCell(event)
+    signal == 2 ? Game.addActionIntoStack(Game.fillCell, event) : null
   }
+  if (event.button === 2) {
+    signal = Game.strokeCell(event)
+    signal == 0 ? Game.addActionIntoStack(Game.strokeCell, event) : null
+    signal = Game.strokeHints(event)
+    signal == 1 ? Game.addActionIntoStack(Game.strokeHints, event) : null
+  }
+})
+
+document.addEventListener("keydown", (event) => {
+  if (event.code == "KeyZ" && (event.ctrlKey || event.metaKey)) Game.prevState()
 })
