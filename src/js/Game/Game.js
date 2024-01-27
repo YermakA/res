@@ -558,4 +558,29 @@ export default class Game {
     this.#drawGrid()
     this.#drawGaps()
   }
+
+  static continueGame() {
+    const canvas = document.getElementById("canvas")
+    const ctx = canvas.getContext("2d")
+    for (let i = 0; i < this.gridLength; i++) {
+      const y =
+        i * this.ceilSize + this.maxColumnLength * this.ceilSize + this.lineGapX
+      for (let j = 0; j < this.gridLength; j++) {
+        const x =
+          j * this.ceilSize + this.maxRowLength * this.ceilSize + this.lineGapY
+        if (this.GRIDBuffer[i][j] === 1) {
+          ctx.fillStyle = "#000"
+          ctx.fillRect(x + 2, y + 2, this.ceilSize - 4, this.ceilSize - 4)
+        }
+        if ((j + 1) % 5 == 0) {
+          this.lineGapY += 5
+        }
+      }
+      this.lineGapY = 5
+      if ((i + 1) % 5 == 0) {
+        this.lineGapX += 5
+      }
+    }
+    this.lineGapX = 5
+  }
 }
