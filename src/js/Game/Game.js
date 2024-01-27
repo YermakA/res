@@ -32,6 +32,15 @@ export default class Game {
     /*4.*/ this.#drawHints()
     /*4.*/ this.#drawGrid()
     /*4.*/ this.#drawGaps()
+    // убирает действие правой кнопки мыши по умолчанию
+    const canvas = document.getElementById("canvas")
+    canvas.addEventListener(
+      "contextmenu",
+      (event) => {
+        event.preventDefault()
+      },
+      false,
+    )
   }
   static #setCanvasSize() {
     this.canvasHeight =
@@ -92,14 +101,6 @@ export default class Game {
   // Рисует сетку
   static #drawGrid() {
     const canvas = document.getElementById("canvas")
-    // убирает действие правой кнопки мыши по умолчанию
-    canvas.addEventListener(
-      "contextmenu",
-      (event) => {
-        event.preventDefault()
-      },
-      false,
-    )
     const ctx = canvas.getContext("2d")
 
     for (let i = 0; i < this.gridLength; i++) {
@@ -110,6 +111,8 @@ export default class Game {
         const x =
           j * this.ceilSize + this.maxRowLength * this.ceilSize + this.lineGapY
         ctx.strokeRect(x, y, this.ceilSize, this.ceilSize)
+        ctx.fillStyle = "#fff"
+        ctx.fillRect(x + 2, y + 2, this.ceilSize - 3, this.ceilSize - 3)
         if ((j + 1) % 5 == 0) {
           this.lineGapY += 5
         }
@@ -515,7 +518,7 @@ export default class Game {
   }
 
   static prevState() {
-    const prev = this.actionsStack.shift()
+    const prev = this.actionsStack.pop()
 
     if (prev) {
       prev[0].call(Game, prev[1])
@@ -545,5 +548,14 @@ export default class Game {
       }
     }
     this.lineGapX = 5
+  }
+
+  static resetGame() {
+    this.GRIDBuffer = Array(this.gridLength)
+      .fill(0)
+      .map(() => Array(this.gridLength).fill(0))
+    this.#drawHints()
+    this.#drawGrid()
+    this.#drawGaps()
   }
 }
