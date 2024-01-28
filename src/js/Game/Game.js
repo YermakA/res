@@ -231,6 +231,7 @@ export default class Game {
   }
 
   static #setRowsHints() {
+    this.rowCeils = []
     for (let i = 0; i < this.gridLength; i++) {
       const tempArr = []
       let count = 0
@@ -259,6 +260,7 @@ export default class Game {
   }
 
   static #setColumnsHints() {
+    this.columnCeils = []
     for (let j = 0; j < this.gridLength; j++) {
       const tempArr = []
       let count = 0
@@ -284,11 +286,11 @@ export default class Game {
       }
     }
   }
-
+  // save call
   static getRowsHints() {
     return this.rowCeils
   }
-
+  // save call
   static getColumnsHints() {
     return this.columnCeils
   }
@@ -557,6 +559,8 @@ export default class Game {
     this.#drawHints()
     this.#drawGrid()
     this.#drawGaps()
+    this.#setColumnsHints()
+    this.#setRowsHints()
   }
 
   static continueGame() {
@@ -582,10 +586,112 @@ export default class Game {
       }
     }
     this.lineGapX = 5
-  }
 
+    //columns
+    for (let i = 0; i < this.columnCeils.length; i++) {
+      let numberLoc = this.maxColumnLength - 1
+      for (let j = this.maxColumnLength - 1; j >= 0; j--) {
+        const x =
+          i * this.ceilSize + this.maxRowLength * this.ceilSize + this.lineGapX
+        const y = this.ceilSize * numberLoc
+        if (this.columnCeils[i][j]) {
+          if (typeof this.columnCeils[i][j] == "string") {
+            ctx.beginPath()
+            ctx.strokeStyle = "#fff"
+            ctx.lineWidth = 2
+            ctx.moveTo(x + 3, y + 3)
+            ctx.lineTo(x + this.ceilSize - 3, y + this.ceilSize - 3)
+            ctx.stroke()
+            ctx.beginPath()
+            ctx.moveTo(x + 3, y + this.ceilSize - 3)
+            ctx.lineTo(x + this.ceilSize - 3, y + 3)
+            ctx.stroke()
+            ctx.strokeStyle = "#000"
+          } else {
+            ctx.fillStyle = "#cccccc"
+            ctx.fillRect(x + 1, y + 1, this.ceilSize - 2, this.ceilSize - 2)
+            ctx.fillStyle = "black"
+            ctx.font = "bold 14px Arial"
+            ctx.textAlign = "left"
+            ctx.textBaseline = "top"
+            this.columnCeils[i][j] > 9
+              ? ctx.fillText(this.columnCeils[i][j], x + 2, y + 5)
+              : ctx.fillText(this.columnCeils[i][j], x + 6, y + 5)
+          }
+
+          numberLoc -= 1
+        }
+      }
+      if ((i + 1) % 5 == 0) {
+        this.lineGapX += 5
+      }
+    }
+
+    //strings
+    for (let i = 0; i < this.rowCeils.length; i++) {
+      let numberLoc = this.maxRowLength - 1
+      for (let j = this.maxRowLength - 1; j >= 0; j--) {
+        const x = this.ceilSize * numberLoc
+        const y =
+          i * this.ceilSize +
+          this.maxColumnLength * this.ceilSize +
+          this.lineGapY
+
+        if (this.rowCeils[i][j]) {
+          if (typeof this.rowCeils[i][j] == "string") {
+            ctx.beginPath()
+            ctx.strokeStyle = "#fff"
+            ctx.lineWidth = 2
+            ctx.moveTo(x + 3, y + 3)
+            ctx.lineTo(x + this.ceilSize - 3, y + this.ceilSize - 3)
+            ctx.stroke()
+            ctx.beginPath()
+            ctx.moveTo(x + 3, y + this.ceilSize - 3)
+            ctx.lineTo(x + this.ceilSize - 3, y + 3)
+            ctx.stroke()
+            ctx.strokeStyle = "#000"
+          } else {
+            ctx.fillStyle = "#cccccc"
+            ctx.fillRect(x + 1, y + 1, this.ceilSize - 2, this.ceilSize - 2)
+            ctx.fillStyle = "black"
+            ctx.font = "bold 14px Arial"
+            ctx.textAlign = "left"
+            ctx.textBaseline = "top"
+            this.rowCeils[i][j] > 9
+              ? ctx.fillText(this.rowCeils[i][j], x + 2, y + 5)
+              : ctx.fillText(this.rowCeils[i][j], x + 6, y + 5)
+          }
+          numberLoc -= 1
+        }
+      }
+      if ((i + 1) % 5 == 0) {
+        this.lineGapY += 5
+      }
+    }
+    this.lineGapX = 5
+    this.lineGapY = 5
+  }
+  // save call
   static getGridBuffer() {
     return this.GRIDBuffer
+  }
+  // save call
+  static getGrid() {
+    return this.GRID
+  }
+  //continue call
+  static setGrid(grid) {
+    this.GRID = grid
+  }
+  //continue call
+  static setGridBuffer(GRIDBuffer) {
+    this.GRIDBuffer = GRIDBuffer
+  } //continue call
+  static setRowsHints(rows) {
+    this.rowCeils = rows
+  } //continue call
+  static setColumnsHints(columns) {
+    this.columnCeils = columns
   }
   static deleteGrid() {
     const canvas = document.getElementById("canvas")

@@ -5,7 +5,7 @@ import createElements from "./js/create-elements"
 import Game from "./js/Game/Game"
 import ref from "./js/ref"
 import timer from "./js/timer"
-
+const savedGame = ref({})
 const time = ref(0)
 let timerInterval
 createElements()
@@ -53,4 +53,27 @@ document.addEventListener("keydown", (event) => {
   clearInterval(timerInterval)
 })
 
+const resetBtn = document.querySelector(".reset")
+resetBtn.addEventListener("click", () => Game.resetGame())
+const decisionBtn = document.querySelector(".decision")
+decisionBtn.addEventListener("click", () => Game.drawDecision())
+const saveBtn = document.querySelector(".save")
+saveBtn.addEventListener("click", () => {
+  savedGame.value.GRID = Game.getGrid()
+  savedGame.value.GRIDBuffer = Game.getGridBuffer()
+  savedGame.value.rowsHints = Game.getRowsHints()
+  savedGame.value.columnsHints = Game.getColumnsHints()
+})
+const continueBtn = document.querySelector(".continue")
+continueBtn.addEventListener("click", () => {
+  console.log(savedGame.value)
+  if (JSON.stringify(savedGame.value) != "{}") {
+    Game.resetGame()
+    Game.setGrid(savedGame.value.GRID)
+    Game.setGridBuffer(savedGame.value.GRIDBuffer)
+    Game.setRowsHints(savedGame.value.rowsHints)
+    Game.setColumnsHints(savedGame.value.columnsHints)
+    Game.continueGame()
+  }
+})
 export { time }
