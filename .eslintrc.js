@@ -2,7 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    node: true
+    node: true,
   },
   extends: "eslint:recommended",
   overrides: [
@@ -20,5 +20,8 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  rules: { semi: ["error", "never"], quotes: ["error", "double"] },
+  rules: {
+    semi: ["error", "never"],
+    quotes: ["error", "double", { avoidEscape: true }],
+  },
 }

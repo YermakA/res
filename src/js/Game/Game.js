@@ -58,7 +58,7 @@ export default class Game {
     canvas.style.border = "1px solid black"
     canvas.id = "canvas"
     document
-      .querySelector("body")
+      .querySelector(".game")
       .insertAdjacentHTML("beforeend", canvas.outerHTML)
   }
 
@@ -525,7 +525,7 @@ export default class Game {
     }
   }
 
-  static getDecision() {
+  static drawDecision() {
     const canvas = document.getElementById("canvas")
     const ctx = canvas.getContext("2d")
     for (let i = 0; i < this.gridLength; i++) {
@@ -582,5 +582,13 @@ export default class Game {
       }
     }
     this.lineGapX = 5
+  }
+
+  static getGridBuffer() {
+    return this.GRIDBuffer
+  }
+  static deleteGrid() {
+    const canvas = document.getElementById("canvas")
+    canvas.remove()
   }
 }
