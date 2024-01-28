@@ -27,24 +27,26 @@ Game.initializeGrid([
   [0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1],
   [0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1],
 ])
+const canvas = document.getElementById("canvas")
 
-document.addEventListener("mousedown", (event) => {
+canvas.addEventListener("mousedown", (event) => {
   event.preventDefault()
   let signal = -1
 
   if (event.button === 0) {
     signal = Game.fillCell(event)
     signal == 2 ? Game.addActionIntoStack(Game.fillCell, event) : null
-    if (go.value && signal == 2) {
-      timerInterval = setInterval(() => timer(time), 1000)
-      go.value = false
-    }
   }
   if (event.button === 2) {
-    signal = Game.strokeCell(event)
-    signal == 0 ? Game.addActionIntoStack(Game.strokeCell, event) : null
     signal = Game.strokeHints(event)
     signal == 1 ? Game.addActionIntoStack(Game.strokeHints, event) : null
+    signal = Game.strokeCell(event)
+    signal == 0 ? Game.addActionIntoStack(Game.strokeCell, event) : null
+  }
+
+  if (go.value && (signal == 0 || signal == 2)) {
+    timerInterval = setInterval(() => timer(time), 1000)
+    go.value = false
   }
 })
 
@@ -64,9 +66,9 @@ saveBtn.addEventListener("click", () => {
   savedGame.value.rowsHints = Game.getRowsHints()
   savedGame.value.columnsHints = Game.getColumnsHints()
 })
+// рисует на канвасе состояние после кнопки save game
 const continueBtn = document.querySelector(".continue")
 continueBtn.addEventListener("click", () => {
-  console.log(savedGame.value)
   if (JSON.stringify(savedGame.value) != "{}") {
     Game.resetGame()
     Game.setGrid(savedGame.value.GRID)
@@ -76,4 +78,7 @@ continueBtn.addEventListener("click", () => {
     Game.continueGame()
   }
 })
+
+// const easy = document.querySelector("#easy")
+// easy.insertAdjacentHTML("beforeend", '<option value="easy">Easy</option>')
 export { time }

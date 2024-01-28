@@ -21,4 +21,18 @@ export default function createELements() {
     "beforeend",
     '<button class="continue">Continue game</button>',
   )
+  optionsSection.insertAdjacentHTML(
+    "beforeend",
+    `
+    <label>Choose level: </label>
+    <select class="level">
+      <optgroup id="easy"  label="easy levels">
+      </optgroup>
+      <optgroup  id="normal"  label="normal levels">
+      </optgroup>
+      <optgroup id="hard" label="hard levels">
+      </optgroup>
+    </select>
+    `,
+  )
 }
