@@ -1,7 +1,7 @@
 @import "./game-section.scss";
 @import "./options-section.scss";
 @import "./timer.scss";
-
+@import "./modal.scss";
 * {
   margin: 0;
   box-sizing: border-box;
@@ -12,5 +12,7 @@
 body{
   display: flex;
   padding-top: 50px;
-    padding-left: 50px;
+
+    flex-direction: column-reverse;
+    align-items: center;
 } 

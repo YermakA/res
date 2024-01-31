@@ -14,7 +14,7 @@ let countGrid = 0
 const firtEasyLevel = Math.round(Math.random() * 4)
 const time = ref(0)
 const go = ref(true)
-
+let randomVal = -1
 let timerInterval
 createElements()
 
@@ -137,7 +137,9 @@ const randomBtn = document.querySelector(".random")
 randomBtn.addEventListener("click", () => {
   decision = false
   const select = document.querySelector("select.level")
-  const randomNumber = Math.round(Math.random() * 14)
+  let randomNumber = Math.round(Math.random() * 14)
+  if (randomVal === randomNumber)
+    randomNumber = Math.round((Math.random() * 14) / 2)
   let gameValue
   for (let i = 0; i < select.options.length; i++) {
     if (i === randomNumber) {

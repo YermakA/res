@@ -5,6 +5,9 @@ export default function checkVictory(GRID, GRIDBuffer) {
       if (GRID[i][j] === 1 && GRIDBuffer[i][j] === 1) {
         count++
       }
+      if (GRID[i][j] === 0 && GRIDBuffer[i][j] === 1) {
+        count -= 1
+      }
     }
   }
   return count
