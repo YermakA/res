@@ -167,6 +167,7 @@ randomBtn.addEventListener("click", () => {
 const selectElement = document.querySelector(".level")
 //change level
 selectElement.addEventListener("change", (event) => {
+  decision = false
   for (const key in levels) {
     for (let i = 0; i < levels[key].levels.length; i++) {
       if (levels[key].levels[i][0].name === event.target.value) {
