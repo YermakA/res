@@ -21,7 +21,11 @@ export default function createELements() {
   )
   optionsSection.insertAdjacentHTML(
     "beforeend",
-    '<button class="continue" >Продолжить игру</button>',
+    '<button class="continue" >Продолжить последнюю игру</button>',
+  )
+  optionsSection.insertAdjacentHTML(
+    "beforeend",
+    '<button class="random" >Случайная игра</button>',
   )
   optionsSection.insertAdjacentHTML(
     "beforeend",

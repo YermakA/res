@@ -5,16 +5,16 @@ import getCountGridValues from "./js/Game/getCountGridValues"
 import checkVictory from "./js/Game/checkVictory"
 import Game from "./js/Game/Game"
 import ref from "./js/ref"
+import showModalVictory from "./js/Game/showModalVictory"
 import timer from "./js/timer"
 const savedGame = ref({})
 let count = 0
+let decision = false
 let countGrid = 0
 const firtEasyLevel = Math.round(Math.random() * 4)
 const time = ref(0)
 const go = ref(true)
-if (localStorage.getItem("savedGame")) {
-  savedGame.value = JSON.parse(localStorage.getItem("savedGame"))
-}
+
 let timerInterval
 createElements()
 
@@ -43,7 +43,10 @@ function onClickCanvas(event) {
   }
 
   count = checkVictory(Game.getGrid(), Game.getGridBuffer())
-  if (count == countGrid) console.log("victory")
+  if (count == countGrid) {
+    showModalVictory(time)
+    clearInterval(timerInterval)
+  }
 }
 
 function keyDownCtrlZ(event) {
@@ -55,14 +58,35 @@ document.addEventListener("keydown", (event) => keyDownCtrlZ(event))
 
 const resetBtn = document.querySelector(".reset")
 resetBtn.addEventListener("click", () => {
-  Game.resetGame()
+  decision = false
+  const GRID = Game.getGrid()
+  Game.deleteGrid()
+  Game.initializeGrid(GRID)
+  const canvas = document.getElementById("canvas")
+  canvas.addEventListener("mousedown", (e) => onClickCanvas(e))
   time.value = -1
   clearInterval(timerInterval)
   timer(time)
   go.value = true
 })
 const decisionBtn = document.querySelector(".decision")
-decisionBtn.addEventListener("click", () => Game.drawDecision())
+
+decisionBtn.addEventListener("click", () => {
+  if (!decision) {
+    const GRID = Game.getGrid()
+    Game.deleteGrid()
+    Game.initializeGrid(GRID)
+    Game.drawDecision()
+    decision = true
+  } else {
+    const GRID = Game.getGrid()
+    Game.deleteGrid()
+    Game.initializeGrid(GRID)
+    const canvas = document.getElementById("canvas")
+    canvas.addEventListener("mousedown", (e) => onClickCanvas(e))
+    decision = false
+  }
+})
 //сохраняет игру
 const saveBtn = document.querySelector(".save")
 saveBtn.addEventListener("click", () => {
@@ -80,7 +104,9 @@ saveBtn.addEventListener("click", () => {
 // рисует на канвасе состояние после нажатия кнопки save game
 const continueBtn = document.querySelector(".continue")
 continueBtn.addEventListener("click", () => {
-  if (JSON.stringify(savedGame.value) != "{}") {
+  decision = false
+  if (localStorage.getItem("savedGame")) {
+    savedGame.value = JSON.parse(localStorage.getItem("savedGame"))
     Game.deleteGrid()
     Game.initializeGrid(savedGame.value.GRID)
     Game.setGridBuffer(savedGame.value.GRIDBuffer)
@@ -93,6 +119,7 @@ continueBtn.addEventListener("click", () => {
     timer(time)
     clearInterval(timerInterval)
     go.value = true
+
     const canvas = document.getElementById("canvas")
     canvas.addEventListener("mousedown", (e) => onClickCanvas(e))
 
@@ -103,6 +130,36 @@ continueBtn.addEventListener("click", () => {
     for (let i = 0; i < select.options.length; i++) {
       if (select.options[i].value === selectElement.value)
         select.options.selectedIndex = i
+    }
+  }
+})
+const randomBtn = document.querySelector(".random")
+randomBtn.addEventListener("click", () => {
+  decision = false
+  const select = document.querySelector("select.level")
+  const randomNumber = Math.round(Math.random() * 14)
+  let gameValue
+  for (let i = 0; i < select.options.length; i++) {
+    if (i === randomNumber) {
+      select.options.selectedIndex = randomNumber
+      gameValue = select.options[randomNumber].value
+    }
+  }
+
+  for (const key in levels) {
+    for (let i = 0; i < levels[key].levels.length; i++) {
+      if (levels[key].levels[i][0].name === gameValue) {
+        Game.deleteGrid()
+        Game.initializeGrid(levels[key].levels[i][1])
+        const canvas = document.getElementById("canvas")
+        canvas.addEventListener("mousedown", (e) => onClickCanvas(e))
+        clearInterval(timerInterval)
+        go.value = true
+        time.value = -1
+        timer(time)
+        countGrid = getCountGridValues(levels[key].levels[i][1])
+        count = 0
+      }
     }
   }
 })

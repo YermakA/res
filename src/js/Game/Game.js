@@ -288,11 +288,11 @@ export default class Game {
   }
   // save call
   static getRowsHints() {
-    return this.rowCeils
+    return JSON.parse(JSON.stringify(this.rowCeils))
   }
   // save call
   static getColumnsHints() {
-    return this.columnCeils
+    return JSON.parse(JSON.stringify(this.columnCeils))
   }
 
   static #drawHints() {
@@ -673,11 +673,11 @@ export default class Game {
   }
   // save call
   static getGridBuffer() {
-    return this.GRIDBuffer
+    return JSON.parse(JSON.stringify(this.GRIDBuffer))
   }
   // save call
   static getGrid() {
-    return this.GRID
+    return JSON.parse(JSON.stringify(this.GRID))
   }
   //continue call
   static setGrid(grid) {
