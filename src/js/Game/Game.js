@@ -695,6 +695,16 @@ export default class Game {
   }
   static deleteGrid() {
     const canvas = document.getElementById("canvas")
+    this.actionsStack = []
+    this.gridLength = 0
+    this.rowCeils = []
+    this.columnCeils = []
+    this.canvasWidth = 0
+    this.canvasHeight = 0
+    this.lineGapY = 5
+    this.lineGapX = 5
+    this.maxRowLength = 0
+    this.maxColumnLength = 0
     canvas.remove()
   }
 }
