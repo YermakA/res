@@ -7,7 +7,7 @@ export default function createELements() {
     "beforeend",
     `
     <header class="header">
-    <button class="change-theme">
+    <button class="change-theme lightTheme-br">
       <svg
       class="circle-svg"
       width="70.000000" height="70.000000" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -66,7 +66,10 @@ export default function createELements() {
   const gameSection = document.querySelector(".game")
   gameSection.insertAdjacentHTML("beforeend", "<div class='game-field'></div>")
   const gameField = document.querySelector(".game-field")
-  gameField.insertAdjacentHTML("afterbegin", '<div class="timer">00:00</div>')
+  gameField.insertAdjacentHTML(
+    "afterbegin",
+    '<div class="timer lightTheme-br">00:00</div>',
+  )
   gameSection.insertAdjacentHTML(
     "beforeend",
     `<aside class="aside">

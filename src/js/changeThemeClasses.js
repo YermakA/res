@@ -1,0 +1,33 @@
+export default function changeThemeClasses() {
+  const options = document.querySelector(".options")
+  options.classList.toggle("darkTheme-options")
+  options.classList.toggle("lightTheme-options")
+  const btns = document.querySelectorAll(".btn")
+  for (const btn of btns) {
+    btn.classList.toggle("darkTheme-font-color")
+    btn.classList.toggle("lightTheme-hover-color")
+    btn.classList.toggle("darkTheme-hover-color")
+  }
+
+  const level = document.querySelector(".level")
+  level.classList.toggle("darkTheme-font-color")
+  level.classList.toggle("lightTheme-hover-color")
+  level.classList.toggle("darkTheme-hover-color")
+  const label = document.querySelector(".level-label")
+  label.classList.toggle("darkTheme-label-color")
+  const timer = document.querySelector(".timer")
+  timer.classList.toggle("darkTheme-font-color")
+  timer.classList.toggle("lightTheme-br")
+  timer.classList.toggle("darkTheme-br")
+  const records = document.querySelector(".records")
+  records.classList.toggle("darkTheme-font-color")
+  records.classList.toggle("lightTheme-bg-records")
+  records.classList.toggle("darkTheme-bg-records")
+  const changeTheme = document.querySelector(".change-theme")
+  changeTheme.classList.toggle("darkTheme-br")
+  changeTheme.classList.toggle("lightTheme-br")
+  const body = document.querySelector("body")
+  body.classList.toggle("darkTheme-background-color")
+  const title = document.querySelector(".title")
+  title.classList.toggle("darkTheme-font-color")
+}

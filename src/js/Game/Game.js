@@ -15,6 +15,9 @@ export default class Game {
   static lineGapX = 5
   static maxRowLength = 0
   static maxColumnLength = 0
+  static colorOne = "#000"
+  static colorTwo = "#fff"
+  static colorThree = "#cccccc"
   // Инициализирует всё необходимое
   static initializeGrid(grid) {
     this.GRID = grid
@@ -55,7 +58,7 @@ export default class Game {
     const canvas = document.createElement("canvas")
     canvas.width = this.canvasWidth
     canvas.height = this.canvasHeight
-    canvas.style.border = "1px solid black"
+    canvas.style.border = `1px solid ${this.colorOne}`
     canvas.id = "canvas"
     document
       .querySelector(".game-field")
@@ -75,6 +78,7 @@ export default class Game {
         i * this.ceilSize + this.maxColumnLength * this.ceilSize + this.lineGapX
       this.lineGapY += 5
       this.lineGapX += 5
+      ctx.strokeStyle = `${this.colorOne}`
       ctx.beginPath()
       ctx.moveTo(x - 2, 0)
       ctx.lineTo(
@@ -107,11 +111,11 @@ export default class Game {
       const y =
         i * this.ceilSize + this.maxColumnLength * this.ceilSize + this.lineGapX
       for (let j = 0; j < this.gridLength; j++) {
-        ctx.strokeStyle = "#000"
+        ctx.strokeStyle = this.colorOne
         const x =
           j * this.ceilSize + this.maxRowLength * this.ceilSize + this.lineGapY
         ctx.strokeRect(x, y, this.ceilSize, this.ceilSize)
-        ctx.fillStyle = "#fff"
+        ctx.fillStyle = this.colorTwo
         ctx.fillRect(x + 2, y + 2, this.ceilSize - 3, this.ceilSize - 3)
         if ((j + 1) % 5 == 0) {
           this.lineGapY += 5
@@ -148,13 +152,13 @@ export default class Game {
         ) {
           if (this.GRIDBuffer[i][j] === 1) {
             this.GRIDBuffer[i][j] = 0
-            ctx.fillStyle = "#fff"
+            ctx.fillStyle = this.colorTwo
             new Audio(one).play()
             ctx.fillRect(x + 2, y + 2, this.ceilSize - 3, this.ceilSize - 3)
             signal = 2
           } else {
             this.GRIDBuffer[i][j] = 1
-            ctx.fillStyle = "#000"
+            ctx.fillStyle = this.colorOne
             new Audio(two).play()
             ctx.fillRect(x + 2, y + 2, this.ceilSize - 4, this.ceilSize - 4)
             signal = 2
@@ -196,14 +200,14 @@ export default class Game {
         ) {
           if (this.GRIDBuffer[i][j] === 2) {
             this.GRIDBuffer[i][j] = 0
-            ctx.fillStyle = "#fff"
+            ctx.fillStyle = this.colorTwo
             new Audio(one).play()
             ctx.fillRect(x + 2, y + 2, this.ceilSize - 3, this.ceilSize - 3)
             signal = 0
           } else {
             this.GRIDBuffer[i][j] = 2
             new Audio(three).play()
-            ctx.fillStyle = "#fff"
+            ctx.fillStyle = this.colorTwo
             ctx.fillRect(x + 2, y + 2, this.ceilSize - 3, this.ceilSize - 3)
             ctx.beginPath()
             ctx.moveTo(x + 3, y + 3)
@@ -305,8 +309,9 @@ export default class Game {
         const x =
           i * this.ceilSize + this.maxRowLength * this.ceilSize + this.lineGapX
         const y = j * this.ceilSize
+        ctx.strokeStyle = this.colorThree
         ctx.strokeRect(x, y, this.ceilSize, this.ceilSize)
-        ctx.fillStyle = "#cccccc"
+        ctx.fillStyle = this.colorThree
         ctx.fillRect(x + 1, y + 1, this.ceilSize - 2, this.ceilSize - 2)
       }
       if ((i + 1) % 5 == 0) {
@@ -323,7 +328,7 @@ export default class Game {
         const y = this.ceilSize * numberLoc
 
         if (this.columnCeils[i][j]) {
-          ctx.fillStyle = "black"
+          ctx.fillStyle = this.colorOne
           ctx.font = "bold 14px Arial"
           ctx.textAlign = "left"
           ctx.textBaseline = "top"
@@ -348,7 +353,7 @@ export default class Game {
           this.maxColumnLength * this.ceilSize +
           this.lineGapY
         ctx.strokeRect(x, y, this.ceilSize, this.ceilSize)
-        ctx.fillStyle = "#cccccc"
+        ctx.fillStyle = this.colorThree
         ctx.fillRect(x + 1, y + 1, this.ceilSize - 2, this.ceilSize - 2)
       }
       if ((i + 1) % 5 == 0) {
@@ -367,7 +372,7 @@ export default class Game {
           this.lineGapY
 
         if (this.rowCeils[i][j]) {
-          ctx.fillStyle = "black"
+          ctx.fillStyle = this.colorOne
           ctx.font = "bold 14px Arial"
           ctx.textAlign = "left"
           ctx.textBaseline = "top"
@@ -415,9 +420,9 @@ export default class Game {
               if (typeof this.columnCeils[i][j] == "string") {
                 new Audio(one).play()
                 this.columnCeils[i][j] = Number(this.columnCeils[i][j])
-                ctx.fillStyle = "#cccccc"
+                ctx.fillStyle = this.colorThree
                 ctx.fillRect(x + 1, y + 1, this.ceilSize - 2, this.ceilSize - 2)
-                ctx.fillStyle = "black"
+                ctx.fillStyle = this.colorOne
                 ctx.font = "bold 14px Arial"
                 ctx.textAlign = "left"
                 ctx.textBaseline = "top"
@@ -429,7 +434,7 @@ export default class Game {
                 new Audio(three).play()
                 this.columnCeils[i][j] = this.columnCeils[i][j].toString()
                 ctx.beginPath()
-                ctx.strokeStyle = "#fff"
+                ctx.strokeStyle = this.colorTwo
                 ctx.lineWidth = 2
                 ctx.moveTo(x + 3, y + 3)
                 ctx.lineTo(x + this.ceilSize - 3, y + this.ceilSize - 3)
@@ -438,7 +443,7 @@ export default class Game {
                 ctx.moveTo(x + 3, y + this.ceilSize - 3)
                 ctx.lineTo(x + this.ceilSize - 3, y + 3)
                 ctx.stroke()
-                ctx.strokeStyle = "#000"
+                ctx.strokeStyle = this.colorOne
                 signal = 1
               }
             }
@@ -473,9 +478,9 @@ export default class Game {
               if (typeof this.rowCeils[i][j] == "string") {
                 new Audio(one).play()
                 this.rowCeils[i][j] = Number(this.rowCeils[i][j])
-                ctx.fillStyle = "#cccccc"
+                ctx.fillStyle = this.colorThree
                 ctx.fillRect(x + 1, y + 1, this.ceilSize - 2, this.ceilSize - 2)
-                ctx.fillStyle = "black"
+                ctx.fillStyle = this.colorOne
                 ctx.font = "bold 14px Arial"
                 ctx.textAlign = "left"
                 ctx.textBaseline = "top"
@@ -487,7 +492,7 @@ export default class Game {
                 new Audio(three).play()
                 this.rowCeils[i][j] = this.rowCeils[i][j].toString()
                 ctx.beginPath()
-                ctx.strokeStyle = "#fff"
+                ctx.strokeStyle = this.colorTwo
                 ctx.lineWidth = 2
                 ctx.moveTo(x + 3, y + 3)
                 ctx.lineTo(x + this.ceilSize - 3, y + this.ceilSize - 3)
@@ -496,7 +501,7 @@ export default class Game {
                 ctx.moveTo(x + 3, y + this.ceilSize - 3)
                 ctx.lineTo(x + this.ceilSize - 3, y + 3)
                 ctx.stroke()
-                ctx.strokeStyle = "#000"
+                ctx.strokeStyle = this.colorOne
                 signal = 1
               }
             }
@@ -537,7 +542,7 @@ export default class Game {
         const x =
           j * this.ceilSize + this.maxRowLength * this.ceilSize + this.lineGapY
         if (this.GRID[i][j] === 1) {
-          ctx.fillStyle = "#000"
+          ctx.fillStyle = this.colorOne
           ctx.fillRect(x + 2, y + 2, this.ceilSize - 4, this.ceilSize - 4)
         }
         if ((j + 1) % 5 == 0) {
@@ -573,7 +578,7 @@ export default class Game {
         const x =
           j * this.ceilSize + this.maxRowLength * this.ceilSize + this.lineGapY
         if (this.GRIDBuffer[i][j] === 1) {
-          ctx.fillStyle = "#000"
+          ctx.fillStyle = this.colorOne
           ctx.fillRect(x + 2, y + 2, this.ceilSize - 4, this.ceilSize - 4)
         }
         if ((j + 1) % 5 == 0) {
@@ -597,7 +602,7 @@ export default class Game {
         if (this.columnCeils[i][j]) {
           if (typeof this.columnCeils[i][j] == "string") {
             ctx.beginPath()
-            ctx.strokeStyle = "#fff"
+            ctx.strokeStyle = this.colorTwo
             ctx.lineWidth = 2
             ctx.moveTo(x + 3, y + 3)
             ctx.lineTo(x + this.ceilSize - 3, y + this.ceilSize - 3)
@@ -606,11 +611,11 @@ export default class Game {
             ctx.moveTo(x + 3, y + this.ceilSize - 3)
             ctx.lineTo(x + this.ceilSize - 3, y + 3)
             ctx.stroke()
-            ctx.strokeStyle = "#000"
+            ctx.strokeStyle = this.colorOne
           } else {
-            ctx.fillStyle = "#cccccc"
+            ctx.fillStyle = this.colorThree
             ctx.fillRect(x + 1, y + 1, this.ceilSize - 2, this.ceilSize - 2)
-            ctx.fillStyle = "black"
+            ctx.fillStyle = this.colorOne
             ctx.font = "bold 14px Arial"
             ctx.textAlign = "left"
             ctx.textBaseline = "top"
@@ -640,7 +645,7 @@ export default class Game {
         if (this.rowCeils[i][j]) {
           if (typeof this.rowCeils[i][j] == "string") {
             ctx.beginPath()
-            ctx.strokeStyle = "#fff"
+            ctx.strokeStyle = this.colorTwo
             ctx.lineWidth = 2
             ctx.moveTo(x + 3, y + 3)
             ctx.lineTo(x + this.ceilSize - 3, y + this.ceilSize - 3)
@@ -649,11 +654,11 @@ export default class Game {
             ctx.moveTo(x + 3, y + this.ceilSize - 3)
             ctx.lineTo(x + this.ceilSize - 3, y + 3)
             ctx.stroke()
-            ctx.strokeStyle = "#000"
+            ctx.strokeStyle = this.colorOne
           } else {
-            ctx.fillStyle = "#cccccc"
+            ctx.fillStyle = this.colorThree
             ctx.fillRect(x + 1, y + 1, this.ceilSize - 2, this.ceilSize - 2)
-            ctx.fillStyle = "black"
+            ctx.fillStyle = this.colorOne
             ctx.font = "bold 14px Arial"
             ctx.textAlign = "left"
             ctx.textBaseline = "top"
@@ -706,5 +711,11 @@ export default class Game {
     this.maxRowLength = 0
     this.maxColumnLength = 0
     canvas.remove()
+  }
+
+  static changeColor(colorOne, colorTwo, colorThree) {
+    this.colorOne = colorOne
+    this.colorTwo = colorTwo
+    this.colorThree = colorThree
   }
 }

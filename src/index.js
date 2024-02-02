@@ -7,6 +7,7 @@ import Game from "./js/Game/Game"
 import ref from "./js/ref"
 import showModalVictory from "./js/Game/showModalVictory"
 import timer from "./js/timer"
+import changeThemeClasses from "./js/changeThemeClasses"
 import createRecords from "./js/createRecords"
 const savedGame = ref({})
 const records = []
@@ -220,13 +221,20 @@ themeBtn.addEventListener("click", () => {
   const circleSvg = document.querySelector(".circle-svg")
   const Oval1 = document.querySelector("#Oval-1")
   const Oval2 = document.querySelector("#Oval-2")
+  let black = "black"
+  let white = "white"
+  let grey = "grey"
   if (theme) {
     //dark theme
+
     circleSvg.style = ` left:40%; 
   transition: all ease .5s;
   transform: rotate(360deg);`
     Oval1.style.fill = "white"
     Oval2.style.fill = "black"
+    black = "white"
+    white = "#646c6f"
+    grey = "#cccccc"
     theme = false
   } else {
     circleSvg.style = ` left:0; 
@@ -234,34 +242,25 @@ themeBtn.addEventListener("click", () => {
   transform: rotate(0deg);`
     Oval1.style.fill = "black"
     Oval2.style.fill = "white"
+    black = "black"
+    white = "white"
+    grey = "#cccccc"
     theme = true
   }
-  const options = document.querySelector(".options")
-  options.classList.toggle("darkTheme-options")
-  options.classList.toggle("lightTheme-options")
-  const btns = document.querySelectorAll(".btn")
-  for (const btn of btns) {
-    btn.classList.toggle("darkTheme-font-color")
-    btn.classList.toggle("lightTheme-hover-color")
-    btn.classList.toggle("darkTheme-hover-color")
-  }
-
-  const level = document.querySelector(".level")
-  level.classList.toggle("darkTheme-font-color")
-  level.classList.toggle("lightTheme-hover-color")
-  level.classList.toggle("darkTheme-hover-color")
-  const label = document.querySelector(".level-label")
-  label.classList.toggle("darkTheme-label-color")
-  const timer = document.querySelector(".timer")
-  timer.classList.toggle("darkTheme-font-color")
-  const records = document.querySelector(".records")
-  records.classList.toggle("darkTheme-font-color")
-  records.classList.toggle("lightTheme-bg-records")
-  records.classList.toggle("darkTheme-bg-records")
-  const body = document.querySelector("body")
-  body.classList.toggle("darkTheme-background-color")
-  const title = document.querySelector(".title")
-  title.classList.toggle("darkTheme-font-color")
+  changeThemeClasses()
+  Game.changeColor(black, white, grey)
+  const GRID = Game.getGrid()
+  const GRIDBuffer = Game.getGridBuffer()
+  const rowsHints = Game.getRowsHints()
+  const columnsHints = Game.getColumnsHints()
+  Game.deleteGrid()
+  Game.initializeGrid(GRID)
+  Game.setGridBuffer(GRIDBuffer)
+  Game.setRowsHints(rowsHints)
+  Game.setColumnsHints(columnsHints)
+  Game.continueGame()
+  const canvas = document.getElementById("canvas")
+  canvas.addEventListener("mousedown", (e) => onClickCanvas(e))
 })
 
 export { time, firtEasyLevel, go, onClickCanvas, records }
