@@ -115,7 +115,7 @@ export default function createELements() {
   container.insertAdjacentHTML(
     "beforeend",
     `
-    <div>
+    <div class="level-div">
       <label class="level-label ">Choose level: </label>
       <select class="level lightTheme-hover-color">
         <optgroup id="easy"  label="easy levels 5x5">
