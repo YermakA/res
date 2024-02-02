@@ -33,7 +33,6 @@ export default function changeThemeClasses() {
   const close = document.querySelector("button.close")
   close.classList.toggle("darkTheme-br")
   close.classList.toggle("lightTheme-br")
-
   const dialog = document.querySelector("dialog")
   dialog.classList.toggle("darkTheme-background-color")
   dialog.classList.toggle("darkTheme-font-color")
