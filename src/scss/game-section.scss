@@ -21,12 +21,11 @@
 
 .records{
   table-layout: fixed;
+  font-size: 18px;
   &>thead>tr > th{
-      background-color: #DBDDDA;
       padding: 5px;
     }
   & > tbody > tr > td{
-      background-color: #DBDDDA;
       padding: 5px;
       text-align: center;
   }

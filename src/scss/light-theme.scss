@@ -1,0 +1,22 @@
+.lightTheme-hover-color{
+  &:hover {
+      cursor: pointer;
+      background: #DBDDDA;
+    }
+}
+
+    .lightTheme-options {
+        background: #b8bcb6;
+    }
+
+
+        .lightTheme-bg-records {
+          &>thead>tr>th {
+            background-color: #DBDDDA;
+    
+          }
+    
+          &>tbody>tr>td {
+            background-color: #DBDDDA;
+          }
+        }

@@ -216,11 +216,12 @@ selectElement.addEventListener("change", (event) => {
 })
 //меняет тему
 const themeBtn = document.querySelector(".change-theme")
-themeBtn.addEventListener("click", (e) => {
+themeBtn.addEventListener("click", () => {
   const circleSvg = document.querySelector(".circle-svg")
   const Oval1 = document.querySelector("#Oval-1")
   const Oval2 = document.querySelector("#Oval-2")
   if (theme) {
+    //dark theme
     circleSvg.style = ` left:40%; 
   transition: all ease .5s;
   transform: rotate(360deg);`
@@ -235,6 +236,32 @@ themeBtn.addEventListener("click", (e) => {
     Oval2.style.fill = "white"
     theme = true
   }
+  const options = document.querySelector(".options")
+  options.classList.toggle("darkTheme-options")
+  options.classList.toggle("lightTheme-options")
+  const btns = document.querySelectorAll(".btn")
+  for (const btn of btns) {
+    btn.classList.toggle("darkTheme-font-color")
+    btn.classList.toggle("lightTheme-hover-color")
+    btn.classList.toggle("darkTheme-hover-color")
+  }
+
+  const level = document.querySelector(".level")
+  level.classList.toggle("darkTheme-font-color")
+  level.classList.toggle("lightTheme-hover-color")
+  level.classList.toggle("darkTheme-hover-color")
+  const label = document.querySelector(".level-label")
+  label.classList.toggle("darkTheme-label-color")
+  const timer = document.querySelector(".timer")
+  timer.classList.toggle("darkTheme-font-color")
+  const records = document.querySelector(".records")
+  records.classList.toggle("darkTheme-font-color")
+  records.classList.toggle("lightTheme-bg-records")
+  records.classList.toggle("darkTheme-bg-records")
+  const body = document.querySelector("body")
+  body.classList.toggle("darkTheme-background-color")
+  const title = document.querySelector(".title")
+  title.classList.toggle("darkTheme-font-color")
 })
 
 export { time, firtEasyLevel, go, onClickCanvas, records }

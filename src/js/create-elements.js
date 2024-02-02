@@ -55,7 +55,10 @@ export default function createELements() {
         <button class="close" type="submit">Закрыть</button>
     </dialog >`,
   )
-  body.insertAdjacentHTML("beforeend", '<section class="options"></section>')
+  body.insertAdjacentHTML(
+    "beforeend",
+    '<section class="options lightTheme-options"></section>',
+  )
 
   body.insertAdjacentHTML("beforeend", '<section class="game"></section>')
 
@@ -67,7 +70,7 @@ export default function createELements() {
   gameSection.insertAdjacentHTML(
     "beforeend",
     `<aside class="aside">
-      <table class="records">
+      <table class="records lightTheme-bg-records">
         <thead>
           <th>Название игры</th>
           <th>Время</th>
@@ -86,30 +89,30 @@ export default function createELements() {
   const container = document.querySelector(".options-container")
   container.insertAdjacentHTML(
     "beforeend",
-    '<button class="save btn">Сохранить игру</button>',
+    '<button class="save btn lightTheme-hover-color">Сохранить игру</button>',
   )
   container.insertAdjacentHTML(
     "beforeend",
-    '<button class="reset btn">Сбросить игру</button>',
+    '<button class="reset btn lightTheme-hover-color">Сбросить игру</button>',
   )
   container.insertAdjacentHTML(
     "beforeend",
-    '<button class="decision btn">Решение</button>',
+    '<button class="decision btn lightTheme-hover-color">Решение</button>',
   )
   container.insertAdjacentHTML(
     "beforeend",
-    '<button class="continue btn" >Продолжить последнюю игру</button>',
+    '<button class="continue btn lightTheme-hover-color" >Продолжить последнюю игру</button>',
   )
   container.insertAdjacentHTML(
     "beforeend",
-    '<button class="random btn" >Случайная игра</button>',
+    '<button class="random btn lightTheme-hover-color" >Случайная игра</button>',
   )
   container.insertAdjacentHTML(
     "beforeend",
     `
     <div>
-      <label class="level-label">Choose level: </label>
-      <select class="level">
+      <label class="level-label ">Choose level: </label>
+      <select class="level lightTheme-hover-color">
         <optgroup id="easy"  label="easy levels 5x5">
         </optgroup>
         <optgroup  id="normal"  label="normal levels 10x10">
