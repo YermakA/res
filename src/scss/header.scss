@@ -1,0 +1,40 @@
+.header{
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+
+.circle-svg{
+  width: 24px;
+  height: 24px;
+  position: relative;
+  left: 0;
+}
+
+.change-theme{
+  display: flex;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: #000000 solid 1px;
+  width: 40px;
+  height: 25px;
+  border-radius: 50px;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+
+@keyframes active {
+  from {
+    transform: rotate(0turn);
+
+  }
+  to {
+    left: 45%;
+    transform: rotate( 1turn);
+  }
+}

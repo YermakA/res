@@ -2,6 +2,7 @@
 @import "./options-section.scss";
 @import "./timer.scss";
 @import "./modal.scss";
+@import "./header.scss";
 * {
   margin: 0;
   box-sizing: border-box;
@@ -10,9 +11,6 @@
 
 
 body{
-  display: flex;
+
   padding-top: 50px;
-  
-    flex-direction: column-reverse;
-    align-items: center;
 } 

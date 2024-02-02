@@ -11,6 +11,7 @@ import createRecords from "./js/createRecords"
 const savedGame = ref({})
 const records = []
 let count = 0
+let theme = true
 let decision = false
 let countGrid = 0
 const firtEasyLevel = Math.round(Math.random() * 4)
@@ -213,4 +214,27 @@ selectElement.addEventListener("change", (event) => {
     }
   }
 })
+//меняет тему
+const themeBtn = document.querySelector(".change-theme")
+themeBtn.addEventListener("click", (e) => {
+  const circleSvg = document.querySelector(".circle-svg")
+  const Oval1 = document.querySelector("#Oval-1")
+  const Oval2 = document.querySelector("#Oval-2")
+  if (theme) {
+    circleSvg.style = ` left:40%; 
+  transition: all ease .5s;
+  transform: rotate(360deg);`
+    Oval1.style.fill = "white"
+    Oval2.style.fill = "black"
+    theme = false
+  } else {
+    circleSvg.style = ` left:0; 
+  transition: all ease .5s;
+  transform: rotate(0deg);`
+    Oval1.style.fill = "black"
+    Oval2.style.fill = "white"
+    theme = true
+  }
+})
+
 export { time, firtEasyLevel, go, onClickCanvas, records }

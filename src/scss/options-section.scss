@@ -1,3 +1,41 @@
 .options{
   margin-bottom: 50px;
+  background: #b8bcb6;
+  display: flex;
+  justify-content: center;
+  &-container{
+    display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    
+  }
+}
+
+.level{
+  appearance: none;
+  padding: 5px;
+  background: none;
+  border: 1px solid black;
+  outline: 0px;
+  font-size: 18px;
+  &-label{
+    font-size: 18px;
+    color: #e5e5e5;
+  }
+  &:hover{
+    cursor: pointer;
+    background: #DBDDDA;
+  }
+}
+
+.btn{
+  background:none;
+  font-size: 18px;
+  border: none;
+  padding: 5px;
+  background: #b8bcb6;
+  &:hover{
+    cursor:pointer;
+    background: #DBDDDA;
+  }
 }
