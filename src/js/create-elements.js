@@ -50,9 +50,11 @@ export default function createELements() {
   body.insertAdjacentHTML(
     "beforeend",
     `
-    <dialog>
-      <div class="modal-title"></div>
-        <button class="close" type="submit">Закрыть</button>
+    <dialog >
+    <div class="modal-content">
+        <div class="modal-title"></div>
+          <button class="close btn lightTheme-br lightTheme-hover-color" type="submit">Играть снова</button>
+        </div>
     </dialog >`,
   )
   body.insertAdjacentHTML(
