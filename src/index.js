@@ -65,7 +65,11 @@ function onClickCanvas(event) {
         record.level = select.options[i].parentNode.label
       }
     }
-    records.push(record)
+
+    if (records.length == 5) {
+      records.pop()
+    }
+    records.unshift(record)
     createRecords(records)
   }
 }
@@ -209,4 +213,4 @@ selectElement.addEventListener("change", (event) => {
     }
   }
 })
-export { time, firtEasyLevel, go, onClickCanvas }
+export { time, firtEasyLevel, go, onClickCanvas, records }
