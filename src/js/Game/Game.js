@@ -58,7 +58,7 @@ export default class Game {
     canvas.style.border = "1px solid black"
     canvas.id = "canvas"
     document
-      .querySelector(".game")
+      .querySelector(".game-field")
       .insertAdjacentHTML("beforeend", canvas.outerHTML)
   }
 

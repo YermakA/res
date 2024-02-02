@@ -2,10 +2,34 @@ import levels from "./levels"
 import { firtEasyLevel } from "../index"
 export default function createELements() {
   const body = document.querySelector("body")
-  body.insertAdjacentHTML("afterbegin", '<section class="game"><section>')
-  body.insertAdjacentHTML("beforeend", '<section class="options"><section>')
+  body.insertAdjacentHTML("afterbegin", '<section class="game"></section>')
+  body.insertAdjacentHTML("beforeend", '<section class="options"></section>')
+  body.insertAdjacentHTML(
+    "beforeend",
+    `
+    <dialog>
+      <div class="modal-title"></div>
+        <button class="close" type="submit">Закрыть</button>
+    </dialog >`,
+  )
   const gameSection = document.querySelector(".game")
-  gameSection.insertAdjacentHTML("afterbegin", '<div class="timer">00:00</div>')
+  gameSection.insertAdjacentHTML("beforeend", "<div class='game-field'></div>")
+  const gameField = document.querySelector(".game-field")
+  gameField.insertAdjacentHTML("afterbegin", '<div class="timer">00:00</div>')
+  gameSection.insertAdjacentHTML(
+    "beforeend",
+    `<aside class="aside">
+      <table class="records">
+        <thead>
+          <th>Название игры</th>
+          <th>Время</th>
+          <th>Уровень</th>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </aside>`,
+  )
   const optionsSection = document.querySelector(".options")
   optionsSection.insertAdjacentHTML(
     "beforeend",

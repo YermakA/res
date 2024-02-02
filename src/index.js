@@ -7,7 +7,9 @@ import Game from "./js/Game/Game"
 import ref from "./js/ref"
 import showModalVictory from "./js/Game/showModalVictory"
 import timer from "./js/timer"
+import createRecords from "./js/createRecords"
 const savedGame = ref({})
+const records = []
 let count = 0
 let decision = false
 let countGrid = 0
@@ -17,7 +19,14 @@ const go = ref(true)
 let randomVal = -1
 let timerInterval
 createElements()
-
+if (localStorage.getItem("records")) {
+  records.push(...JSON.parse(localStorage.getItem("records")))
+  createRecords(records)
+  if (records.length > 0) {
+    const aside = document.querySelector(".aside")
+    aside.style.display = "block"
+  }
+}
 Game.initializeGrid(levels.easy.levels[firtEasyLevel][1])
 countGrid = getCountGridValues(levels.easy.levels[firtEasyLevel][1])
 const canvas = document.getElementById("canvas")
@@ -44,14 +53,25 @@ function onClickCanvas(event) {
 
   count = checkVictory(Game.getGrid(), Game.getGridBuffer())
   if (count == countGrid) {
-    showModalVictory(time)
     clearInterval(timerInterval)
+    showModalVictory(time)
+    const record = {
+      time: time.value,
+    }
+    const select = document.querySelector("select.level")
+    for (let i = 0; i < select.options.length; i++) {
+      if (i === select.options.selectedIndex) {
+        record.name = select.options[i].value
+        record.level = select.options[i].parentNode.label
+      }
+    }
+    records.push(record)
+    createRecords(records)
   }
 }
 
 function keyDownCtrlZ(event) {
   if (event.code == "KeyZ" && (event.ctrlKey || event.metaKey)) Game.prevState()
-  clearInterval(timerInterval)
 }
 canvas.addEventListener("mousedown", (e) => onClickCanvas(e))
 document.addEventListener("keydown", (event) => keyDownCtrlZ(event))
@@ -115,7 +135,7 @@ continueBtn.addEventListener("click", () => {
     Game.continueGame()
     countGrid = savedGame.value.countGrid
     count = savedGame.value.count
-    time.value = savedGame.value.time - 1
+    time.value = savedGame.value.time
     timer(time)
     clearInterval(timerInterval)
     go.value = true
@@ -138,8 +158,10 @@ randomBtn.addEventListener("click", () => {
   decision = false
   const select = document.querySelector("select.level")
   let randomNumber = Math.round(Math.random() * 14)
-  if (randomVal === randomNumber)
+  if (randomVal === randomNumber) {
     randomNumber = Math.round((Math.random() * 14) / 2)
+  }
+  randomVal = randomNumber
   let gameValue
   for (let i = 0; i < select.options.length; i++) {
     if (i === randomNumber) {
@@ -187,4 +209,4 @@ selectElement.addEventListener("change", (event) => {
     }
   }
 })
-export { time, firtEasyLevel }
+export { time, firtEasyLevel, go, onClickCanvas }
