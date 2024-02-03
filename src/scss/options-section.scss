@@ -25,11 +25,25 @@
     font-size: 18px;
     color: var(--lb-color);
   }
+  &>optgroup{
+    background: var(--options-color);
+  }
+  &>optgroup>option {
+    color: var(--text-color);
+    background: var(--bg-color);
+    &:hover {
+        cursor: pointer;
+      
+      }
+  }
+
     &:hover {
       cursor: pointer;
       background: var(--bg-color);
     }
 }
+
+ 
 
 .btn{
     color: var(--text-color);
