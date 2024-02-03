@@ -21,6 +21,16 @@ const go = ref(true)
 let randomVal = -1
 let timerInterval
 createElements()
+
+if (localStorage.getItem("sound")) {
+  sound = JSON.parse(localStorage.getItem("sound"))
+  if (!sound) {
+    const soundsBtn = document.querySelector(".sound")
+    for (let i = 1; i < soundsBtn.children.length; i++) {
+      soundsBtn.children[i].classList.toggle("wave")
+    }
+  }
+}
 if (localStorage.getItem("records")) {
   records.push(...JSON.parse(localStorage.getItem("records")))
   createRecords(records)
@@ -29,6 +39,40 @@ if (localStorage.getItem("records")) {
     aside.style.display = "block"
   }
 }
+if (localStorage.getItem("theme")) {
+  theme = JSON.parse(localStorage.getItem("theme"))
+  theme = !theme
+  const circleSvg = document.querySelector(".circle-svg")
+  const Oval1 = document.querySelector("#Oval-1")
+  const Oval2 = document.querySelector("#Oval-2")
+  let black = "black"
+  let white = "white"
+  let grey = "grey"
+  if (theme) {
+    //dark theme
+    document.body.classList.add("dark-theme")
+    circleSvg.style = "left:40%;"
+    Oval1.style.fill = "white"
+    Oval2.style.fill = "black"
+    black = "#e5e5e5"
+    white = "#646c6f"
+    grey = "#b8bcb6"
+    theme = false
+  } else {
+    document.body.classList.remove("dark-theme")
+    circleSvg.style = ` left:0; 
+  transition: all ease .5s;
+  transform: rotate(0deg);`
+    Oval1.style.fill = "black"
+    Oval2.style.fill = "white"
+    black = "black"
+    white = "white"
+    grey = "#cccccc"
+    theme = true
+  }
+  Game.changeColor(black, white, grey)
+}
+
 Game.initializeGrid(levels.easy.levels[firtEasyLevel][1])
 countGrid = getCountGridValues(levels.easy.levels[firtEasyLevel][1])
 const canvas = document.getElementById("canvas")
@@ -76,9 +120,65 @@ function onClickCanvas(event) {
   }
 }
 
+function changeTheme() {
+  const circleSvg = document.querySelector(".circle-svg")
+  const Oval1 = document.querySelector("#Oval-1")
+  const Oval2 = document.querySelector("#Oval-2")
+  let black = "black"
+  let white = "white"
+  let grey = "grey"
+  if (theme) {
+    //dark theme
+    document.body.classList.add("dark-theme")
+    circleSvg.style = ` left:40%; 
+  transition: all ease .5s;
+  transform: rotate(360deg);`
+    Oval1.style.fill = "white"
+    Oval2.style.fill = "black"
+    black = "#e5e5e5"
+    white = "#646c6f"
+    grey = "#b8bcb6"
+    theme = false
+  } else {
+    document.body.classList.remove("dark-theme")
+    circleSvg.style = ` left:0; 
+  transition: all ease .5s;
+  transform: rotate(0deg);`
+    Oval1.style.fill = "black"
+    Oval2.style.fill = "white"
+    black = "black"
+    white = "white"
+    grey = "#cccccc"
+    theme = true
+  }
+  Game.changeColor(black, white, grey)
+  const GRID = Game.getGrid()
+  const GRIDBuffer = Game.getGridBuffer()
+  const rowsHints = Game.getRowsHints()
+  const columnsHints = Game.getColumnsHints()
+  Game.deleteGrid()
+  Game.initializeGrid(GRID)
+  Game.setGridBuffer(GRIDBuffer)
+  Game.setRowsHints(rowsHints)
+  Game.setColumnsHints(columnsHints)
+  Game.continueGame()
+  const canvas = document.getElementById("canvas")
+  canvas.addEventListener("mousedown", (e) => onClickCanvas(e))
+  localStorage.setItem("theme", theme)
+}
+function changeSound() {
+  const soundsBtn = document.querySelector(".sound")
+  sound = !sound
+  for (let i = 1; i < soundsBtn.children.length; i++) {
+    soundsBtn.children[i].classList.toggle("wave")
+  }
+
+  localStorage.setItem("sound", sound)
+}
 function keyDownCtrlZ(event) {
   if (event.code == "KeyZ" && (event.ctrlKey || event.metaKey)) Game.prevState()
 }
+
 canvas.addEventListener("mousedown", (e) => onClickCanvas(e))
 document.addEventListener("keydown", (event) => keyDownCtrlZ(event))
 
@@ -217,59 +317,9 @@ selectElement.addEventListener("change", (event) => {
 })
 //меняет тему
 const themeBtn = document.querySelector(".change-theme")
-themeBtn.addEventListener("click", () => {
-  const circleSvg = document.querySelector(".circle-svg")
-  const Oval1 = document.querySelector("#Oval-1")
-  const Oval2 = document.querySelector("#Oval-2")
-  let black = "black"
-  let white = "white"
-  let grey = "grey"
-  if (theme) {
-    //dark theme
-    document.body.classList.add("dark-theme")
-    circleSvg.style = ` left:40%; 
-  transition: all ease .5s;
-  transform: rotate(360deg);`
-    Oval1.style.fill = "white"
-    Oval2.style.fill = "black"
-    black = "#e5e5e5"
-    white = "#646c6f"
-    grey = "#b8bcb6"
-    theme = false
-  } else {
-    document.body.classList.remove("dark-theme")
-    circleSvg.style = ` left:0; 
-  transition: all ease .5s;
-  transform: rotate(0deg);`
-    Oval1.style.fill = "black"
-    Oval2.style.fill = "white"
-    black = "black"
-    white = "white"
-    grey = "#cccccc"
-    theme = true
-  }
-  Game.changeColor(black, white, grey)
-  const GRID = Game.getGrid()
-  const GRIDBuffer = Game.getGridBuffer()
-  const rowsHints = Game.getRowsHints()
-  const columnsHints = Game.getColumnsHints()
-  Game.deleteGrid()
-  Game.initializeGrid(GRID)
-  Game.setGridBuffer(GRIDBuffer)
-  Game.setRowsHints(rowsHints)
-  Game.setColumnsHints(columnsHints)
-  Game.continueGame()
-  const canvas = document.getElementById("canvas")
-  canvas.addEventListener("mousedown", (e) => onClickCanvas(e))
-})
+themeBtn.addEventListener("click", changeTheme)
 
 const soundsBtn = document.querySelector(".sound")
-soundsBtn.addEventListener("click", () => {
-  const soundsBtn = document.querySelector(".sound")
-  sound = !sound
-  for (let i = 1; i < soundsBtn.children.length; i++) {
-    soundsBtn.children[i].classList.toggle("wave")
-  }
-})
+soundsBtn.addEventListener("click", changeSound)
 
 export { time, firtEasyLevel, go, onClickCanvas, records, sound }
