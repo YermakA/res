@@ -14,6 +14,7 @@ let count = 0
 let theme = true
 let decision = false
 let countGrid = 0
+let sound = true
 const firtEasyLevel = Math.round(Math.random() * 4)
 const time = ref(0)
 const go = ref(true)
@@ -262,4 +263,13 @@ themeBtn.addEventListener("click", () => {
   canvas.addEventListener("mousedown", (e) => onClickCanvas(e))
 })
 
-export { time, firtEasyLevel, go, onClickCanvas, records }
+const soundsBtn = document.querySelector(".sound")
+soundsBtn.addEventListener("click", () => {
+  const soundsBtn = document.querySelector(".sound")
+  sound = !sound
+  for (let i = 1; i < soundsBtn.children.length; i++) {
+    soundsBtn.children[i].classList.toggle("wave")
+  }
+})
+
+export { time, firtEasyLevel, go, onClickCanvas, records, sound }

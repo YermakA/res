@@ -1,9 +1,10 @@
 import win from "../../assets/audio/win.mp3"
+import { sound } from "../../index"
 import Game from "../Game/Game"
 import { go, onClickCanvas } from "../../index"
 import timer from "../timer"
 export default function showModalVictory(time) {
-  new Audio(win).play()
+  sound ? new Audio(win).play() : null
   const modalTitle = document.querySelector(".modal-title")
   modalTitle.textContent = `Отлично! Вы решили кроссворд за ${time.value} секунд!`
   const dialog = document.querySelector("dialog")

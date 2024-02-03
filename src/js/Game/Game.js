@@ -1,6 +1,7 @@
 import two from "../../assets/audio/two.mp3"
 import one from "../../assets/audio/one.mp3"
 import three from "../../assets/audio/three.mp3"
+import { sound } from "../../index.js"
 export default class Game {
   static actionsStack = []
   static gridLength = 0
@@ -153,13 +154,13 @@ export default class Game {
           if (this.GRIDBuffer[i][j] === 1) {
             this.GRIDBuffer[i][j] = 0
             ctx.fillStyle = this.colorTwo
-            new Audio(one).play()
+            sound ? new Audio(one).play() : null
             ctx.fillRect(x + 2, y + 2, this.ceilSize - 3, this.ceilSize - 3)
             signal = 2
           } else {
             this.GRIDBuffer[i][j] = 1
             ctx.fillStyle = this.colorOne
-            new Audio(two).play()
+            sound ? new Audio(two).play() : null
             ctx.fillRect(x + 2, y + 2, this.ceilSize - 4, this.ceilSize - 4)
             signal = 2
           }
@@ -201,12 +202,12 @@ export default class Game {
           if (this.GRIDBuffer[i][j] === 2) {
             this.GRIDBuffer[i][j] = 0
             ctx.fillStyle = this.colorTwo
-            new Audio(one).play()
+            sound ? new Audio(one).play() : null
             ctx.fillRect(x + 2, y + 2, this.ceilSize - 3, this.ceilSize - 3)
             signal = 0
           } else {
             this.GRIDBuffer[i][j] = 2
-            new Audio(three).play()
+            sound ? new Audio(three).play() : null
             ctx.fillStyle = this.colorTwo
             ctx.fillRect(x + 2, y + 2, this.ceilSize - 3, this.ceilSize - 3)
             ctx.beginPath()
@@ -418,7 +419,7 @@ export default class Game {
               offsetY < y + this.ceilSize
             ) {
               if (typeof this.columnCeils[i][j] == "string") {
-                new Audio(one).play()
+                sound ? new Audio(one).play() : null
                 this.columnCeils[i][j] = Number(this.columnCeils[i][j])
                 ctx.fillStyle = this.colorThree
                 ctx.fillRect(x + 1, y + 1, this.ceilSize - 2, this.ceilSize - 2)
@@ -431,7 +432,7 @@ export default class Game {
                   : ctx.fillText(this.columnCeils[i][j], x + 6, y + 5)
                 signal = 1
               } else {
-                new Audio(three).play()
+                sound ? new Audio(three).play() : null
                 this.columnCeils[i][j] = this.columnCeils[i][j].toString()
                 ctx.beginPath()
                 ctx.strokeStyle = this.colorTwo
@@ -476,7 +477,7 @@ export default class Game {
               offsetY < y + this.ceilSize
             ) {
               if (typeof this.rowCeils[i][j] == "string") {
-                new Audio(one).play()
+                sound ? new Audio(one).play() : null
                 this.rowCeils[i][j] = Number(this.rowCeils[i][j])
                 ctx.fillStyle = this.colorThree
                 ctx.fillRect(x + 1, y + 1, this.ceilSize - 2, this.ceilSize - 2)
@@ -489,7 +490,7 @@ export default class Game {
                   : ctx.fillText(this.rowCeils[i][j], x + 6, y + 5)
                 signal = 1
               } else {
-                new Audio(three).play()
+                sound ? new Audio(three).play() : null
                 this.rowCeils[i][j] = this.rowCeils[i][j].toString()
                 ctx.beginPath()
                 ctx.strokeStyle = this.colorTwo
