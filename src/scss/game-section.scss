@@ -20,11 +20,19 @@
 
 
 .records{
+    color: var(--text-color);
   table-layout: fixed;
   font-size: 18px;
   &>thead>tr > th{
       padding: 5px;
+        &>thead>tr>th {
+            background-color: var(--bg-color);
+        
+          }
     }
+         &>tbody>tr>td {
+           background-color: var(--bg-color);
+         }
   & > tbody > tr > td{
       padding: 5px;
       text-align: center;

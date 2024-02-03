@@ -6,6 +6,10 @@
   align-items: center;
 }
 
+.title{
+    color: var(--text-color);
+}
+
 .circle-svg{
   width: 24px;
   height: 24px;
@@ -21,6 +25,7 @@
   width: 40px;
   height: 25px;
   border-radius: 50px;
+  border: 1px solid var(--br-color);
   &:hover{
     cursor: pointer;
   }

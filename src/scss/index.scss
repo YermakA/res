@@ -4,7 +4,7 @@
 @import "./modal.scss";
 @import "./header.scss";
 @import "./dark-theme.scss";
-@import "./light-theme.scss";
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -13,6 +13,19 @@
 
 
 body{
-
-  padding-top: 50px;
+    --bg-color: #DBDDDA;
+    --options-color: #b8bcb6;
+    --br-color: black;
+    --lb-color: #e5e5e5;
+    --text-color: black;
 } 
+
+body.dark-theme{
+  background: #323441;
+  --bg-color: #4c4f6286;
+    --options-color: #3c405a;
+    --br-color: white;
+    --lb-color: #8db7ff;
+      --text-color: #e0dede;
+    
+}

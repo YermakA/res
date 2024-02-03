@@ -7,7 +7,7 @@ export default function createELements() {
     "beforeend",
     `
     <header class="header">
-    <button class="change-theme lightTheme-br">
+    <button class="change-theme">
       <svg
       class="circle-svg"
       width="70.000000" height="70.000000" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -53,14 +53,11 @@ export default function createELements() {
     <dialog >
     <div class="modal-content">
         <div class="modal-title"></div>
-          <button class="close btn lightTheme-br lightTheme-hover-color" type="submit">Играть снова</button>
+          <button class="close btn" type="submit">Играть снова</button>
         </div>
     </dialog >`,
   )
-  body.insertAdjacentHTML(
-    "beforeend",
-    '<section class="options lightTheme-options"></section>',
-  )
+  body.insertAdjacentHTML("beforeend", '<section class="options"></section>')
 
   body.insertAdjacentHTML("beforeend", '<section class="game"></section>')
 
@@ -68,14 +65,11 @@ export default function createELements() {
   const gameSection = document.querySelector(".game")
   gameSection.insertAdjacentHTML("beforeend", "<div class='game-field'></div>")
   const gameField = document.querySelector(".game-field")
-  gameField.insertAdjacentHTML(
-    "afterbegin",
-    '<div class="timer lightTheme-br">00:00</div>',
-  )
+  gameField.insertAdjacentHTML("afterbegin", '<div class="timer">00:00</div>')
   gameSection.insertAdjacentHTML(
     "beforeend",
     `<aside class="aside">
-      <table class="records lightTheme-bg-records">
+      <table class="records">
         <thead>
           <th>Название игры</th>
           <th>Время</th>
@@ -94,30 +88,30 @@ export default function createELements() {
   const container = document.querySelector(".options-container")
   container.insertAdjacentHTML(
     "beforeend",
-    '<button class="save btn lightTheme-hover-color">Сохранить игру</button>',
+    '<button class="save btn">Сохранить игру</button>',
   )
   container.insertAdjacentHTML(
     "beforeend",
-    '<button class="reset btn lightTheme-hover-color">Сбросить игру</button>',
+    '<button class="reset btn">Сбросить игру</button>',
   )
   container.insertAdjacentHTML(
     "beforeend",
-    '<button class="decision btn lightTheme-hover-color">Решение</button>',
+    '<button class="decision btn">Решение</button>',
   )
   container.insertAdjacentHTML(
     "beforeend",
-    '<button class="continue btn lightTheme-hover-color" >Продолжить последнюю игру</button>',
+    '<button class="continue btn" >Продолжить последнюю игру</button>',
   )
   container.insertAdjacentHTML(
     "beforeend",
-    '<button class="random btn lightTheme-hover-color" >Случайная игра</button>',
+    '<button class="random btn" >Случайная игра</button>',
   )
   container.insertAdjacentHTML(
     "beforeend",
     `
     <div class="level-div">
       <label class="level-label ">Choose level: </label>
-      <select class="level lightTheme-hover-color">
+      <select class="level">
         <optgroup id="easy"  label="easy levels 5x5">
         </optgroup>
         <optgroup  id="normal"  label="normal levels 10x10">

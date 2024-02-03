@@ -1,9 +1,10 @@
 .timer{
+  color: var(--text-color);
   margin:  0;
   font-size: 24px;
   width: 114px;
   padding: 14px 28px;
-  
+  border: var(--br-color) 1px solid;
   border-radius: 100px;
   margin-bottom: 20px;
 }

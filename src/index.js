@@ -7,7 +7,6 @@ import Game from "./js/Game/Game"
 import ref from "./js/ref"
 import showModalVictory from "./js/Game/showModalVictory"
 import timer from "./js/timer"
-import changeThemeClasses from "./js/changeThemeClasses"
 import createRecords from "./js/createRecords"
 const savedGame = ref({})
 const records = []
@@ -226,17 +225,18 @@ themeBtn.addEventListener("click", () => {
   let grey = "grey"
   if (theme) {
     //dark theme
-
+    document.body.classList.add("dark-theme")
     circleSvg.style = ` left:40%; 
   transition: all ease .5s;
   transform: rotate(360deg);`
     Oval1.style.fill = "white"
     Oval2.style.fill = "black"
-    black = "white"
+    black = "#e5e5e5"
     white = "#646c6f"
-    grey = "#cccccc"
+    grey = "#b8bcb6"
     theme = false
   } else {
+    document.body.classList.remove("dark-theme")
     circleSvg.style = ` left:0; 
   transition: all ease .5s;
   transform: rotate(0deg);`
@@ -247,7 +247,6 @@ themeBtn.addEventListener("click", () => {
     grey = "#cccccc"
     theme = true
   }
-  changeThemeClasses()
   Game.changeColor(black, white, grey)
   const GRID = Game.getGrid()
   const GRIDBuffer = Game.getGridBuffer()

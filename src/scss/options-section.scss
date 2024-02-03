@@ -3,33 +3,44 @@
   display: flex;
   align-items: center;
   justify-content: center;
+    background: var(--options-color);
   &-container{
     display: flex;
       align-items:center;
       flex-wrap: wrap;
   }
+
 }
 
 
 .level{
+    color: var(--text-color);
   appearance: none;
   padding: 5px;
   background: none;
-  border: 1px solid black;
+  border: 1px solid var(--br-color);
   outline: 0px;
   font-size: 18px;
   &-label{
     font-size: 18px;
-    color: #e5e5e5;
+    color: var(--lb-color);
   }
+    &:hover {
+      cursor: pointer;
+      background: var(--bg-color);
+    }
 }
 
 .btn{
+    color: var(--text-color);
   background:none;
   font-size: 18px;
   border: none;
   padding: 7px;
-
+&:hover {
+    cursor: pointer;
+    background: var(--bg-color);
+  }
  
 }
 @media screen and (max-width: 1194px) {
