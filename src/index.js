@@ -51,7 +51,7 @@ if (localStorage.getItem("theme")) {
   if (theme) {
     //dark theme
     document.body.classList.add("dark-theme")
-    circleSvg.style = "left:40%;"
+    circleSvg.style = "left:40%; transform:rotate(360deg);"
     Oval1.style.fill = "white"
     Oval2.style.fill = "black"
     black = "#e5e5e5"
@@ -60,9 +60,7 @@ if (localStorage.getItem("theme")) {
     theme = false
   } else {
     document.body.classList.remove("dark-theme")
-    circleSvg.style = ` left:0; 
-  transition: all ease .5s;
-  transform: rotate(0deg);`
+    circleSvg.style = "left:0; transform: rotate(0deg);"
     Oval1.style.fill = "black"
     Oval2.style.fill = "white"
     black = "black"
@@ -130,9 +128,7 @@ function changeTheme() {
   if (theme) {
     //dark theme
     document.body.classList.add("dark-theme")
-    circleSvg.style = ` left:40%; 
-  transition: all ease .5s;
-  transform: rotate(360deg);`
+    circleSvg.style = "left:40%; transform: rotate(360deg);"
     Oval1.style.fill = "white"
     Oval2.style.fill = "black"
     black = "#e5e5e5"
@@ -141,9 +137,7 @@ function changeTheme() {
     theme = false
   } else {
     document.body.classList.remove("dark-theme")
-    circleSvg.style = ` left:0; 
-  transition: all ease .5s;
-  transform: rotate(0deg);`
+    circleSvg.style = "left:0; transform: rotate(0deg);"
     Oval1.style.fill = "black"
     Oval2.style.fill = "white"
     black = "black"
