@@ -576,7 +576,6 @@ export default class Game {
   static continueGame() {
     const canvas = document.getElementById("canvas")
     const ctx = canvas.getContext("2d")
-    console.log(this.GRIDBuffer)
     for (let i = 0; i < this.gridLength; i++) {
       const y =
         i * this.ceilSize + this.maxColumnLength * this.ceilSize + this.lineGapX
