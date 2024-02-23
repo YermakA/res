@@ -4,14 +4,40 @@
 
 Here is a collection of badges I earned from completing Microsoft Learn's TypeScript modules:
 
-1. **Getting Started with TypeScript**: [Badge](https://learn.microsoft.com/api/achievements/share/ru-ru/YermakYerofeev-4575/QDAYSVUE?sharingId=CA81338B9B9E0C0F)
-2. **Declare Variable Types in TypeScript**: [Badge](https://learn.microsoft.com/api/achievements/share/en-us/YermakYerofeev-4575/N7UYMTKF?sharingId=CA81338B9B9E0C0F)
-3. **Implement Interfaces in TypeScript**: [Badge](https://learn.microsoft.com/api/achievements/share/ru-ru/YermakYerofeev-4575/HY6XWPG8?sharingId=CA81338B9B9E0C0F)
-4. **Develop Typed Functions in TypeScript**: [Badge](https://learn.microsoft.com/api/achievements/share/ru-ru/YermakYerofeev-4575/DGE3MLGJ?sharingId=CA81338B9B9E0C0F)
-5. **Declare and Instantiate Classes in TypeScript**: [Badge](https://learn.microsoft.com/api/achievements/share/ru-ru/YermakYerofeev-4575/YV84XQVR?sharingId=CA81338B9B9E0C0F)
-6. **Generics in TypeScript**: [Badge](https://learn.microsoft.com/api/achievements/share/ru-ru/YermakYerofeev-4575/EJZUGNEP?sharingId=CA81338B9B9E0C0F)
-7. **Work with External Libraries in TypeScript**: [Badge](https://learn.microsoft.com/api/achievements/share/ru-ru/YermakYerofeev-4575/UFLQDJP3?sharingId=CA81338B9B9E0C0F)
-8. **Organize Code with Namespaces in TypeScript**: [Badge](https://learn.microsoft.com/api/achievements/share/ru-ru/YermakYerofeev-4575/X2HJ874Y?sharingId=CA81338B9B9E0C0F)
+1. **Getting Started with TypeScript**: 
+<a href="https://learn.microsoft.com/api/achievements/share/ru-ru/YermakYerofeev-4575/QDAYSVUE?sharingId=CA81338B9B9E0C0F">
+  <img src="./image.png" alt="drawing" style="width:50px;"/>
+</a>    
+
+2. **Declare Variable Types in TypeScript**:
+<a href="https://learn.microsoft.com/api/achievements/share/en-us/YermakYerofeev-4575/N7UYMTKF?sharingId=CA81338B9B9E0C0F">
+  <img src="./image-1.png" alt="drawing" style="width:50px;"/>
+</a>    
+3. **Implement Interfaces in TypeScript**: 
+<a href="https://learn.microsoft.com/api/achievements/share/ru-ru/YermakYerofeev-4575/HY6XWPG8?sharingId=CA81338B9B9E0C0F">
+  <img src="./image-2.png" alt="drawing" style="width:50px;"/>
+</a>   
+4. **Develop Typed Functions in TypeScript**: 
+<a href="https://learn.microsoft.com/api/achievements/share/ru-ru/YermakYerofeev-4575/DGE3MLGJ?sharingId=CA81338B9B9E0C0F">
+  <img src="./image-3.png" alt="drawing" style="width:50px;"/>
+</a>   
+5. **Declare and Instantiate Classes in TypeScript**:
+<a href="https://learn.microsoft.com/api/achievements/share/ru-ru/YermakYerofeev-4575/YV84XQVR?sharingId=CA81338B9B9E0C0F">
+  <img src="./image-4.png" alt="drawing" style="width:50px;"/>
+</a>   
+6. **Generics in TypeScript**: 
+<a href="https://learn.microsoft.com/api/achievements/share/ru-ru/YermakYerofeev-4575/EJZUGNEP?sharingId=CA81338B9B9E0C0F">
+  <img src="./image-5.png" alt="drawing" style="width:50px;"/>
+</a>   
+
+7. **Work with External Libraries in TypeScript**: 
+<a href="https://learn.microsoft.com/api/achievements/share/ru-ru/YermakYerofeev-4575/UFLQDJP3?sharingId=CA81338B9B9E0C0F">
+  <img src="./image-6.png" alt="drawing" style="width:50px;"/>
+</a>   
+8. **Organize Code with Namespaces in TypeScript**:
+<a href="https://learn.microsoft.com/api/achievements/share/ru-ru/YermakYerofeev-4575/X2HJ874Y?sharingId=CA81338B9B9E0C0F">
+  <img src="./image-7.png" alt="drawing" style="width:50px;"/>
+</a>   
 
 ## Reflections
 
