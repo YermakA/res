@@ -1,0 +1,91 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Regular.ttf") format("truetype"), url("../fonts/Inter-Light.ttf") format("truetype"), url("../fonts/Inter-Black.ttf") format("truetype"), url("../fonts/Inter-Medium.ttf") format("truetype"), url("../fonts/Inter-Bold.ttf") format("truetype"), url("../fonts/Inter-ExtraBold.ttf") format("truetype"), url("../fonts/Inter-ExtraLight.ttf") format("truetype"), url("../fonts/Inter-SemiBold.ttf") format("truetype"), url("../fonts/Inter-Thin.ttf") format("truetype");
+}
+.footer__container {
+  background-color: #665F55;
+  height: 450px;
+  margin-bottom: 40px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+}
+.footer__svg-border {
+  cursor: pointer;
+}
+.footer__svg-icon {
+  cursor: pointer;
+}
+.footer__img {
+  width: 60px;
+  height: 60px;
+  margin-right: 8px;
+  transition: ease all 2s;
+}
+.footer__img:hover .footer__svg-border {
+  transition: all ease 2s;
+  stroke: none;
+  fill: #E1D4C9;
+}
+.footer__img:hover .footer__svg-icon {
+  transition: ease all 2s;
+  stroke: #403F3D;
+}
+.footer__title {
+  margin: 0 0 40px 0;
+  font-family: Inter;
+  letter-spacing: 0.5px;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  color: #E1D4C9;
+}
+
+.contacts__link {
+  width: 262px;
+  height: 116px;
+}
+.contacts__title {
+  padding-top: 16px;
+  margin: 0 0 40px 0;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  color: #E1D4C9;
+}
+
+.contact-item {
+  letter-spacing: 0.3px;
+  font-family: Inter;
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  height: 24px;
+  line-height: 150%;
+  color: #E1D4C9;
+}
+.contact-item_link {
+  margin-bottom: 16px;
+  width: 182px;
+  height: 28px;
+}
+.contact-item_link:hover .underline {
+  transition: ease all 1s;
+  opacity: 1;
+  width: 100%;
+  border: 1px solid #E1D4C9;
+}
+
+.links {
+  padding-left: 100px;
+  width: 530px;
+  margin-right: 100px;
+}
+
+.contacts {
+  width: 530px;
+}/*# sourceMappingURL=footer.css.map */

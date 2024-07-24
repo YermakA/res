@@ -1,0 +1,141 @@
+@import "../_variables.scss";
+@import "../fonts.scss";
+  .favorite-coffee{
+    &__container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 100px;
+    }
+    &__title{
+      margin-top: 0rem;
+      font-family: Inter;
+      font-size: 6rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 125%;
+    }
+  }
+
+.arrows-wh{
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.slider{
+  width: 136rem;
+  height: 64rem;
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__arrow-left{
+    position: relative;
+    top: -0.8rem;
+    left: 0.3rem;
+    cursor: pointer;
+    border: solid 0.1rem;
+    border-radius: 10rem;
+    width: 6rem;
+    height: 6rem;
+    background: none;
+
+  }
+  &__arrow-right{
+    position: relative;
+    top: -0.8rem;
+    left: -0.5rem;
+    cursor: pointer;
+    border: solid 0.1rem;
+    border-radius: 10rem;
+    width: 6rem;
+    height: 6rem;
+    background: none;
+  }
+  &__slide{
+    display: flex;
+    width: 48rem;
+    overflow: hidden;
+  }
+}
+
+.slide{
+  left: 0rem;
+  transition: ease all 1s;
+  position: relative;
+}
+
+.slide{
+  &__img{
+    width: 48rem;
+    height: 48rem;
+    margin-bottom: 2rem;
+  }
+  &__description{
+    width: 48rem;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+  }
+}
+
+.description{
+  &__title{
+  margin: 0 0 1.6rem 0;
+  font-family: Inter;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 600;
+
+  }
+  &__text{
+  text-align: center;
+  margin: 0 0 1.6rem 0;
+  font-family: Inter;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  }
+  &__price{
+  margin: 0 0 1.6rem 0;
+  font-family: Inter;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%; 
+  }
+}
+
+
+.controls{
+  position: relative;
+  top: -0.9rem;
+  display: flex;
+  
+}
+
+.control{
+  margin-right: 1.2rem;
+  width: 4rem;
+  height: 0.4rem;
+  &_black{
+
+     margin-right: 1.2rem;
+    width: 0rem;
+    height: 0.4rem;
+    background-color: #665F55;
+  }
+}
+
+
+.control-back{
+  display: block;
+  margin-right: 1.2rem;
+  width: 4rem;
+  height: 0.4rem;
+  background-color: #C1B6AD;
+  &:last-child{
+    margin-right: 0rem;
+  }
+}

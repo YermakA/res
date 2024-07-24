@@ -1,0 +1,75 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Regular.ttf") format("truetype"), url("../fonts/Inter-Light.ttf") format("truetype"), url("../fonts/Inter-Black.ttf") format("truetype"), url("../fonts/Inter-Medium.ttf") format("truetype"), url("../fonts/Inter-Bold.ttf") format("truetype"), url("../fonts/Inter-ExtraBold.ttf") format("truetype"), url("../fonts/Inter-ExtraLight.ttf") format("truetype"), url("../fonts/Inter-SemiBold.ttf") format("truetype"), url("../fonts/Inter-Thin.ttf") format("truetype");
+}
+.hero__img {
+  width: 1360px;
+  height: 644px;
+  border-radius: 40px;
+  margin: 0 auto;
+}
+.hero__container {
+  margin-bottom: 100px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.hero__offer {
+  left: 100px;
+  top: 100px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 530px;
+  height: 444px;
+}
+.hero__title {
+  color: #E1D4C9;
+  margin: 0 0 40px 0;
+  font-family: Inter;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 105%;
+}
+.hero__text {
+  color: #E1D4C9;
+  align-self: stretch;
+  font-family: Inter;
+  margin: 0 0 40px 0;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+.hero__button {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  border: none;
+  border-radius: 100px;
+  width: 200px;
+  background-color: #E1D4C9;
+}
+.hero__button:hover .hero-img {
+  transition: ease all 2s;
+  opacity: 1;
+}
+
+.hero-button {
+  transition: ease all 2s;
+}
+.hero-button__text {
+  padding: 0 0 0 78px;
+  color: black;
+  margin-right: 8px;
+}
+
+.hero-img {
+  opacity: 0;
+}/*# sourceMappingURL=hero.css.map */

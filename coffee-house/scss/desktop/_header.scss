@@ -1,0 +1,104 @@
+@import "../_variables.scss";
+@import "../fonts.scss";
+.header
+{
+
+  &__coffee-menu{
+    display: flex;
+    align-items: center;
+    padding: 0;
+    
+  }
+  &__container{
+    position: relative; 
+    height: 6rem;
+    margin-bottom: 2rem;
+    padding: 2rem 0 0 0;
+    display: flex;
+    align-items: center;
+    width: 136rem;
+    z-index: 10;
+}
+  &__logo{
+    position: relative;
+    z-index: 10;
+    width: 10rem;
+    height: 6rem;
+  }
+  &__text{
+    margin: 0;
+  }
+}
+
+.menu-link__nav{
+  display: none;
+}
+
+.navbar{
+  margin-right: 1.3rem;
+  width: 80.8rem;
+  height: 6rem;
+  display: flex;
+  padding-left: 36.6rem;
+  flex-direction: row;
+  align-items:center;
+  &__menu-item{
+
+    &:last-child{
+      margin-right: 0rem;
+    }
+    height: 2.8rem;
+  letter-spacing: 0.03rem;
+  color: black;
+  font-family: Inter;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  margin-right: 4rem;
+  }
+}
+
+.coffee-menu{
+      margin-top: 0.2rem;
+  width: 7.2rem;
+   transition: ease all 2s;
+  height: 2.8rem;
+  &__text{
+    font-family: "Inter";
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    margin-right: 0.8rem;
+    color: black;
+  }
+  &_underline{
+    width: 7.2rem;
+  border-bottom: 0.2rem solid black;
+  }
+  &_link{
+    width: 7.2rem;
+    height: 3.6rem;
+  }
+  &__coffee-cup{
+    position: relative;
+    top: -0.2rem;
+    right: -0.2rem;
+    width: 2rem;
+    height: 2rem;
+  }
+
+ }
+
+
+.burger-menu{
+  display: none;
+  position: relative;
+  z-index: 10;
+}
+
+
+.menu-link{
+  display: inline;
+}

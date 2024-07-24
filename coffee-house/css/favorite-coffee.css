@@ -1,0 +1,127 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Regular.ttf") format("truetype"), url("../fonts/Inter-Light.ttf") format("truetype"), url("../fonts/Inter-Black.ttf") format("truetype"), url("../fonts/Inter-Medium.ttf") format("truetype"), url("../fonts/Inter-Bold.ttf") format("truetype"), url("../fonts/Inter-ExtraBold.ttf") format("truetype"), url("../fonts/Inter-ExtraLight.ttf") format("truetype"), url("../fonts/Inter-SemiBold.ttf") format("truetype"), url("../fonts/Inter-Thin.ttf") format("truetype");
+}
+.favorite-coffee__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+}
+.favorite-coffee__title {
+  margin-top: 0px;
+  font-family: Inter;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.slider {
+  width: 1360px;
+  height: 640px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.slider__arrow-left {
+  position: relative;
+  top: -8px;
+  left: 3px;
+  cursor: pointer;
+  border: solid 1px;
+  border-radius: 100px;
+  width: 60px;
+  height: 60px;
+  background: none;
+}
+.slider__arrow-left:hover {
+  transition: ease all 2s;
+  background: #665F55;
+  border: none;
+}
+.slider__arrow-left:hover .arrows {
+  transition: ease all 2s;
+  stroke: #E1D4C9;
+}
+.slider__arrow-right {
+  position: relative;
+  top: -8px;
+  left: -5px;
+  cursor: pointer;
+  border: solid 1px;
+  border-radius: 100px;
+  width: 60px;
+  height: 60px;
+  background: none;
+}
+.slider__arrow-right:hover {
+  transition: ease all 2s;
+  background: #665F55;
+  border: none;
+}
+.slider__arrow-right:hover .arrows {
+  transition: ease all 2s;
+  stroke: #E1D4C9;
+}
+.slider__slide {
+  display: flex;
+  flex-direction: column;
+}
+
+.slide__img {
+  width: 480px;
+  height: 480px;
+  margin-bottom: 20px;
+}
+.slide__description {
+  width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.description__title {
+  margin: 0 0 16px 0;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+}
+.description__text {
+  text-align: center;
+  margin: 0 0 16px 0;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+.description__price {
+  margin: 0 0 16px 0;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.controls {
+  position: relative;
+  top: -9px;
+  display: flex;
+}
+
+.control {
+  margin-right: 12px;
+  width: 40px;
+  height: 4px;
+  background-color: #C1B6AD;
+}
+.control:last-child {
+  margin-right: 0px;
+}
+.control_black {
+  background-color: #665F55;
+}/*# sourceMappingURL=favorite-coffee.css.map */

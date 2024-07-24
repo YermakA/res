@@ -1,0 +1,88 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Regular.ttf") format("truetype"), url("../fonts/Inter-Light.ttf") format("truetype"), url("../fonts/Inter-Black.ttf") format("truetype"), url("../fonts/Inter-Medium.ttf") format("truetype"), url("../fonts/Inter-Bold.ttf") format("truetype"), url("../fonts/Inter-ExtraBold.ttf") format("truetype"), url("../fonts/Inter-ExtraLight.ttf") format("truetype"), url("../fonts/Inter-SemiBold.ttf") format("truetype"), url("../fonts/Inter-Thin.ttf") format("truetype");
+}
+.mobile-app__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+
+.offer {
+  width: 630px;
+  height: 342px;
+}
+.offer_text-pos-start {
+  text-align: start;
+}
+.offer__btn-img {
+  padding-left: 12px;
+  width: 36px;
+  height: 36px;
+  margin-right: 8px;
+}
+.offer__title {
+  letter-spacing: 1.1px;
+  font-family: Inter;
+  margin: 0 0 40px 0;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+}
+.offer__text {
+  margin: 0 0 40px 0;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+.offer__btn {
+  cursor: pointer;
+  margin-right: 20px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background: none;
+  border-radius: 1px solid black;
+  width: 200px;
+  height: 64px;
+  border-radius: 100px;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+}
+.offer__btn_mr-0 {
+  margin-right: 0;
+}
+.offer__btn-text {
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.button-container {
+  display: flex;
+}
+
+.offer__btn {
+  transition: all ease 2s;
+}
+.offer__btn:hover {
+  border: none;
+  background-color: #665F55;
+}
+.offer__btn:hover .button__svg-icon {
+  transition: all ease 2s;
+  fill: #E1D4C9;
+}
+.offer__btn:hover .offer_text-pos-start {
+  transition: all ease 2s;
+  color: #E1D4C9;
+}/*# sourceMappingURL=mobile-app.css.map */
