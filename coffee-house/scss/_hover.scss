@@ -1,0 +1,233 @@
+@media (hover: none) {
+
+
+
+}
+
+
+
+
+@media (hover: hover)  {
+
+
+
+
+  
+      .preview{
+  &:hover{ 
+    .preview__img{
+    transition: ease all 1s;
+    transform: scale(1);
+    
+    }
+  }
+    }
+
+    .tab-item{
+         &:hover{
+    border: none;
+    background-color: #665F55;
+     .tab-item__img{
+    background-color: $light;
+  }
+   .tab-item__text{
+    font-family: Inter;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 600;
+    color: $light;
+    line-height: 150%
+  }
+  }
+    &:active{
+    border: none;
+    background-color: #665F55;
+  .tab-item__img{
+    background-color: $light;
+  }
+  .tab-item__text{
+font-family: Inter;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 600;
+    color: $light;
+    line-height: 150%
+  }
+  }
+    }
+
+
+
+    .footer{
+    &__img{
+      width: 6rem;
+      height: 6rem;
+      margin-right: 0.8rem;
+      transition: ease all 2s;
+      &:hover{
+      .footer__svg-border{
+         transition: all ease 2s;
+        stroke: none;
+        fill: $light;   
+  }
+      .footer__svg-icon{  
+        transition: ease all 2s;
+        stroke: #403F3D;
+  }
+      }
+    }
+}
+
+
+.contact-item{
+  &_link{
+    margin-bottom: 1.6rem;
+    width: 18.2rem;
+    height: 2.8rem;
+    &:hover .underline{
+       transition: ease all 1s;
+    opacity: 1;
+    width: 100%;
+    border: 0.1rem solid $light;
+    }
+  }
+  }
+
+  .navbar{
+  &__menu-item{
+     &:hover  .underline{
+  transition: ease all 2s;
+  width: 100%;
+  opacity: 1;
+}
+  }
+}
+
+.coffee-menu{
+ &:hover + .underline{
+ transition: ease all 2s;
+ width: 7.2rem;
+  opacity: 1;
+}
+ }
+
+
+ 
+
+
+.slider{
+  &__arrow-left{
+   &:hover{
+    transition: ease all 2s;
+    background: #665F55;
+    border:none;
+    .arrows{
+      transition: ease all 2s;
+      stroke: $light;
+    }
+   }
+  }
+  &__arrow-right{
+    &:hover{
+      transition: ease all 2s;
+    background: #665F55;
+    border:none;
+    .arrows{
+      transition: ease all 2s;
+      stroke: $light;
+    }
+   }
+  }
+
+}
+
+.images{
+  &__border{
+    &:hover {
+      .big-img{
+          transition: ease all 2s;
+        transform: scale(1);
+      }
+       .small-img{
+          transition: ease all 2s;
+        transform: scale(1);
+      }
+    }
+  }
+}
+}
+
+
+@media screen and (hover: hover)  and (min-width: 768px){
+
+  .hero{
+  &__img{
+  width: 136rem;
+  height: 64.4rem;
+  border-radius: 4rem;
+  margin: 0 auto;
+  }
+  &__container{
+    margin-bottom: 10rem;
+    position: relative;
+  display: flex;
+  justify-content: center;
+  }
+  &__offer{
+    left: 10rem;
+    top: 10rem;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 53rem;
+    height: 44.4rem;
+  }
+  &__title{
+    color: $light;
+    margin: 0 0 4rem 0;
+    font-family: Inter;
+    font-size: 7.2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 105%;
+    
+   
+  }
+  &__text{
+    color: $light;
+    align-self: stretch;
+    font-family: Inter;
+    margin: 0 0 4rem 0;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    
+  }
+  &__button{
+    &:hover{
+      .hero-img{
+        width: 2rem;
+        height: 2rem;
+        transition: ease all 2s;
+       opacity: 1;
+      }
+    }
+  }
+}
+}
+
+
+@media (hover: hover) and (width<=768px)
+{
+  .underline{
+    margin-top: 0.3rem;
+    animation-fill-mode: forwards;
+  }
+.coffee-menu:hover + .underline {
+  
+    transition: ease all 2s;
+    width: 13.2rem;
+    opacity: 1;
+}
+}
